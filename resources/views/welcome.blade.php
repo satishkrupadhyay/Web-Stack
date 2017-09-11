@@ -93,8 +93,8 @@
 
                         <div class="col-sm-7 col-xs-12 heading-text">
                             <div class="single_home_content wow zoomIn" data-wow-duration="1s">
-                                <h1>Introducing REMEDIO </h1>
-                                <p class="bannerDescription">Now get your medicines delivered at your doorstep. HASSLE FREE.</p>
+                                <h1>Introducing <b>REMEDIO</b> </h1>
+                                <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Becauese we <b>CARE</b></p>
                                 <div class="button">
                                     <a href="" class="btn">Downlod APP</a>
                                     <a href="" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
@@ -256,7 +256,7 @@
             </div>
         </section>
 
-        <!-- Video Section -->
+        <!-- Video Section 
 
         <section id="video_icon">
             <div class="video_overlay">
@@ -273,7 +273,7 @@
                     </div>
                 </div>
             </div>  
-        </section>
+        </section>-->
 
         <!-- Description Section -->
 
@@ -625,12 +625,12 @@
                 <div class="row">
                     <div class="download_heading_text center-content">
                         <h1>Download the App</h1>
-                        <p>Phasellus nisl leo congue eu malesuada lobortis fringilla et nulla. Curabitur posuere sem nec bibendum finibus.</p>
+                        <p>To get your medicine needs taken care by us</p>
 
                         <div class="down_text_des wow fadeInUp" data-wow-duration="1.5s">
-                            <a href=""><img src="images/d1.png" alt="" /></a>
+                            
                             <a href=""><img src="images/d2.png" alt="" /></a>
-                            <a href=""><img src="images/d3.png" alt="" /></a>
+                            
                         </div>
                     </div>
                 </div>
@@ -646,7 +646,7 @@
                         <div class="subscribe_heading_text center-content">
                             <div class="subscribe_heading_title wow fadeIn" data-wow-duration="1s">
                                 <h1>Subscribe Now</h1>
-                                <p>Get latest news and offers curabitur posuere.</p>
+                                <p>Get latest news and offers from us.</p>
                             </div>
 
                             <div class="subcribe_form center-content">
