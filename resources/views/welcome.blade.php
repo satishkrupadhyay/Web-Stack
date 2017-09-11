@@ -93,8 +93,8 @@
 
                         <div class="col-sm-7 col-xs-12 heading-text">
                             <div class="single_home_content wow zoomIn" data-wow-duration="1s">
-                                <h1>Introducing Iolite app landing template </h1>
-                                <p class="bannerDescription">Iolite is great new responsive app landing page template for your awesome app. This is freebie from uimint.com & you will get useful resources from there.</p>
+                                <h1>Introducing REMEDIO </h1>
+                                <p class="bannerDescription">Now get your medicines delivered at your doorstep. HASSLE FREE.</p>
                                 <div class="button">
                                     <a href="" class="btn">Downlod APP</a>
                                     <a href="" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
