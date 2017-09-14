@@ -13,7 +13,7 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#works" class=""><b>SignUp/Login</b></a></li>
+                            <li><a href="{{ url('/login') }}" class="">Login/SignUp</a></li>
                             <li><a href="#description_second" class=""><b>Upload Prescription</b></a></li>
                             <li><a href="#pricing" class=""><b>Search</b></a></li>
                             <li><a href="#downloadApps" class=""><b>Download</b></a></li>
