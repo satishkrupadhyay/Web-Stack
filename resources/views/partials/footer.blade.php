@@ -7,9 +7,8 @@
                             <a href=""><i class="fa fa-facebook"></i></a>
                             <a href=""><i class="fa fa-linkedin"></i></a>
                             <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-instagram"></i></a>
-                            <a href=""><i class="fa fa-pinterest-p"></i></a>
-                            <a href=""><i class="fa fa-dribbble"></i></a>
+                            
+                            
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-12">

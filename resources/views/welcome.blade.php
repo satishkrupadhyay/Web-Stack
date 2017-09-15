@@ -13,10 +13,16 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
         <!-- font awesome -->
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/superslide/superslides.css">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+     <!--   <script src="js/jquery/jquery.js"></script>-->
+
+        <!-- Bootstrap -->
+      <!--  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/superslide/superslides.css">
         <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
         <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">
         <link rel="stylesheet" href="css/themes/default/default.css">
@@ -27,13 +33,13 @@
         <link rel="stylesheet" href="css/owl-carousel/owl.theme.css">
         <link rel="stylesheet" href="css/owl-carousel/owl.transitions.css">
 
-        <script src="js/jquery/jquery.js"></script>
 
         <script src="js/script.js"></script>
 
 
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap/bootstrap.min.js"></script>
+   <!--     <script src="js/bootstrap/bootstrap.min.js"></script>-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="js/fancybox/jquery.fancybox.pack.js"></script>
         <script src="js/nivo-lightbox/nivo-lightbox.min.js"></script>
         <script src="js/owl-carousel/owl.carousel.min.js"></script>
@@ -114,7 +120,7 @@
         </section>
 
 
-        <!-- Our Works Section -->
+        <!-- Our Works Section 
 
         <section id="works" class="center-content">
             <div class="container">
@@ -122,67 +128,23 @@
                     <div class="works_content text-center">
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="single_works_text wow fadeInLeft" data-wow-duration=".5s">
-                                <i class="fa fa-crop"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration=".8s">
-                                <i class="fa fa-cube"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration="1.2s">
-                                <i class="fa fa-magic"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration="1.5s">
-                                <i class="fa fa-code-fork"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration="1.9s">
-                                <i class="fa fa-rocket"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration="2.3s">
-                                <i class="fa fa-database"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration="2.6s">
-                                <i class="fa fa-rocket"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration="2.9s">
-                                <i class="fa fa-database"></i>
-                                <h3>Clean and Responsive</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh orci.</p>
-                            </div>
-                        </div>
-                    </div>
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @if (Auth::check())
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
                 </div>
-            </div>
-        </section>
+            @endif
+
+            </div></div></div></div></div>
+
+        </section> -->
 
 
-        <section id="works_2">
+     <!--   <section id="works_2">
             <div class="container">
                 <div class="row">
                     <div class="works_2_content">
@@ -719,5 +681,8 @@
         <div class="scrollup">
             <a href="#"><i class="fa fa-chevron-up"></i></a>
         </div>
+
+
+
     </body>
 </html>

@@ -1,13 +1,20 @@
+<div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">Register</h4>
+            </div>
+
+<div class="modal-body">
+
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
 
-                <div class="panel-body">
+                <div class="panel-body">-->
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
@@ -112,9 +119,10 @@
                             </div>
                         </div>
                     </form>
-                </div>
+               <!-- </div>
             </div>
         </div>
     </div>
-</div>
+</div>-->
 @endsection
+</div>
