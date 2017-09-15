@@ -23,3 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//Upload image and save in database
+//Route::get('upload','FileController@index');
+Route::get('file','FileController@index')->name('upload.file');
+Route::post('file','FileController@storeFile');
