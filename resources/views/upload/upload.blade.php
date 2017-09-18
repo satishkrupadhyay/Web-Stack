@@ -35,7 +35,7 @@
 						<strong>{{ $message }}</strong>
 						
 					</div>
-					<img src="/upload/{{ Session::get('path') }}">
+					<img src="/upload/{{ Session::get('path') }}" width="400px" height="600px">
 					@endif
 					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
 					{{csrf_field()}}
