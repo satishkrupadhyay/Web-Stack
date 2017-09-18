@@ -28,3 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('upload','FileController@index');
 Route::get('file','FileController@index')->name('upload.file');
 Route::post('file','FileController@storeFile');
+
+//Pharmacy home page
+Route::get('pharmhome','pharmController@index');
+

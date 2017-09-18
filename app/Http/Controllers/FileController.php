@@ -29,6 +29,7 @@ class FileController extends Controller
     	if ($request->hasFile('image')) {
    		
    		  $imageName= time().'.'.$request->image->getClientOriginalExtension();
+        //$orderDate = date();
         $request->image->move(public_path('upload'),$imageName);
    			//$filename = $request->image->getClientOriginalName();
         //$request->image->storeAs('upload',$imageName);
