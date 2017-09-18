@@ -14,10 +14,7 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
 
-=======
->>>>>>> 9b9f01b35d73dcce71889e55605cc2b1bc1e7a4e
                             <li>@if (Route::has('login'))
                                     @if (Auth::check())
                                          <a href="{{ url('/home') }}">Home</a>
@@ -26,15 +23,12 @@
                                     @endif
                                 @endif
 
-<<<<<<< HEAD
+
                                 
 
                             
 
-=======
-        
-                            
->>>>>>> 9b9f01b35d73dcce71889e55605cc2b1bc1e7a4e
+
                             <li><a href="#description_second" class=""><b>Upload Prescription</b></a></li>
                             <li><a href="#pricing" class=""><b>Search</b></a></li>
                             <li><a href="#downloadApps" class=""><b>Download</b></a></li>
