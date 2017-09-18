@@ -1,4 +1,3 @@
- 
 
  <header id="home" class="header navbar-fixed-top">
             <div class="navbar navbar-default main-menu">
@@ -10,26 +9,21 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a  href="#home" class="navbar-brand"><img src="images/Asset 34x.png" alt="Logo" width="100px" height="50px"/></a>
-                        <!-- <a class="navbar-brand" href="index.html"></a> -->
+                        <a  href="#home" class="navbar-brand"><img src="images/Asset 34x.png" alt="Logo" width="50px" height="50px"/></a>
+                         <a class="navbar-brand" href="index.html"></a> 
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
                             <li>@if (Route::has('login'))
                                     @if (Auth::check())
                                          <a href="{{ url('/home') }}">Home</a>
                                     @else
                                     <a href="" class="" data-toggle="modal" data-target="#myModal"><b>SignUp/Login</b></a></li>
-                                 <!--   <a href="{{ url('/login') }}" class="" data-toggle="modal" data-target="#myModal"><b>SignUp/Login</b></a></li> -->
-                                   <!-- <button type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#myModal">Launch demo modal</button>-->
                                     @endif
                                 @endif
 
-                                
-=======
-                            <li><a href="{{ url('/login') }}" class="">Login/SignUp</a></li>
->>>>>>> 8a8010edcabdebf4ef58e4db5aff429856508fea
+        
+                            
                             <li><a href="#description_second" class=""><b>Upload Prescription</b></a></li>
                             <li><a href="#pricing" class=""><b>Search</b></a></li>
                             <li><a href="#downloadApps" class=""><b>Download</b></a></li>
@@ -37,7 +31,7 @@
 
                     </div>
                 </div>
-            </div> <!-- end of navbar -->
+            </div>  <!--end of navbar--> 
         </header>
             <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
