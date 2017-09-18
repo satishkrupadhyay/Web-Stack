@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Pending Orders</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -15,7 +15,18 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    
+                    <table>
+                               <tr>
+                                <td>ORDER ID | CUSTOMER NAME | DATE OF ORDER</td>
+                                </tr>
+                           @foreach ($data as $value)
+
+                                <tr>
+                                <td><a href=""> {{$value->order_id}} | {{$value->cust_id}} | {{$value->date_of_purchase}}</a></td>
+                                </tr>
+                           @endforeach
+                    </table> 
                 </div>
             </div>
         </div>
