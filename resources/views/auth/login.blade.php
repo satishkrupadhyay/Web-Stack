@@ -61,10 +61,10 @@
                                     Login
                                 </button>
 
-                                <a href="{{ route('password.request') }}">
+                                <a href="{{ route('password.request') }}" data-toggle="modal" data-target="#forgot" >
                                     Forgot Your Password?
                                 </a>
-                                <a  href="{{ url('/register') }}" class="btn btn-primary" data-toggle="modal" data-target="#registermodal" >
+                                <a class="btn btn-primary" href="{{ url('/register') }}" data-toggle="modal" data-target="#registermodal">
                                     Register
                                 </a>
                             </div>
@@ -80,7 +80,20 @@
             </div>
         
             
-<div class="modal fade" id="registermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" z-index="1045">
+<div class="modal fade" id="registermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+
+         <!--   <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>-->
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+<div class="modal fade" id="forgot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             

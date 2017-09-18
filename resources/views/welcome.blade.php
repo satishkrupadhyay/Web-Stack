@@ -43,7 +43,6 @@
         <script src="js/fancybox/jquery.fancybox.pack.js"></script>
         <script src="js/nivo-lightbox/nivo-lightbox.min.js"></script>
         <script src="js/owl-carousel/owl.carousel.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL6gbhsnCEt4FS9D6BBl3mZO1xy-NcwpE&sensor=false"></script>
         <script src="js/jquery-easing/jquery.easing.1.3.js"></script>
         <script src="js/superslide/jquery.superslides.js"></script>
         <script src="js/wow/wow.min.js"></script>
@@ -406,126 +405,6 @@
             </div>
         </section>
 
-        <!-- Apps Gallary  -->
-
-        <section id="apps_gallery">
-            <div class="container">
-                <div class="row">
-                    <div class="gallery_heading_text center-content">
-                        <h1>App Gallery</h1>
-                        <p class="description">Showcase your app screenshots into a nice carousel below. You can add as many screenshots as you want.</p>
-                    </div>
-
-                    <div class="col-md-12 col-sm-12 col-xs-12"> 
-                        <div class="gallery_carousel center-content">
-                            <div class="single_gallery">
-                                <img src="images/g1.png" alt="" />
-                            </div>
-                            <div class="single_gallery">
-                                <img src="images/g1.png" alt="" />
-                            </div>
-                            <div class="single_gallery">
-                                <img src="images/g1.png" alt="" />
-                            </div>
-                            <div class="single_gallery">
-                                <img src="images/g1.png" alt="" />
-                            </div>
-                            <div class="single_gallery">
-                                <img src="images/g1.png" alt="" />
-                            </div>
-                            <div class="single_gallery">
-                                <img src="images/g1.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </section>
-
-        <!-- Our Pricing  -->
-
-        <section id="pricing">
-            <div class="container">
-                <div class="row">
-                    <div class="pricing_heading_text center-content">
-                        <h1>Our Pricing</h1>
-                    </div>
-
-                    <div class="main_pricing_table">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single_pricing wow fadeIn" data-wow-duration="1.5s">
-                                <div class="top_text">
-                                    <h4>Free</h4>
-                                    <h6>For presonal use</h6>
-                                    <p>Outline an app feature/benefit here. You can change the icon above icons available.</p>
-                                </div>
-                                <ul>
-                                    <li><img src="images/tic.png" alt="" />Justo Fringilla</li>
-                                    <li><img src="images/tic.png" alt="" />Mollis Sit Nullam</li>
-                                    <li><img src="images/tic.png" alt="" />Ultricies Purus Amet</li>
-                                    <li><img src="images/tic.png" alt="" />Cras Inceptos</li>
-                                </ul>
-                                <hr />
-                                <div class="table_info">
-                                    <div class="info_head_text">
-                                        <sub>$</sub>0<span>/per month</span>
-                                    </div>
-                                    <a href="" class="btn-sm">sign up</a> <a href="" class="info_right_text">Free Forever</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single_pricing economy_table wow fadeIn" data-wow-duration="1.6s">
-                                <div class="top_text">
-                                    <h4>Economy</h4>
-                                    <h6>More awesome photo filters</h6>
-                                    <p>Outline an app feature/benefit here. You can change the icon above icons available.</p>
-                                </div>
-                                <ul>
-                                    <li><img src="images/tic.png" alt="" />Justo Fringilla</li>
-                                    <li><img src="images/tic.png" alt="" />Mollis Sit Nullam</li>
-                                    <li><img src="images/tic.png" alt="" />Ultricies Purus Amet</li>
-                                    <li><img src="images/tic.png" alt="" />Cras Inceptos</li>
-                                </ul>
-                                <hr />
-                                <div class="table_info">
-                                    <div class="info_head_text">
-                                        <sub>$</sub>29<span>/per month</span>
-                                    </div>
-                                    <a href="" class="btn-sm">sign up</a> <a href="" class="info_right_text">Best for individuals</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="single_pricing wow fadeIn" data-wow-duration="1.8s">
-                                <div class="top_text">
-                                    <h4>Professional</h4>
-                                    <h6>Include your business watermark</h6>
-                                    <p>Outline an app feature/benefit here. You can change the icon above icons available.</p>
-                                </div>
-                                <ul>
-                                    <li><img src="images/tic.png" alt="" />Justo Fringilla</li>
-                                    <li><img src="images/tic.png" alt="" />Mollis Sit Nullam</li>
-                                    <li><img src="images/tic.png" alt="" />Ultricies Purus Amet</li>
-                                    <li><img src="images/tic.png" alt="" />Cras Inceptos</li>
-                                </ul>
-                                <hr />
-                                <div class="table_info">
-                                    <div class="info_head_text">
-                                        <sub>$</sub>54<span>/per month</span>
-                                    </div>
-                                    <a href="" class="btn-sm">sign up</a> <a href="" class="info_right_text">Best for team</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Our Testimonial  -->
 
         <section id="testimonial">
@@ -561,23 +440,7 @@
             </div>
         </section>
 
-        <!-- Clients logo Section  -->
-
-        <section id="clientsLogo">
-            <div class="container">
-                <div class="row">
-                    <div class="client_heading_text center-content wow zoomIn" data-wow-duration="1.5s">
-                        <h1>As Seen On</h1>
-
-                        <a href=""><img src="images/c1.png" alt="" /></a>
-                        <a href=""><img src="images/c2.png" alt="" /></a>
-                        <a href=""><img src="images/c3.png" alt="" /></a>
-                        <a href=""><img src="images/c4.png" alt="" /></a>
-                        <a href=""><img src="images/c5.png" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    
 
 
         <!-- Download Section  -->
