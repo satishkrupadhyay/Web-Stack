@@ -37,3 +37,6 @@ Route::get('/pharmlogin', function () {
 Route::post('/dashboard', 'pharmController@handlelogin');
 //Login successful method!
 
+//Pharmacy prescription view and form
+Route::get('pharmview','pharmviewController@index');
+
