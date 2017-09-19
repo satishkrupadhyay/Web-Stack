@@ -43,7 +43,7 @@
                 <a class="btn btn-primary" href="{{ url('/login') }}" data-toggle="modal" data-target="#loginmodal" data-dismiss="modal">
                     Enter as USER
                 </a>
-                <a class="btn btn-primary" href="{{ url('/login') }}">
+                <a class="btn btn-primary" href="{{ url('/pharmlogin') }}"data-toggle="modal" data-target="#pharmlogin" data-dismiss="modal">
                     Enter as PHARMACY
                 </a>
 
@@ -57,6 +57,19 @@
 </div> <!-- /.modal -->
 
 <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+
+         <!--   <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>-->
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+<div class="modal fade" id="pharmlogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             
