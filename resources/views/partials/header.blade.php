@@ -45,13 +45,13 @@
                 <a class="btn btn-primary" href="{{ url('/login') }}" data-toggle="modal" data-target="#loginmodal" data-dismiss="modal">
                     Enter as USER
                 </a>
-                <a class="btn btn-primary" href="{{ url('/pharmlogin') }}"data-toggle="modal" data-target="#pharmlogin" data-dismiss="modal">
+                <a style="float: right;" class="btn btn-primary" href="{{ url('/pharmlogin') }}"data-toggle="modal" data-target="#pharmlogin" data-dismiss="modal">
                     Enter as PHARMACY
                 </a>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-xs" data-dismiss="modal" >Close</button>
+                <button  style="display: block; margin: 0 auto; height:50px; width:80px;" type="button" class="btn btn-primary btn-xs" data-dismiss="modal" >Close</button>
                 
             </div>
         </div> <!-- /.modal-content -->
