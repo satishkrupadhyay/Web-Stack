@@ -24,7 +24,9 @@
                                 @endif
 
                             <li><a href="#pricing" class=""><b>Search</b></a></li>
-                            <li><a href="#downloadApps" class=""><b>Download</b></a></li>
+                            <li><a href="#downloadApps" class=""><b>Download</b></a></li>\
+                            <li><a href="#description_second" class=""><b>About</b></a></li>
+
                         </ul>
 
                     </div>

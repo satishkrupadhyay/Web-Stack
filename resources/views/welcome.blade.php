@@ -98,11 +98,11 @@
 
                         <div class="col-sm-7 col-xs-12 heading-text">
                             <div class="single_home_content wow zoomIn" data-wow-duration="1s">
-                                <h1>Introducing <b>REMEDIO</b> </h1>
+                                <h1>Introducing <b>ZEEVANI</b> </h1>
                                 <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Becauese we <b>CARE</b></p>
                                 <div class="button">
-                                    <a href="" class="btn">Downlod APP</a>
-                                    <a href="" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
+                                    <a href="#downloadApps" class="btn">Downlod APP</a>
+                                    <a href="#video" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@
             </div>
         </section>-->
 
-        <!-- Description Section -->
+        <!-- Description Section 
 
         <section id="descriotion">
             <div class="container">
@@ -245,75 +245,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
         <!-- Description Second Section -->
 
-        <section id="description_second">
-            <div class="container">
-                <div class="row">
-                    <div class="main_description_second_contant">
-                        <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-duration="1.5s">
-                            <div class="second_heading_text top-margin">
-                                <h1>Description Second Layout</h1>
-                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
-                            </div>
-
-                            <div class="second_bottom_text">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="second_single_text">
-                                            <i class="fa fa-shield"></i>
-                                            <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="second_single_text">
-                                            <i class="fa fa-css3"></i>
-                                            <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="second_single_text">
-                                            <i class="fa fa-file-text"></i>
-                                            <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="second_single_text">
-                                            <i class="fa fa-server"></i>
-                                            <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-md-6 col-sm-6">
-                            <div class="right_desc_img center-content wow fadeInRight" data-wow-duration="1.5s">
-                                <img src="images/iphone4.png" alt="" />
-                                
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
 
         <!-- Video Section -->
@@ -393,7 +329,73 @@
             </div>
         </section>
 
-        <!-- Subscribe Section  -->
+        <section id="description_second">
+            <div class="container">
+                <div class="row">
+                    <div class="main_description_second_contant">
+                        <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-duration="1.5s">
+                            <div class="second_heading_text top-margin">
+                                <h1>Description Second Layout</h1>
+                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                            </div>
+
+                            <div class="second_bottom_text">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="second_single_text">
+                                            <i class="fa fa-shield"></i>
+                                            <div class="right_bottom_description">
+                                                <h6>Hundreds of Icons</h6>
+                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="second_single_text">
+                                            <i class="fa fa-css3"></i>
+                                            <div class="right_bottom_description">
+                                                <h6>Hundreds of Icons</h6>
+                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="second_single_text">
+                                            <i class="fa fa-file-text"></i>
+                                            <div class="right_bottom_description">
+                                                <h6>Hundreds of Icons</h6>
+                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="second_single_text">
+                                            <i class="fa fa-server"></i>
+                                            <div class="right_bottom_description">
+                                                <h6>Hundreds of Icons</h6>
+                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6">
+                            <div class="right_desc_img center-content wow fadeInRight" data-wow-duration="1.5s">
+                                <img src="images/iphone4.png" alt="" />
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section  
 
         <section id="subscribe">
             <div class="subcribe_overlay">
@@ -415,7 +417,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
 
         <!-- message section -->
