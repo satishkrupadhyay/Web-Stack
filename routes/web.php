@@ -32,3 +32,6 @@ Route::post('file','FileController@storeFile');
 //Pharmacy home page
 Route::get('pharmhome','pharmController@index');
 
+//Pharmacy prescription view and form
+Route::get('pharmview','pharmviewController@index');
+
