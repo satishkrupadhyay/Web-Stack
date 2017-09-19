@@ -17,11 +17,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
-     <!--   <script src="js/jquery/jquery.js"></script>-->
+       <!-- <script src="js/jquery/jquery.js"></script>-->
 
         <!-- Bootstrap -->
-      <!--  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+      <!-- <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="css/superslide/superslides.css">
         <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
         <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">

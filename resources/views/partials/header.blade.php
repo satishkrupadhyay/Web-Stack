@@ -23,13 +23,6 @@
                                     @endif
                                 @endif
 
-
-                                
-
-                            
-
-
-                            <li><a href="#description_second" class=""><b>Upload Prescription</b></a></li>
                             <li><a href="#pricing" class=""><b>Search</b></a></li>
                             <li><a href="#downloadApps" class=""><b>Download</b></a></li>
                         </ul>
