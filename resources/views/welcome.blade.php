@@ -86,7 +86,7 @@
  <div class='preloader'><div class='loaded'>&nbsp;</div></div>
        @include('partials.header')
 
-        <section id="home">
+        <section id="homea">
             <div id="bgimage" class="header-image">
                 <div class="container">
                     <div class="row">
