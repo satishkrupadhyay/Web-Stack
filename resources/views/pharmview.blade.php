@@ -1,81 +1,159 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
-    <title>test</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
+  
 </head>
 <body>
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12 ">
-            <div class="panel panel-default">
-                <div class="panel-heading"><strong>View Orders</strong></div>
+    <div id="app">
+       <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
 
-                <div class="panel-body col-md-4">
-                    
-                    
-                   <img src="/upload/1505473424.jpg" width="400px" height="600px">
+                    <!--Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
+                        Hello Pharmacy
+                    </a>
                 </div>
 
-                 <div class="panel-body col-md-7 col-md-offset-1">
-                   
-                    
-                    <form id="bookForm" method="post" class="form-horizontal" action="">
-                    
-                    <div class="panel panel-default">
+              <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        <li><a href="{{ url('file') }}">View Orders</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Pharmacy <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
   
-                    <div class="panel-heading">Medicine Details</div>
-                    <div class="panel-body">
-                      
-                    <div id="education_fields">
-                              
-                    </div>
-                    <div class="col-xs-4">                      
-                        <input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required>                      
-                    </div>
-
-                    <div class="col-xs-4">                      
-                        <input type="text" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required>                     
-                    </div>
-
-                    <div class="col-xs-2">                      
-                        <input type="text" class="form-control" id="price" name="price[]" value="" placeholder="Price" required>                      
-                    </div>
-
-                    <div class="col-xs-1">                 
-                            <button class="btn btn-success" type="button"  onclick="education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>                                                 
-                    </div>
-
-
-                    <div class="clear"></div>
-
-                      
-                    </div>
-                      
-                      
-                    </div>
-                    <div class="form-group">
-                        <div class="col-xs-5">
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </div>
-                    </div>
-                    </form>
-
+                        
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
+
+    @yield('content')
     </div>
-</div>
-</body>
-</html>
+        
+
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><strong>ORDER ID:</strong></div>
+
+                                    <div class="panel-body col-md-4">
+                                        
+                                        
+                                       <img src="/upload/1505473424.jpg" width="400px" height="600px">
+
+                                    </div>
+
+                                     <div class="panel-body col-md-7 col-md-offset-1">
+                                       
+                                        
+                                        <form id="bookForm" method="post" class="form-horizontal" action="{{ route('logout') }}">
+                                        {{ csrf_field() }}
+                                        <div class="panel panel-default">
+                      
+                                        <div class="panel-heading"><strong>Medicine Details:</strong></div>
+                                        <div class="panel-body">
+                                          
+                                        <div id="education_fields">
+                                                  
+                                        </div>
+                                        <div class="col-xs-4">                      
+                                            <input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required>                      
+                                        </div>
+
+                                        <div class="col-xs-4">                      
+                                            <input type="text" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required>                     
+                                        </div>
+
+                                        <div class="col-xs-2">                      
+                                            <input type="text" class="form-control" id="price" name="price[]" value="" placeholder="Price" required>                      
+                                        </div>
+
+                                        <div class="col-xs-1">                 
+                                                <button class="btn btn-success" type="button"  onclick="education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>                                                 
+                                        </div>
 
 
+                                        <div class="clear"></div>
 
-<script>
+                                          
+                                        </div>
+                                          
+                                          
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-4 col-md-offset-10">
+                                                <button type="submit" class="btn btn-success">Proceed</button>
+                                            </div>
+                                        </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+   
+
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
 var room = 1;
 function education_fields() {
  
@@ -92,3 +170,43 @@ function education_fields() {
        $('.removeclass'+rid).remove();
    }
 </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
