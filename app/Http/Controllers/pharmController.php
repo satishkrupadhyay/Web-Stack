@@ -7,21 +7,6 @@ use Illuminate\Http\Request;
 class pharmController extends Controller
 {
     
-    public function index()
-    {
-      //$data['data'] = DB::table('orders')->get();
-      $data['data'] = DB::table('orders')->where('status', 0)->simplePaginate(5);
-
-      if (count($data) > 0) 
-      {
-        return view('auth.dashboard', $data);
-      }
-      else{
-
-            return view('auth.dashboard');
-      }
-        
-    }
 
     public function viewlogin()
     {
@@ -50,7 +35,17 @@ class pharmController extends Controller
 
         if(count($checklogin) > 0)
         {
-            return view('/auth/dashboard');
+           // return view('/auth/dashboard');
+            $data['data'] = DB::table('orders')->where('status', 0)->simplePaginate(5);
+
+      if (count($data) > 0) 
+      {
+        return view('auth.dashboard', $data);
+      }
+      else{
+
+            return view('auth.dashboard');
+      }
             // echo "Login Success!";
         }
         else

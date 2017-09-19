@@ -37,6 +37,3 @@ Route::get('/pharmlogin', function () {
 Route::post('/dashboard', 'pharmController@handlelogin');
 //Login successful method!
 
-
-//Pharmacy home page
-Route::get('/dashboard','pharmController@index');
