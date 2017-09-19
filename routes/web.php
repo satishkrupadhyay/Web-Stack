@@ -28,6 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('upload','FileController@index');
 Route::get('file','FileController@index')->name('upload.file');
 Route::post('file','FileController@storeFile');
+<<<<<<< HEAD
 Route::get('display','ImageController@show');
 
 Route::get('/pharmlogin', function () {
@@ -36,3 +37,9 @@ Route::get('/pharmlogin', function () {
 
 Route::post('/dashboard', 'PharmController@handlelogin');
 //Login successful method!
+=======
+
+//Pharmacy home page
+Route::get('pharmhome','pharmController@index');
+
+>>>>>>> aa188e2b2590d8d36b71dabc7b11feb3421d3a7e

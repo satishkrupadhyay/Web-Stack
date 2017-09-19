@@ -1,3 +1,4 @@
+
 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                  <h4 class="modal-title">Register</h4>
@@ -72,7 +73,7 @@
                             <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required autofocus>
+                                <textarea id="address" type="address" rows="3" cols="50" class="form-control" name="address" value="{{ old('address') }}" required autofocus></textarea>
                             </div>
                         </div>
 
