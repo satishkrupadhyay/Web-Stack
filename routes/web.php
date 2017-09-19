@@ -29,8 +29,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('file','FileController@index')->name('upload.file');
 Route::post('file','FileController@storeFile');
 
-//Pharmacy home page
-Route::get('pharmhome','pharmController@index');
+
+Route::get('/pharmlogin', function () {
+    return view('/auth/pharmlogin');
+});
+
+Route::post('/dashboard', 'pharmController@handlelogin');
+//Login successful method!
 
 //Pharmacy prescription view and form
 Route::get('pharmview','pharmviewController@index');

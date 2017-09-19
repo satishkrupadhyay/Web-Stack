@@ -18,11 +18,11 @@
         
 
 
-     <!--   <script src="js/jquery/jquery.js"></script>-->
+       <!-- <script src="js/jquery/jquery.js"></script>-->
 
         <!-- Bootstrap -->
-      <!--  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+      <!-- <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="css/superslide/superslides.css">
         <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
         <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">
@@ -120,30 +120,6 @@
         </section>
 
 
-        <!-- Our Works Section 
-
-        <section id="works" class="center-content">
-            <div class="container">
-                <div class="row">
-                    <div class="works_content text-center">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration=".5s">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            </div></div></div></div></div>
-
-        </section> -->
-
-
      <!--   <section id="works_2">
             <div class="container">
                 <div class="row">
@@ -216,25 +192,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Video Section 
-
-        <section id="video_icon">
-            <div class="video_overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12">
-                            <div class="video_text center-content">
-                                <a href="http://www.youtube.com" class="youtube-media">
-                                <img src="images/play.png" alt="" />
-                                </a>
-                                <h5>Watch the feature video</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
         </section>-->
 
         <!-- Description Section -->
@@ -378,32 +335,6 @@
                     </div>
                 </div>
             </div>  
-        </section>
-
-
-        <!-- Description Third Section -->
-        <section id="description_third">
-            <div class="container">
-                <div class="row">
-                    <div class="main_des_third_contant">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="left_desc_img center-content wow fadeInLeft" data-wow-duration="1.5s">
-                                <img src="images/iphone5.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 top-margin">
-                            <div class="right_desc_text wow fadeIn" data-wow-duration="1.5s">
-                                <h4>Description Third Layout</h4>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt efficitur vestibulum. Phasellus nisl leo, congue eu malesuada lobortis, fringilla et nulla. Curabitur posuere, sem nec bibendum finibus, erat turpis congue tellus, id sagittis eros purus quis odio. Etiam ut auctor mi. Nam enim augue, placerat ut pellentesque ac, dictum nec ligula. Maecenas venenatis nisi porta neque volutpat, nec vestibulum quam elementum. Nunc blandit elit in pretium ultrices.</p>
-
-                                <p>Cras dapibus accumsan ex a luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam maximus rhoncus orci, tempor mollis purus euismod sed. Proin aliquam nibh eros, iaculis accumsan dolor tempor ac. Proin commodo elementum magna at aliquam. Donec semper libero ut ipsum pharetra eleifend. Etiam rhoncus orci metus, eget pulvinar quam lobortis.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Our Testimonial  -->
