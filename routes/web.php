@@ -28,3 +28,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('upload','FileController@index');
 Route::get('file','FileController@index')->name('upload.file');
 Route::post('file','FileController@storeFile');
+Route::get('display','ImageController@show');
+
+Route::get('/pharmlogin', function () {
+    return view('/auth/pharmlogin');
+});
+
+Route::post('/dashboard', 'PharmController@handlelogin');
+//Login successful method!
