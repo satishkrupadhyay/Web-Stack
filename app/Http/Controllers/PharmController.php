@@ -36,16 +36,7 @@ class pharmController extends Controller
         if(count($checklogin) > 0)
         {
            // return view('/auth/dashboard');
-            $data['data'] = DB::table('orders')->where('status', 0)->simplePaginate(5);
-
-      if (count($data) > 0) 
-      {
-        return view('auth.dashboard', $data);
-      }
-      else{
-
-            return view('auth.dashboard');
-      }
+            return $this->viewpage();
             // echo "Login Success!";
         }
         else
@@ -54,6 +45,21 @@ class pharmController extends Controller
         }
         //return view('auth.pharmlogin');
         
+    }
+
+
+    public function viewpage()
+    {
+        $data['data'] = DB::table('orders')->where('status', 0)->simplePaginate(5);
+
+              if (count($data) > 0) 
+              {
+                return view('auth.dashboard', $data);
+              }
+              else{
+
+                    return view('auth.dashboard');
+              }
     }
 
     
