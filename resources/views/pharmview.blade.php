@@ -16,7 +16,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         $(document).ready(function(e){
             $("input").change(function(){
                 var price=0;
@@ -28,7 +28,7 @@
             });
         });
         
-    </script>
+    </script>-->
   
 </head>
 <body>
@@ -113,7 +113,7 @@
                                      <div class="panel-body col-md-7 col-md-offset-1">
                                        
                                         
-                                        <form id="bookForm" method="post" class="form-horizontal" action="{{ route('logout') }}">
+                                        <form id="bookForm" method="post" class="form-horizontal" action="pharmview">
                                         {{ csrf_field() }}
                                         <div class="panel panel-default">
                       
@@ -150,11 +150,11 @@
                                         </div>
                                          <div class="panel-heading">
                                             <div class="form-group">
-                                        <label class="col-xs-2 control-label">Amount:</label>
-                                        <div class="col-xs-4"> 
+                                          <!-- <label class="col-xs-2 control-label">Amount:</label>
+                                            <div class="col-xs-4"> 
                                                              
                                             <input type="number" class="form-control" id="total" name="total" value="" placeholder="Total" required readonly>                     
-                                        </div>
+                                        </div>-->
                                         </div>
                                          </div> 
                                           
