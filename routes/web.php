@@ -43,3 +43,20 @@ Route::post('/dashboard', 'PharmController@handlelogin');
 Route::get('pharmhome','pharmController@index');
 
 >>>>>>> aa188e2b2590d8d36b71dabc7b11feb3421d3a7e
+// ***********************************************************
+/*Routing for
+Invoice generation*/
+Route::get('/', function () {
+    return view('invoice1');
+});
+
+
+Route::get('/index','UserDetailController@index');
+
+Route::post('submitForm','UserDetailController@store');
+
+//web.php
+
+Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
+
+//****************************************************************
