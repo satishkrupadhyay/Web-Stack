@@ -28,20 +28,27 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('upload','FileController@index');
 Route::get('file','FileController@index')->name('upload.file');
 Route::post('file','FileController@storeFile');
-<<<<<<< HEAD
-Route::get('display','ImageController@show');
+
 
 Route::get('/pharmlogin', function () {
     return view('/auth/pharmlogin');
 });
 
-Route::post('/dashboard', 'PharmController@handlelogin');
 //Login successful method!
-=======
+Route::post('/dashboard', 'pharmController@handlelogin');
 
-//Pharmacy home page
-Route::get('pharmhome','pharmController@index');
+//pagination
+Route::get('/dashboard', 'pharmController@viewpage');
 
+
+//Pharmacy prescription view and form
+Route::get('pharmview','pharmviewController@index');
+
+
+//updating order data with prescription details
+Route::post('pharmview', 'pharmviewController@update');
+
+<<<<<<< HEAD
 >>>>>>> aa188e2b2590d8d36b71dabc7b11feb3421d3a7e
 // ***********************************************************
 /*Routing for
@@ -60,3 +67,5 @@ Route::post('submitForm','UserDetailController@store');
 Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
 
 //****************************************************************
+=======
+>>>>>>> 30f7404f3fc07d82298021ebb62fdc3884fe4039

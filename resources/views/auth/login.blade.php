@@ -1,6 +1,6 @@
 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                 <h4 class="modal-title">Login/SignUp</h4>
+                 <h4 class="modal-title">User Login/SignUp</h4>
 </div>
 
 <div class="modal-body">
@@ -64,7 +64,7 @@
                                 <a href="{{ route('password.request') }}" data-toggle="modal" data-target="#forgot" >
                                     Forgot Your Password?
                                 </a>
-                                <a class="btn btn-primary" href="{{ url('/register') }}" data-toggle="modal" data-target="#registermodal">
+                                <a class="btn btn-primary" data-remote="{{ url('/register') }}"  data-toggle="modal" data-target="#registermodal" >
                                     Register
                                 </a>
                             </div>

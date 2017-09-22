@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'User Upload Prescription') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        Hello User
+                        Hello Pharmacy
                     </a>
                 </div>
 
@@ -45,7 +45,7 @@
                         <!-- Authentication Links -->
                         <li><a href="{{ url('file') }}">Upload Prescription</a></li>
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('pharmlogin') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
@@ -79,69 +79,5 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-		<br>
-		<br>
-		<div class="container"> 
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h2>Upload Your Prescription</h2>
-					
-				</div>
-				<div class="panel-body">
-					@if (count($errors)>0)
-					<div class="alert alert-danger">
-						<strong>Oops !</strong> There were some problem with your input.<br><br>
-						<ul>
-							@foreach ($errors->all() as $error)
-							<li>{{$error}}</li>
-							@endforeach
-						</ul>
-					</div>
-					@endif
-
-					@if($message = Session::get('success'))
-					<div class="alert alert-success alert-block">
-						<button type="button" class="close" data-dismiss="alert"></button>
-						<strong>{{ $message }}</strong>
-						
-					</div>
-					<img src="/upload/{{ Session::get('path') }}" width="400px" height="600px">
-					@endif
-					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
-					{{csrf_field()}}
-					<div class="row">
-						<div class="col-md-12">
-						<input type="File" name="image">
-						</div>
-						<div class="col-md-12">
-						<input type="submit" name="Upload">
-						</div>
-					</div>
-					</form>
-				</div>
-			</div>
-		</div>
-
-
-		<!--
-		<div class="col-lg-offset-4 col-lg-4">
-		<center><h1>Upload a File</h1></center>
-
-		<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
-		{{csrf_field()}}
-			<input type="File" name="image">
-			<br>
-			<input type="submit" name="Upload">
-				
-		</form>
-			
-		</div>
-
-		<div class="row">
-			<h2> Show file</h2>
-			<img src="{{ asset('storage/upload/sa.jpeg')}}">
-		</div>
-	-->
-
 </body>
 </html>

@@ -15,13 +15,14 @@
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
 
 
-     <!--   <script src="js/jquery/jquery.js"></script>-->
+       <!-- <script src="js/jquery/jquery.js"></script>-->
 
         <!-- Bootstrap -->
-      <!--  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+      <!-- <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="css/superslide/superslides.css">
         <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
         <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">
@@ -85,7 +86,7 @@
  <div class='preloader'><div class='loaded'>&nbsp;</div></div>
        @include('partials.header')
 
-        <section id="home">
+        <section id="homea">
             <div id="bgimage" class="header-image">
                 <div class="container">
                     <div class="row">
@@ -98,11 +99,11 @@
 
                         <div class="col-sm-7 col-xs-12 heading-text">
                             <div class="single_home_content wow zoomIn" data-wow-duration="1s">
-                                <h1>Introducing <b>REMEDIO</b> </h1>
+                                <h1>Introducing <b>ZEEVANI</b> </h1>
                                 <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Becauese we <b>CARE</b></p>
                                 <div class="button">
-                                    <a href="" class="btn">Downlod APP</a>
-                                    <a href="" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
+                                    <a href="#downloadApps" class="btn">Downlod APP</a>
+                                    <a href="#video" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
                                 </div>
                             </div>
                         </div>
@@ -117,30 +118,6 @@
             </div>
 
         </section>
-
-
-        <!-- Our Works Section 
-
-        <section id="works" class="center-content">
-            <div class="container">
-                <div class="row">
-                    <div class="works_content text-center">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single_works_text wow fadeInLeft" data-wow-duration=".5s">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            </div></div></div></div></div>
-
-        </section> -->
 
 
      <!--   <section id="works_2">
@@ -215,28 +192,9 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Video Section 
-
-        <section id="video_icon">
-            <div class="video_overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12">
-                            <div class="video_text center-content">
-                                <a href="http://www.youtube.com" class="youtube-media">
-                                <img src="images/play.png" alt="" />
-                                </a>
-                                <h5>Watch the feature video</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
         </section>-->
 
-        <!-- Description Section -->
+        <!-- Description Section 
 
         <section id="descriotion">
             <div class="container">
@@ -288,9 +246,89 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
         <!-- Description Second Section -->
+
+        
+
+
+        <!-- Video Section -->
+
+        <section id="video">
+            <div class="video_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="video_text center-content">
+                                
+                                <!-- 4:3 aspect ratio -->
+                                <div class="embed-responsive embed-responsive-4by3">
+                                  <iframe class="embed-responsive-item" style="border-radius:10px;" width="940" height="600" src="https://www.youtube.com/embed/a3LLp5RRt_U" frameborder="0" allowfullscreen></iframe>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+        <!-- Our Testimonial  -->
+
+        <section id="testimonial">
+            <div class="container">
+                <div class="row">
+                    <div class="main_testimonial_text center-content">
+                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="">Jhone Due, Photographer</a>
+                        </div>
+                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="">Jhone Due, Photographer</a>
+                        </div>
+                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="">Jhone Due, Photographer</a>
+                        </div>
+                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="">Jhone Due, Photographer</a>
+                        </div>
+                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="">Jhone Due, Photographer</a>
+                        </div>
+                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="">Jhone Due, Photographer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+
+
+        <!-- Download Section  -->
+
+        <section id="downloadApps">
+            <div class="container">
+                <div class="row">
+                    <div class="download_heading_text center-content">
+                        <h1>Download the App</h1>
+                        <p>To get your medicine needs taken care by us</p>
+
+                        <div class="down_text_des wow fadeInUp" data-wow-duration="1.5s">
+                            
+                            <a href=""><img src="images/d2.png" alt="" /></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="description_second">
             <div class="container">
@@ -358,111 +396,7 @@
             </div>
         </section>
 
-
-        <!-- Video Section -->
-
-        <section id="video">
-            <div class="video_overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="video_text center-content">
-                                
-                                <!-- 4:3 aspect ratio -->
-                                <div class="embed-responsive embed-responsive-4by3">
-                                  <iframe class="embed-responsive-item" style="border-radius:10px;" width="940" height="600" src="https://www.youtube.com/embed/a3LLp5RRt_U" frameborder="0" allowfullscreen></iframe>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-        </section>
-
-
-        <!-- Description Third Section -->
-        <section id="description_third">
-            <div class="container">
-                <div class="row">
-                    <div class="main_des_third_contant">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="left_desc_img center-content wow fadeInLeft" data-wow-duration="1.5s">
-                                <img src="images/iphone5.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 top-margin">
-                            <div class="right_desc_text wow fadeIn" data-wow-duration="1.5s">
-                                <h4>Description Third Layout</h4>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt efficitur vestibulum. Phasellus nisl leo, congue eu malesuada lobortis, fringilla et nulla. Curabitur posuere, sem nec bibendum finibus, erat turpis congue tellus, id sagittis eros purus quis odio. Etiam ut auctor mi. Nam enim augue, placerat ut pellentesque ac, dictum nec ligula. Maecenas venenatis nisi porta neque volutpat, nec vestibulum quam elementum. Nunc blandit elit in pretium ultrices.</p>
-
-                                <p>Cras dapibus accumsan ex a luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam maximus rhoncus orci, tempor mollis purus euismod sed. Proin aliquam nibh eros, iaculis accumsan dolor tempor ac. Proin commodo elementum magna at aliquam. Donec semper libero ut ipsum pharetra eleifend. Etiam rhoncus orci metus, eget pulvinar quam lobortis.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Testimonial  -->
-
-        <section id="testimonial">
-            <div class="container">
-                <div class="row">
-                    <div class="main_testimonial_text center-content">
-                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="">Jhone Due, Photographer</a>
-                        </div>
-                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="">Jhone Due, Photographer</a>
-                        </div>
-                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="">Jhone Due, Photographer</a>
-                        </div>
-                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="">Jhone Due, Photographer</a>
-                        </div>
-                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="">Jhone Due, Photographer</a>
-                        </div>
-                        <div class="col-md-12 col-sm-12 single_testimonial_text item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris quis nostrud nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="">Jhone Due, Photographer</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    
-
-
-        <!-- Download Section  -->
-
-        <section id="downloadApps">
-            <div class="container">
-                <div class="row">
-                    <div class="download_heading_text center-content">
-                        <h1>Download the App</h1>
-                        <p>To get your medicine needs taken care by us</p>
-
-                        <div class="down_text_des wow fadeInUp" data-wow-duration="1.5s">
-                            
-                            <a href=""><img src="images/d2.png" alt="" /></a>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Subscribe Section  -->
+        <!-- Subscribe Section  
 
         <section id="subscribe">
             <div class="subcribe_overlay">
@@ -484,7 +418,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
 
         <!-- message section -->

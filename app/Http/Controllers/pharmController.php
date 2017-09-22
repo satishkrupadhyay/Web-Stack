@@ -7,20 +7,59 @@ use Illuminate\Http\Request;
 class pharmController extends Controller
 {
     
-    public function index()
+
+    public function viewlogin()
     {
-      //$data['data'] = DB::table('orders')->get();
-      $data['data'] = DB::table('orders')->where('status', 0)->simplePaginate(5);
+        return view('auth.pharmlogin');
+    }
 
-      if (count($data) > 0) 
-      {
-        return view('pharmhome', $data);
-      }
-      else{
+    public function viewdashboard()
+    {
+        return view('auth.dashboard');
+    }
 
-            return view('pharmname');
-      }
+    public function handlelogin(Request $req)
+    {
+        $user = $req->input('email');
+        $pass = $req->input('password');
+        // echo $user."-->".$pass;
+        $checklogin = DB::table('medical_store')->where(['store_id'=> $user, 'password'=> $pass])->get();
+
+       /* $data = $request->only('email', 'password');
+        if(\Auth::attempt($data)){
+            return redirect()->intended('dashboard');
+
+        }
+
+        return back()->withInput();*/
+
+        if(count($checklogin) > 0)
+        {
+           // return view('/auth/dashboard');
+            return $this->viewpage();
+            // echo "Login Success!";
+        }
+        else
+        {
+            echo "Wrong Data!!";
+        }
+        //return view('auth.pharmlogin');
         
+    }
+
+
+    public function viewpage()
+    {
+        $data['data'] = DB::table('orders')->where('status', 0)->simplePaginate(5);
+
+              if (count($data) > 0) 
+              {
+                return view('auth.dashboard', $data);
+              }
+              else{
+
+                    return view('auth.dashboard');
+              }
     }
 
     
