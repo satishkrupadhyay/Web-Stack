@@ -48,3 +48,4 @@ Route::get('pharmview','pharmviewController@index');
 //updating order data with prescription details
 Route::post('pharmview', 'pharmviewController@update');
 
+Route::get('email', 'HomeController@mail');

@@ -1,3 +1,20 @@
+<?php
+
+if(isset($_POST['Upload']))
+{
+    $to      = '{{ Auth::user()->email }}';
+    $subject = 'the subject';
+    $message = 'hello';
+    $headers = 'From: webmaster@example.com' . "\r\n" .
+        'Reply-To: webmaster@example.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
+	echo 'Email Sent.';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -100,6 +117,7 @@
 					@endif
 
 					@if($message = Session::get('success'))
+
 					<div class="alert alert-success alert-block">
 						<button type="button" class="close" data-dismiss="alert"></button>
 						<strong>{{ $message }}</strong>
