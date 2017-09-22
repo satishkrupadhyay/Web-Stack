@@ -17,14 +17,15 @@ class pharmviewController extends Controller
     public function update(request $request)
     {
       		
-      		$medname = $request->medname;
-      		$quantity = $request->quantity;
-      		$price = $request->price;
-      		$amount = $request->price;
-    		DB::table('orders')
-            ->where('order_id', 42)
-            ->update(['drug_name' => $medname, 'quantity' => $quantity, 'price' => $price, 'amount'=>$amount]);
-            return view('pharmview');
+      		$medname = $request=> 'medname';
+      		return $medname;
+
+      		//collect($request->medname)->each(function($medname){
+      		//var_dump($medname);
+      			//$string = implode(',', $medname);
+      			//$string .= $medname.',';
+      			//return($string);
+      		//});
       
     }
 }
