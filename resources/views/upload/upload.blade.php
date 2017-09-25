@@ -123,9 +123,15 @@ if(isset($_POST['Upload']))
 						<strong>{{ $message }}</strong>
 						
 					</div>
+
 					<img src="/upload/{{ Session::get('path') }}" width="400px" height="600px">
 					@endif
-					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
+					@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+					<form action="email" enctype="multipart/form-data" method="post">
 					{{csrf_field()}}
 					<div class="row">
 						<div class="col-md-12">

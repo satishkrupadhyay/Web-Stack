@@ -50,7 +50,9 @@ Route::post('pharmview', 'pharmviewController@update');
 
 
 
-Route::get('email', 'HomeController@mail');
+Route::post('email', 'HomeController@mail');
+
+Route::post('registermail', 'HomeController@regmail');
 
 
 

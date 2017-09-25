@@ -1,0 +1,1 @@
+You have been succesfully registered to our survices. Please login to use our services.
