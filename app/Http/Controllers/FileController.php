@@ -23,6 +23,7 @@ class FileController extends Controller
     public function storeFile(request $request)
     {
 
+      $user_id = $request->usr_id;
       //image validate
       $this->validate($request,['image'=>'required|image|mimes:jpeg,jpg,png|max:2048',]);
 
@@ -34,7 +35,7 @@ class FileController extends Controller
    			//$filename = $request->image->getClientOriginalName();
         //$request->image->storeAs('upload',$imageName);
 
-        $data = array('image' =>$imageName);
+        $data = array('image' =>$imageName,'cust_id' =>$user_id);
         DB::table('orders')->insert($data);
 
     		

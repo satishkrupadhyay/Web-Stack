@@ -67,12 +67,13 @@
                     </td> -->
                                    
                    
+                  
                         <tr>
                             <td>
                                 <div class="left">
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong> BF123<br>
-                                    <strong>Due Date:</strong> 10/01/2013<br>
+                                    <strong>Invoice Number:</strong>{{$drug->invoice_no}}<br>
+                                    <strong>Due Date:</strong> <br>
                                 </div>
                             </td>
                         </tr>
@@ -84,8 +85,12 @@
                         <tr>
                             <td>
                                 <div class="left">
-                                    <strong>Invoice To:</strong> Customer Name <br>
-                                    <strong>Invoice Amount:</strong> Rs. 11,236 <br>
+                                    <strong>Invoice To:</strong> {{$drug->name}} <br>
+                                    <strong>Invoice Amount:</strong> Rs. <?php 
+                                 $amount = $drug->amount;
+                                 $tax = 1.35;
+                                 $total_amount = $amount + $tax;
+                                 ?>{{$total_amount}} <br>
                                 </div>
                             </td>
                         </tr>
@@ -98,18 +103,16 @@
                             <td>
                                 <div align="left">
                                     <strong>Shipping Address</strong><br>
-                                Next Step Webs, Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, TX 12345
+                                {{$drug->ship_address}}<br>
+                                
                                 </div>
                             </td>
                             
                             <td>
                                 <div align="right">
                                     <strong>Billing Address</strong><br>
-                                Acme Corp.gdfhsfhfjgjfhjfhjghjhgjhgjhgdjhfj<br>
-                                John Doe<br>
-                                john@example.com
+                                {{$drug->address}}<br>
+                                
                                 </div>
                             </td>
                         </tr>
@@ -120,8 +123,7 @@
                     
             </tbody>
         </table>
-        
-   
+
         <table width="100%" class="outline-table">
             <tbody>
                 <!-- <tr class="border-bottom border-right grey">
@@ -135,21 +137,41 @@
                     <td width="15%"><strong>Amount (INR)</strong></td>
                 </tr>
                 
+                
+               <?php  
+                     $name = explode(',',$drug->drug_name);
+                     $quant = explode(',',$drug->quantity);
+                     $price = explode(',',$drug->price);
+                     $amount = $drug->amount;
+                     $tax = 1.35;
+               ?>
+                
+                
+                @for( $i=0; $i<count($name); $i++)
+
                 <tr class="border-right">
-                    <td class="pad-left"><b>{{$drug->id}}</b></td>
-                    <td class="center">{{$drug->drug_name}}</td>
-                    <td class="center">9</td>
-                    <td class="center">5.00</td>
-                    <td class="right">45.00</td>
+                   
+                    <td class="pad-left"><b>{{$i+1}}</b></td>
+                    <td class="center">{{$name[$i]}}</td>
+                    <td class="center">{{$quant[$i]}}</td>
+                    <td class="center">{{$price[$i]}}</td>
+                    <td class="right">{{$quant[$i]*$price[$i]}}</td>
+                    
                 </tr>
+                @endfor
+               
+              
+
                 
                 <tr class="border-right">
                     <td class="pad-left">&nbsp;</td>
                     <td class="pad-left">&nbsp;</td>
                     <td class="pad-left">&nbsp;</td>
                     <td class="right border-top">Subtotal</td>
-                    <td class="right border-top">100.00</td>
+                    <td class="right border-top">{{$amount}}</td>
                 </tr>
+                
+
                 <tr class="border-right">
                     <td class="pad-left">&nbsp;</td>
                     <td class="pad-left">&nbsp;</td>
@@ -162,8 +184,9 @@
                     <td class="pad-left">&nbsp;</td>
                     <td class="pad-left">&nbsp;</td>
                     <td class="right border-top">Grand Total</td>
-                    <td class="right border-top">Rs. 101.35</td>
+                    <td class="right border-top">{{$amount+$tax}}</td>
                 </tr>
+                
             </tbody>
         </table>
         <p>&nbsp;</p>
@@ -193,8 +216,7 @@
                 
             </tbody>
         </table>
-        <p>&nbsp;</p>
-    
+        <p>&nbsp;</p>  
     </div>
 </body>
 </html>

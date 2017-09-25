@@ -13,8 +13,25 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <style>
+            body {
+                font-family: sans-serif;
+            }
+            #summation {
+                font-size: 18px;
+                font-weight: bold;
+                color:#174C68;
+            }
+            .txt {
+                background-color: #FEFFB0;
+                font-weight: bold;
+                text-align: right;
+            }
+        </style>
 
     <!--<script type="text/javascript">
         $(document).ready(function(e){
@@ -130,7 +147,7 @@
                                         </div>
 
                                         <div class="col-xs-3">                      
-                                            <input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required>                      
+                                            <input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required onkeyup="calculate();">                      
                                         </div>
 
                                         <div class="col-xs-1">                 
@@ -150,14 +167,20 @@
                                         </div>
                                          <div class="panel-heading">
                                             <div class="form-group">
-                                          <!-- <label class="col-xs-2 control-label">Amount:</label>
-                                            <div class="col-xs-4"> 
+                                          <label class="col-xs-2 control-label">Amount:</label>
+                                            <div class="col-xs-2"> 
                                                              
                                             <input type="number" class="form-control" id="total" name="total" value="" placeholder="Total" required readonly>                     
-                                        </div>-->
+                                        </div>
                                         </div>
                                          </div> 
                                           
+                                        <input type="hidden" id="medname2" name="medname2">
+                                        <input type="hidden" id="quantity2" name="quantity2">
+                                        <input type="hidden" id="price2" name="price2">
+
+      
+
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-4 col-md-offset-10">
@@ -188,7 +211,7 @@
         var divtest = document.createElement("div");
         divtest.setAttribute("class", "form-group removeclass"+room);
         var rdiv = 'removeclass'+room;
-        divtest.innerHTML = '<div class="col-xs-4"><input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required></div><div class="col-xs-4 nopadding"><input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required></div><div class="col-xs-3 nopadding"><input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required></div><div class="col-xs-1 nopadding"><button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div><div class="clear"></div>';
+        divtest.innerHTML = '<div class="col-xs-4"><input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required></div><div class="col-xs-4 nopadding"><input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required></div><div class="col-xs-3 nopadding"><input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required onkeyup="calculate();"></div><div class="col-xs-1 nopadding"><button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div><div class="clear"></div>';
         
         objTo.appendChild(divtest)
 
@@ -197,6 +220,7 @@
     }
     function remove_education_fields(rid) {
            $('.removeclass'+rid).remove();
+           calculate();
     }
 
 
@@ -212,11 +236,29 @@
         //alert(medname);
         //alert(quantity);
         //alert(price);
+        document.getElementById("medname2").value = medname1;
+        document.getElementById("quantity2").value = quantity1;
+        document.getElementById("price2").value = price1;
 
         });
 
+
+
+        function calculate(){
+          var elems = document.getElementsByName('price[]');
+          var sum = 0;
+          for (var i = 0; i < elems.length; i++)
+          {
+            sum += parseFloat(elems[i].value);
+          }
+          document.getElementById('total').value = sum;
+        }
+
+
    
 </script>
+
+
 </body>
 </html>
 

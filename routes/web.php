@@ -57,17 +57,19 @@ Route::post('registermail', 'HomeController@regmail');
 
 
 // ***********************************************************
+/*Routing for
+Invoice generation*/
+
 
 /*Routing for Invoice generation*/
 
 
-Route::get('/index','UserDetailController@index');
 
-Route::post('submitForm','UserDetailController@store');
+Route::get('/invoice','InvoiceCreator@index');
 
 //web.php
 
-Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
+Route::get('/downloadPDF/{id}','InvoiceCreator@downloadPDF');
 
 
 

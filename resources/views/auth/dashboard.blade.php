@@ -90,12 +90,12 @@
                     
                     <table>
                                <tr>
-                                <td>ORDER ID | CUSTOMER NAME | DATE OF ORDER</td>
+                                <td>ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER</td>
                                 </tr>
                            @foreach ($data as $value)
 
                                 <tr>
-                                <td><a href=""> {{$value->order_id}} | {{$value->cust_id}} | {{$value->date_of_purchase}}</a></td>
+                                <td><a href="{{ url('pharmview') }}"> {{$value->order_id}}| | {{$value->id}} | {{$value->name}} | {{$value->date_of_purchase}}</a></td>
                                 </tr>
 
                            @endforeach
