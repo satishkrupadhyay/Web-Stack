@@ -49,13 +49,19 @@ Route::get('pharmview','pharmviewController@index');
 Route::post('pharmview', 'pharmviewController@update');
 
 
+
 Route::get('email', 'HomeController@mail');
 
 
 
 // ***********************************************************
+<<<<<<< HEAD
 /*Routing for
 Invoice generation*/
+=======
+
+/*Routing for Invoice generation*/
+>>>>>>> 2005a2df7184234ff3a543711a5df42cfc918d99
 
 
 
@@ -65,4 +71,7 @@ Route::get('/invoice','InvoiceCreator@index');
 
 Route::get('/downloadPDF/{id}','InvoiceCreator@downloadPDF');
 
+
+
 //****************************************************************
+
