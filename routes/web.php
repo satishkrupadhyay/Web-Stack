@@ -56,11 +56,7 @@ Route::get('email', 'HomeController@mail');
 
 // ***********************************************************
 
-/*Routing for
-Invoice generation*/
-Route::get('/', function () {
-    return view('invoice1');
-});
+/*Routing for Invoice generation*/
 
 
 Route::get('/index','UserDetailController@index');
