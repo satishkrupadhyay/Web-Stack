@@ -1,0 +1,1 @@
+We have received your prescription. Please stay with us while we go through your order and make it ready for you.
