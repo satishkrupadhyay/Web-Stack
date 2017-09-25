@@ -49,14 +49,13 @@ Route::get('pharmview','pharmviewController@index');
 Route::post('pharmview', 'pharmviewController@update');
 
 
-<<<<<<< HEAD
-=======
+<
 Route::get('email', 'HomeController@mail');
 
 
 
 // ***********************************************************
->>>>>>> 7e0c451f6b32e7768ce033752c3655240d86a938
+
 /*Routing for
 Invoice generation*/
 Route::get('/', function () {
@@ -72,7 +71,7 @@ Route::post('submitForm','UserDetailController@store');
 
 Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
 
-<<<<<<< HEAD
-=======
+
+
 //****************************************************************
->>>>>>> 7e0c451f6b32e7768ce033752c3655240d86a938
+
