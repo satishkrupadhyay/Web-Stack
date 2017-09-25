@@ -55,17 +55,21 @@ Route::get('email', 'HomeController@mail');
 
 
 // ***********************************************************
+<<<<<<< HEAD
+/*Routing for
+Invoice generation*/
+=======
 
 /*Routing for Invoice generation*/
+>>>>>>> 2005a2df7184234ff3a543711a5df42cfc918d99
 
 
-Route::get('/index','UserDetailController@index');
 
-Route::post('submitForm','UserDetailController@store');
+Route::get('/invoice','InvoiceCreator@index');
 
 //web.php
 
-Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
+Route::get('/downloadPDF/{id}','InvoiceCreator@downloadPDF');
 
 
 
