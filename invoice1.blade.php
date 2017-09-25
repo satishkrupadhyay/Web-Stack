@@ -63,42 +63,30 @@
                         <img src="http://exotel.in/wp-content/uploads/2013/03/exotel.png">  your logo here 
                         
                     </td> -->
-                    @foreach($stores as $store)
                                   <center><strong><h4>TAX INVOICE</h4></strong>        
-                        <p ><strong>{{$store->store_name}}</strong></p>
+                        <p ><strong>STORE NAME</strong></p>
                         <p>
-                 {{$store->address}} | Phone: {{$store->phone}} | e-mail:{{$store->store_id}}</p></center>
-                 @endforeach   
+                 Guwahati | Phone: 9876543210 | e-mail:store@email.com</p></center>
+                     
                 </tr>   
                    
                         <tr>
                             <td colspan="2">
                                 <div class="left">
-                    @foreach($drugs as $drug)
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong>{{$drug->invoice_no}}<br>
+                                    <strong>Invoice Number:</strong> BF123<br>
                                     <strong>Due Date:</strong> 10/01/2013<br>
                                 </div>
                             </td>
                         </tr>
-                    @endforeach 
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
                     <tr>
                         <td colspan="2">
                             <div class="left">
-                                @foreach($drugs as $drug)  
-                                <strong>Invoice To:</strong> {{$drug->name}}
-                                &nbsp;&nbsp;<strong>Invoice Amount:</strong> Rs. 
-                                
-                                 <?php 
-                                 $amount = $drug->amount;
-                                 $tax = 1.35;
-                                 $total_amount = $amount + $tax;
-                                 ?>{{$total_amount}}
-                                 @endforeach
-                                 
+                                <strong>Invoice To:</strong> Customer Name
+                                &nbsp;&nbsp;<strong>Invoice Amount:</strong> Rs. 11,236
                             </div>
                         </td>
                     </tr>
@@ -108,19 +96,19 @@
                                     <td>
                                         <div align="left">
                                             <strong>Shipping Address</strong><br>
-                                       @foreach($drugs as $drug)
-                                       {{$drug->ship_address}}<br>
-                                        @endforeach
+                                        Next Step Webs, Inc.<br>
+                                        12345 Sunny Road<br>
+                                        Sunnyville, TX 12345
                                         </div>
                                     </td>
                                     
                                     <td>
                                         <div align="right">
                                             <strong>Billing Address</strong><br>
-                                        @foreach($drugs as $drug)
-                                       {{$drug->address}}<br>
-                                        @endforeach
-                                        </div>  
+                                        Acme Corp.gdfhsfhfjgjfhjfhjghjhgjhgjhgdjhfj<br>
+                                        John Doe<br>
+                                        john@example.com
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -144,13 +132,12 @@
                 </tr>
                 @foreach($drugs as $drug)
                 
-               <?php 
+               <?php $var = $drug->id; 
                      $name = explode(',',$drug->drug_name);
                      $quant = explode(',',$drug->quantity);
                      $price = explode(',',$drug->price);
                      $amount = $drug->amount;
                      $tax = 1.35;
-                     $total_amount = $amount + $tax;
                ?>
                 
                 
@@ -190,10 +177,10 @@
                     <td class="pad-left">&nbsp;</td>
                     <td class="pad-left">&nbsp;</td>
                     <td class="right border-top">Grand Total</td>
-                    <td class="right border-top">{{$total_amount}}</td>
+                    <td class="right border-top">{{$amount+$tax}}</td>
                 </tr>
                 <tr>
-                    <td><a href="{{action('InvoiceCreator@downloadPDF', $drug->id)}}" target="_blank">PDF</a>
+                    <td><a href="{{action('UserDetailController@downloadPDF', $drug->id)}}" target="_blank">PDF</a>
                 </tr>
             </tbody>
         </table>
