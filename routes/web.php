@@ -49,7 +49,7 @@ Route::get('pharmview','pharmviewController@index');
 Route::post('pharmview', 'pharmviewController@update');
 
 
-<
+
 Route::get('email', 'HomeController@mail');
 
 
