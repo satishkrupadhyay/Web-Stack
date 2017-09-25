@@ -95,7 +95,7 @@
                            @foreach ($data as $value)
 
                                 <tr>
-                                <td><a href="{{ url('pharmview'),$value->order_id }}"> {{$value->order_id}}| | {{$value->id}} | {{$value->name}} | {{$value->date_of_purchase}}</a></td>
+                                <td><a href="{{ url('pharmview') }}"> {{$value->order_id}}| | {{$value->id}} | {{$value->name}} | {{$value->date_of_purchase}}</a></td>
                                 </tr>
 
                            @endforeach

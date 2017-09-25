@@ -109,7 +109,7 @@
                                         <div align="left">
                                             <strong>Shipping Address</strong><br>
                                        @foreach($drugs as $drug)
-                                       {{$drug->ship_address}}<br>
+                                       {{$drug->address}}<br>
                                         @endforeach
                                         </div>
                                     </td>
@@ -193,7 +193,7 @@
                     <td class="right border-top">{{$total_amount}}</td>
                 </tr>
                 <tr>
-                    <td><a href="{{action('InvoiceCreator@downloadPDF', $drug->id)}}" target="_blank">PDF</a>
+                    <td><a href="{{action('InvoiceCreator@downloadPDF', $drug->order_id)}}" target="_blank">PDF</a>
                 </tr>
             </tbody>
         </table>
