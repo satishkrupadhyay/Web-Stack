@@ -48,9 +48,7 @@ Route::get('pharmview','pharmviewController@index');
 //updating order data with prescription details
 Route::post('pharmview', 'pharmviewController@update');
 
-<<<<<<< HEAD
->>>>>>> aa188e2b2590d8d36b71dabc7b11feb3421d3a7e
-// ***********************************************************
+
 /*Routing for
 Invoice generation*/
 Route::get('/', function () {
@@ -66,6 +64,3 @@ Route::post('submitForm','UserDetailController@store');
 
 Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
 
-//****************************************************************
-=======
->>>>>>> 30f7404f3fc07d82298021ebb62fdc3884fe4039

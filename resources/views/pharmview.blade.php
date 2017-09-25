@@ -191,11 +191,29 @@
         divtest.innerHTML = '<div class="col-xs-4"><input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required></div><div class="col-xs-4 nopadding"><input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required></div><div class="col-xs-3 nopadding"><input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required></div><div class="col-xs-1 nopadding"><button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div><div class="clear"></div>';
         
         objTo.appendChild(divtest)
+
+        
+
     }
     function remove_education_fields(rid) {
            $('.removeclass'+rid).remove();
     }
 
+
+    $('.form-horizontal').on('submit', function(){
+        var medname1 = $("input[name='medname\\[\\]']")
+                      .map(function(){return $(this).val();}).get();
+
+        var quantity1 = $("input[name='quantity\\[\\]']")
+                      .map(function(){return $(this).val();}).get();
+        var price1 = $("input[name='price\\[\\]']")
+                      .map(function(){return $(this).val();}).get();
+
+        //alert(medname);
+        //alert(quantity);
+        //alert(price);
+
+        });
 
    
 </script>
