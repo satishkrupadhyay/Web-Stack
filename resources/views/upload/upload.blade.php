@@ -1,20 +1,3 @@
-<?php
-
-if(isset($_POST['Upload']))
-{
-    $to      = '{{ Auth::user()->email }}';
-    $subject = 'the subject';
-    $message = 'hello';
-    $headers = 'From: webmaster@example.com' . "\r\n" .
-        'Reply-To: webmaster@example.com' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-    mail($to, $subject, $message, $headers);
-	echo 'Email Sent.';
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -130,6 +113,7 @@ if(isset($_POST['Upload']))
 					<div class="row">
 						<div class="col-md-12">
 						<input type="File" name="image">
+                        <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
 						</div>
 						<div class="col-md-12">
 						<input type="submit" name="Upload">
