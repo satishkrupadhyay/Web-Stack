@@ -114,12 +114,14 @@
         {{ session('status') }}
     </div>
 @endif
-					<form action="email" enctype="multipart/form-data" method="post">
+					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
 					{{csrf_field()}}
 					<div class="row">
 						<div class="col-md-12">
 						<input type="File" name="image">
                         <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
+
 						</div>
 						<div class="col-md-12">
 						<input type="submit" name="Upload">
