@@ -50,7 +50,9 @@ class pharmController extends Controller
 
     public function viewpage()
     {
-        $data['data'] = DB::table('orders')->where('status', 0)->simplePaginate(5);
+        $data['data'] = DB::table('orders')
+        ->leftjoin('users', 'orders.cust_id', '=', 'users.id')
+        ->where('status', 0)->simplePaginate(5);
 
               if (count($data) > 0) 
               {

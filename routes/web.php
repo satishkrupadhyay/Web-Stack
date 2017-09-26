@@ -50,13 +50,21 @@ Route::post('pharmview', 'pharmviewController@update');
 
 
 
-Route::get('email', 'HomeController@mail');
+Route::post('email', 'HomeController@mail');
+
+Route::post('registermail', 'HomeController@regmail');
 
 
 
 // ***********************************************************
 /*Routing for
 Invoice generation*/
+<<<<<<< HEAD
+=======
+
+
+/*Routing for Invoice generation*/
+>>>>>>> b5b503846aba4e99529891b92decad5efff8553e
 
 
 

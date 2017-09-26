@@ -119,6 +119,12 @@
                                 </button>
                             </div>
                         </div>
+
+                        @if (session('statusreg'))
+    <div class="alert alert-success">
+        {{ session('statusreg') }}
+    </div>
+@endif
                     </form>
                <!-- </div>
             </div>
