@@ -45,7 +45,7 @@ class HomeController extends Controller
 {
    // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
 
-    $message->to($request->get('email'), 'Receiver Name')->subject('Registration successful');
+    $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
             // Set the sender
             $message->from('imdadul@simplisticsolutions.in','Greetings');
 });
