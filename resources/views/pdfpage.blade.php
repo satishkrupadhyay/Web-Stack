@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Invoice</title>
-<style type="text/css">
+<style type="text/css"> 
     #page-wrap {
         width: 70%;
         margin: 0 auto;
@@ -72,7 +72,7 @@
                             <td>
                                 <div class="left">
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong>{{$drug->invoice_no}}<br>
+                                    <strong>Invoice Number:</strong>{{$drug->price}}<br>
                                     <strong>Due Date:</strong> <br>
                                 </div>
                             </td>
@@ -88,10 +88,10 @@
                                     <strong>Invoice To:</strong> {{$drug->name}} <br>
                                     <strong>Invoice Amount:</strong> Rs. <?php 
                                  $amount = $drug->amount;
-                                 $tax = 1.35;
+                                 $tax = 12.35;
                                  $total_amount = $amount + $tax;
-                                 ?>{{$total_amount}} <br>
-                                </div>
+                                 ?>{{$drug->name}} <br>
+                                </div> 
                             </td>
                         </tr>
 

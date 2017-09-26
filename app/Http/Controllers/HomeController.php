@@ -33,7 +33,7 @@ class HomeController extends Controller
     {
 
     //   $contactEmail = $req->input('email'); 
-
+        $usr_email = $request->get('usr_email');
       //  $Data = array('emaily' => $contactEmail);
         $data = array('name'=>"Our Code World");
         // Path or name to the blade template to be rendered
@@ -45,7 +45,11 @@ class HomeController extends Controller
 {
    // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
 
+<<<<<<< HEAD
     $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
+=======
+    $message->to($usr_email, 'Receiver Name')->subject('Registration successful');
+>>>>>>> 040c70271c789df297879d9b1e9186ea18af43e0
             // Set the sender
             $message->from('imdadul@simplisticsolutions.in','Greetings');
 });

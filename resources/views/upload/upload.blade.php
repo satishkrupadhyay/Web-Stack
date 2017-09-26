@@ -120,6 +120,8 @@
 						<div class="col-md-12">
 						<input type="File" name="image">
                         <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
+
 						</div>
 						<div class="col-md-12">
 						<input type="submit" name="Upload">
