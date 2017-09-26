@@ -29,6 +29,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('file','FileController@index')->name('upload.file');
 Route::post('file','FileController@storeFile');
 
+//Route::post('file', 'FileController@mail');
+
+Route::post('registermail', 'Auth/RegisterController@regmail');
+
 
 Route::get('/pharmlogin', function () {
     return view('/auth/pharmlogin');
@@ -50,9 +54,7 @@ Route::post('pharmview', 'pharmviewController@update');
 
 
 
-Route::post('email', 'HomeController@mail');
 
-Route::post('registermail', 'HomeController@regmail');
 
 
 
