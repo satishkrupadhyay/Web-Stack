@@ -55,13 +55,8 @@ Route::get('email', 'HomeController@mail');
 
 
 // ***********************************************************
-<<<<<<< HEAD
 /*Routing for
 Invoice generation*/
-=======
-
-/*Routing for Invoice generation*/
->>>>>>> 2005a2df7184234ff3a543711a5df42cfc918d99
 
 
 

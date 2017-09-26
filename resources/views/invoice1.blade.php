@@ -76,7 +76,7 @@
                                 <div class="left">
                     @foreach($drugs as $drug)
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong>{{$drug->invoice_no}}<br>
+                                    <strong>Invoice Number:</strong>{{$drug->name}}<br>
                                     <strong>Due Date:</strong> 10/01/2013<br>
                                 </div>
                             </td>
@@ -109,7 +109,7 @@
                                         <div align="left">
                                             <strong>Shipping Address</strong><br>
                                        @foreach($drugs as $drug)
-                                       {{$drug->ship_address}}<br>
+                                       {{$drug->address}}<br>
                                         @endforeach
                                         </div>
                                     </td>
