@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\UserOrder;
+use App\Order;
 use PDF;
 use DB;
 
@@ -15,19 +15,18 @@ class InvoiceCreator extends Controller
       $stores = DB::table('medical_store')
       ->where('store_id','=','ad@gmai.com')->get();
 
-      $drugs = DB::table('orders')
-<<<<<<< HEAD
-      ->join('users', 'id', '=', 'orders.cust_id')
-=======
-      ->join('users', 'users.id', '=', 'orders.cust_id')
->>>>>>> b5b503846aba4e99529891b92decad5efff8553e
-      ->where('order_id','=','42')->get();
+      $drugs = DB::table('users')
+      // ->join('users', 'users.id', '=', 'orders.cust_id')
+      ->join('orders', 'orders.cust_id', '=', 'users.id')
+      ->where('orders.id','=','42')->get();
 
       return view('invoice1', ['drugs' => $drugs, 'stores' => $stores ]);
     }
 
+
     public function downloadPDF($id){
-      $drug = UserOrder::find($id);
+      $drug = Order::find($id);
+      // $user = User::find($id);
       // $store = UserDetail::find($store_name);
 
       $pdf = PDF::loadView('pdfpage', compact('drug'));

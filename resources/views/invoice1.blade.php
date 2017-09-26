@@ -76,7 +76,7 @@
                                 <div class="left">
                     @foreach($drugs as $drug)
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong>{{$drug->name}}<br>
+                                    <strong>Invoice Number:</strong>{{$drug->invoice_no}}<br>
                                     <strong>Due Date:</strong> 10/01/2013<br>
                                 </div>
                             </td>
@@ -118,7 +118,7 @@
                                         <div align="right">
                                             <strong>Billing Address</strong><br>
                                         @foreach($drugs as $drug)
-                                       {{$drug->address}}<br>
+                                       {{$drug->id}}<br>
                                         @endforeach
                                         </div>  
                                     </td>
@@ -174,10 +174,9 @@
                     <td class="pad-left">&nbsp;</td>
                     <td class="pad-left">&nbsp;</td>
                     <td class="right border-top">Subtotal</td>
-                    <td class="right border-top">{{$amount}}</td>
+                    <td class="right border-top">{{$drug->amount}}</td>
                 </tr>
                 
-
                 <tr class="border-right">
                     <td class="pad-left">&nbsp;</td>
                     <td class="pad-left">&nbsp;</td>
@@ -193,7 +192,7 @@
                     <td class="right border-top">{{$total_amount}}</td>
                 </tr>
                 <tr>
-                    <td><a href="{{action('InvoiceCreator@downloadPDF', $drug->order_id)}}" target="_blank">PDF</a>
+                    <td><a href="{{action('InvoiceCreator@downloadPDF', $drug->id)}}" target="_blank">PDF</a>
                 </tr>
             </tbody>
         </table>
@@ -212,7 +211,9 @@
                         </div>
                     </td>
                     <td width="50%">
-                        <div align="right" "><strong>STORE NAME</strong><br>
+                        @foreach($stores as $store)
+                        <div align="right" "><strong>{{$store->store_name}}</strong><br>
+                        @endforeach
                         <br>
                         <br>
                         <br>
