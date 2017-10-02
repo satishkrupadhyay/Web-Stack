@@ -273,7 +273,7 @@
             </div>  
         </section>
 
-        <!-- Our Testimonial  -->
+        <!-- Our Testimonial  
 
         <section id="testimonial">
             <div class="container">
@@ -306,7 +306,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
     
 
@@ -356,7 +356,7 @@
                                             <i class="fa fa-magic"></i>
                                             <div class="right_bottom_description">
                                                 <h6>Ease of use</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                                <p>User Friendly environment for all.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -365,7 +365,7 @@
                                             <i class="fa fa-file-text"></i>
                                             <div class="right_bottom_description">
                                                 <h6>Directly Upload your Precription</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                                <p>Upload and save your prescription to get your medicines.</p>
                                             </div>
                                         </div>
                                     </div>
