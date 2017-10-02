@@ -31,7 +31,7 @@ Route::post('file','FileController@storeFile');
 
 //Route::post('file', 'FileController@mail');
 
-Route::post('registermail', 'Auth/RegisterController@regmail');
+//Route::post('registermail', 'Auth/RegisterController@regmail');
 
 
 Route::get('/pharmlogin', function () {

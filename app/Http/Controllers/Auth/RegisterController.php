@@ -6,7 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
+use Mail;
+use Illuminate\Support\Facades\Input;
 class RegisterController extends Controller
 {
     /*
@@ -63,6 +65,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $template_path = 'registermail';
+        $usr_email = Input::get('email');
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -72,24 +78,20 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'phone' => $data['phone'],
         ]);
-    }
-public function regmail()
-    {
 
-        $data = array('name'=>"Our Code World");
-        // Path or name to the blade template to be rendered
-        $template_path = 'registermail';
 
-        Mail::send(['text'=> $template_path ], array('email' => $request->get('email')), function($message) {
-            // Set the receiver and subject of the mail.
-            $message->to($request->get('email')), 'Receiver Name')->subject('Registration successful');
+        Mail::send(['text'=> $template_path ], /*array('email' => $request->get('email')),*/ function($message) use ($usr_email)
+{
+   // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
+
+   // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
+
+    $message->to($usr_email, 'Receiver Name')->subject('Registration Successful');
+
             // Set the sender
             $message->from('imdadul@simplisticsolutions.in','Greetings');
-        });
-
-        return redirect('home')->with('statusreg','You have succesfully registered with Zeevani. Please log in to continue');
+});
     }
-    
 
 
 
