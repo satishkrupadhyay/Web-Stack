@@ -336,26 +336,26 @@
                     <div class="main_description_second_contant">
                         <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-duration="1.5s">
                             <div class="second_heading_text top-margin">
-                                <h1>Description Second Layout</h1>
-                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                <h1>The Health App YOU always NEEDED</h1>
+                                <p>Getting your medicines made easy for all.</p>
                             </div>
 
                             <div class="second_bottom_text">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6">
                                         <div class="second_single_text">
-                                            <i class="fa fa-shield"></i>
+                                            <i class="fa fa-car"></i>
                                             <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                                <h6>Home Delivery</h6>
+                                                <p>Get your medicines from the ease of your home.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="second_single_text">
-                                            <i class="fa fa-css3"></i>
+                                            <i class="fa fa-magic"></i>
                                             <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
+                                                <h6>Ease of use</h6>
                                                 <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
                                             </div>
                                         </div>
@@ -364,16 +364,16 @@
                                         <div class="second_single_text">
                                             <i class="fa fa-file-text"></i>
                                             <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
+                                                <h6>Directly Upload your Precription</h6>
                                                 <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="second_single_text">
-                                            <i class="fa fa-server"></i>
+                                            <i class="fa fa-location-arrow"></i>
                                             <div class="right_bottom_description">
-                                                <h6>Hundreds of Icons</h6>
+                                                <h6>Location based access</h6>
                                                 <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
                                             </div>
                                         </div>
