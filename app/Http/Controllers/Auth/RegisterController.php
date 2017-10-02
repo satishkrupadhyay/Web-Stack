@@ -66,10 +66,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $template_path = 'registermail';
-        $usr_email = Input::get('email');
+    //    $usr_email = Input::get('email');
 
 
-        return User::create([
+        $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -80,19 +80,20 @@ class RegisterController extends Controller
         ]);
 
 
-        Mail::send(['text'=> $template_path ], /*array('email' => $request->get('email')),*/ function($message) use ($usr_email)
+        Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($user)
 {
    // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
 
    // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
 
-    $message->to($usr_email, 'Receiver Name')->subject('Registration Successful');
+    $message->to(Input::get('email'), 'Receiver Name')->subject('Registration Successful');
 
             // Set the sender
             $message->from('imdadul@simplisticsolutions.in','Greetings');
 });
-    }
 
+        return $user;
+    }
 
 
 }
