@@ -72,8 +72,8 @@
                             <td>
                                 <div class="left">
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong>{{$drug->price}}<br>
-                                    <strong>Due Date:</strong> <br>
+                                    <strong>Invoice Number:</strong>{{$drug->invoice_no}}<br>
+                                    <strong>Order ID:</strong>{{$drug->id}} <br>
                                 </div>
                             </td>
                         </tr>
@@ -88,9 +88,9 @@
                                     <strong>Invoice To:</strong> {{$drug->name}} <br>
                                     <strong>Invoice Amount:</strong> Rs. <?php 
                                  $amount = $drug->amount;
-                                 $tax = 12.35;
+                                 $tax = 1.35;
                                  $total_amount = $amount + $tax;
-                                 ?>{{$drug->name}} <br>
+                                 ?>{{$total_amount}} <br>
                                 </div> 
                             </td>
                         </tr>
@@ -103,7 +103,7 @@
                             <td>
                                 <div align="left">
                                     <strong>Shipping Address</strong><br>
-                                {{$drug->ship_address}}<br>
+                                {{$drug->address}}<br>
                                 
                                 </div>
                             </td>

@@ -67,9 +67,8 @@ Invoice generation*/
 
 
 
-Route::get('/invoice','InvoiceCreator@index');
 
-//web.php
+Route::get('/invoice','InvoiceCreator@index');
 
 Route::get('/downloadPDF/{id}','InvoiceCreator@downloadPDF');
 
