@@ -374,7 +374,7 @@
                                             <i class="fa fa-location-arrow"></i>
                                             <div class="right_bottom_description">
                                                 <h6>Location based access</h6>
-                                                <p>Ipsum dolor sit amet, consectetur adipiscing elit Integer tincidunt.</p>
+                                                <p>Get you medicine from your nearest pharamcy.</p>
                                             </div>
                                         </div>
                                     </div>
