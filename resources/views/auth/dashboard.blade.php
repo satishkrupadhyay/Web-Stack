@@ -88,22 +88,21 @@
                     @endif
 
                     
-                    <table>
-                               <tr>
-                                <td>ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER</td>
-                                </tr>
+                   
+
+                </div>
+                <div class="list-group">
+                               
+                                ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER
+                                
                            @foreach ($data as $value)
 
-                                <tr>
-                                <td><a href="{{ action('pharmviewController@index', $value->order_id) }}"> {{$value->order_id}}| | {{$value->id}} | {{$value->name}} | {{$value->date_of_purchase}}</a></td>
-                                </tr>
+                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> {{$value->order_id}} | {{$value->id}} | {{$value->name}} | {{$value->date_of_purchase}}</a>
 
                            @endforeach
 
-                    </table> 
+                    </div> 
                      {{ $data->links() }}
-
-                </div>
             </div>
         </div>
     </div>
