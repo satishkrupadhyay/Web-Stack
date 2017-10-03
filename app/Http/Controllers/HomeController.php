@@ -29,7 +29,7 @@ class HomeController extends Controller
         return view('home');
     }
 
-<<<<<<< HEAD
+
     public function mail(Request $request)
     {
 
@@ -49,7 +49,7 @@ class HomeController extends Controller
 
     $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
 
-    $message->to($usr_email, 'Receiver Name')->subject('Registration successful');
+    //$message->to($usr_email, 'Receiver Name')->subject('Registration successful');
 
             // Set the sender
             $message->from('imdadul@simplisticsolutions.in','Greetings');
@@ -58,24 +58,8 @@ class HomeController extends Controller
         return redirect('file')->with('status','Your prescription has been uploaded. Please wait till we send you the detail.');
     }
 
-    public function regmail()
-    {
+    
 
-        $data = array('name'=>"Our Code World");
-        // Path or name to the blade template to be rendered
-        $template_path = 'registermail';
 
-        Mail::send(['text'=> $template_path ], $data, function($message) {
-            // Set the receiver and subject of the mail.
-            $message->to('satish@simplisticsolutions.in', 'Receiver Name')->subject('Registration successful');
-            // Set the sender
-            $message->from('imdadul@simplisticsolutions.in','Greetings');
-        });
-
-        return redirect('home')->with('statusreg','You have succesfully registered with Zeevani. Please log in to continue');
-    }
-
-=======
->>>>>>> 20510404cfdbffc497eafb298b03d866df0862ce
     
 }
