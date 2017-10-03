@@ -6,7 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
+use Mail;
+use Illuminate\Support\Facades\Input;
 class RegisterController extends Controller
 {
     /*
@@ -63,7 +65,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $template_path = 'registermail';
+    //    $usr_email = Input::get('email');
+
+
+        $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -72,5 +78,22 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'phone' => $data['phone'],
         ]);
+
+
+        Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($user)
+{
+   // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
+
+   // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
+
+    $message->to(Input::get('email'), 'Receiver Name')->subject('Registration Successful');
+
+            // Set the sender
+            $message->from('imdadul@simplisticsolutions.in','Greetings');
+});
+
+        return $user;
     }
+
+
 }
