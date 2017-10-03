@@ -62,7 +62,7 @@ Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), fu
     $message->to($mailid, 'Receiver Name')->subject('Order Dispatched');
 
             // Set the sender
-            $message->from('imdadul@simplisticsolutions.in','Greetings');
+            $message->from('satish@simplisticsolutions.in','Greetings');
 });
 
 
