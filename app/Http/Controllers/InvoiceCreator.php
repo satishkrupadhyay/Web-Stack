@@ -16,11 +16,10 @@ class InvoiceCreator extends Controller
       ->where('store_id','=','ad@gmai.com')->get();
 
       $drugs = DB::table('orders')
-<<<<<<< HEAD
-      ->join('users', 'id', '=', 'orders.cust_id')
-=======
+
+
       ->join('users', 'users.id', '=', 'orders.cust_id')
->>>>>>> b5b503846aba4e99529891b92decad5efff8553e
+
       ->where('order_id','=','42')->get();
 
       return view('invoice1', ['drugs' => $drugs, 'stores' => $stores ]);
