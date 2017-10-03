@@ -29,7 +29,7 @@ class HomeController extends Controller
         return view('home');
     }
 
-<<<<<<< HEAD
+
     public function mail(Request $request)
     {
 
@@ -75,7 +75,6 @@ class HomeController extends Controller
         return redirect('home')->with('statusreg','You have succesfully registered with Zeevani. Please log in to continue');
     }
 
-=======
->>>>>>> 20510404cfdbffc497eafb298b03d866df0862ce
+
     
 }
