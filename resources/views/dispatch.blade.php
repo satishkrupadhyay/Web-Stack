@@ -1,0 +1,1 @@
+Your order has been dispatched. You will soon get your medicines. Thank you for shopping with us.
