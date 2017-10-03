@@ -18,7 +18,7 @@ class pharmviewController extends Controller
             //$id =  $order_id;
             //$results = DB::select('select image from orders where order_id = $order_id');
             $results = DB::select( DB::raw("SELECT * FROM orders WHERE order_id = '$order_id'") );
-            echo $results;
+            
             return view('pharmview', ['order_id'=> $order_id, 'results'=>$results]);   
     }
 
@@ -63,7 +63,7 @@ Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), fu
     $message->to($mailid, 'Receiver Name')->subject('Order Dispatched');
 
             // Set the sender
-            $message->from('satish@simplisticsolutions.in','Greetings');
+            $message->from('chandan@simplisticsolutions.in','Greetings');
 });
 
 
