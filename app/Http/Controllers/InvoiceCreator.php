@@ -9,25 +9,20 @@ use DB;
 
 class InvoiceCreator extends Controller
 {
-    public function index(){
+    public function index($ord_id){
 
       // $drugs = UserDetail::all();
+      $id=$ord_id;
       $stores = DB::table('medical_store')
       ->where('store_id','=','ad@gmai.com')->get();
 
-<<<<<<< HEAD
-      $drugs = DB::table('orders')
-      ->join('users', 'users.id', '=', 'orders.cust_id')
-      ->where('orders.id','=','42')->get();
-=======
-
       $drugs = DB::table('orders')
 
 
       ->join('users', 'users.id', '=', 'orders.cust_id')
 
-      ->where('order_id','=','42')->get();
->>>>>>> 4429e995d2fc5693bca8e803abd68728ed04cd03
+      ->where('order_id','=',$id)->get();
+
 
       return view('invoice1', ['drugs' => $drugs, 'stores' => $stores ]);
     }

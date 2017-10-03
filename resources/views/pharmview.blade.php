@@ -179,6 +179,8 @@
                                         <input type="hidden" id="quantity2" name="quantity2">
                                         <input type="hidden" id="price2" name="price2">
 
+                                        <input type="hidden" id="ord_id" name="ord_id" value="{{$order_id}}">
+
       
 
                                         </div>
@@ -246,10 +248,14 @@
 
         function calculate(){
           var elems = document.getElementsByName('price[]');
+          var elems_qty = document.getElementsByName('quantity[]');
           var sum = 0;
+          var pro = 1;
           for (var i = 0; i < elems.length; i++)
           {
-            sum += parseFloat(elems[i].value);
+            pro = parseFloat(elems[i].value) * parseFloat(elems_qty[i].value)
+            sum += pro;
+
           }
           document.getElementById('total').value = sum;
         }

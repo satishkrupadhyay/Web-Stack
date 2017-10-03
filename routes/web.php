@@ -67,7 +67,7 @@ Invoice generation*/
 
 
 
-Route::get('/invoice','InvoiceCreator@index');
+Route::get('/invoice/{ord_id}','InvoiceCreator@index');
 
 //web.php
 
