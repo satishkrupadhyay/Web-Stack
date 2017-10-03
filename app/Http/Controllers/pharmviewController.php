@@ -18,6 +18,7 @@ class pharmviewController extends Controller
     public function update(request $request)
     {
       		// $id = $this->index();
+      
           $medname1 = $request->medname2;
           $quantity1 = $request->quantity2;
           $price1 = $request->price2;
