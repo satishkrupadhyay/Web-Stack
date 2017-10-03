@@ -7,13 +7,16 @@ use Illuminate\Http\Request;
 
 class pharmviewController extends Controller
 {
-    private $var;
+    //private $var;
 
     public function index($order_id)
     {
-            $this->var = $order_id;
+            //$this->var = $order_id;
             //$id =  $order_id;
-            return view('pharmview', ['order_id'=> $order_id]);   
+            //$results = DB::select('select image from orders where order_id = $order_id');
+            $results = DB::select( DB::raw("SELECT * FROM orders WHERE order_id = '$order_id'") );
+            echo $results;
+            return view('pharmview', ['order_id'=> $order_id, 'results'=>$results]);   
     }
 
     public function update(request $request)

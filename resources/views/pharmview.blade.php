@@ -118,13 +118,13 @@
                         <div class="row">
                             <div class="col-md-12 ">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><strong>ORDER ID:</strong></div>
+                                    <div class="panel-heading"><strong>ORDER ID:{{$order_id}}</strong></div>
 
                                     <div class="panel-body col-md-4">
                                         
-                                        
-                                       <img src="/upload/1505473424.jpg" width="400px" height="600px">
-
+                                        @foreach ($results as $value)
+                                       <img src="/upload/{{$value->image}}" width="400px" height="600px">
+                                       @endforeach
                                     </div>
 
                                      <div class="panel-body col-md-7 col-md-offset-1">
