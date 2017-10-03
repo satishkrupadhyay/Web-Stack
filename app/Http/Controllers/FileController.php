@@ -60,7 +60,7 @@ class FileController extends Controller
 
     		
    			return back()
-                -> with('success','Image Uploaded Successfully.Please check you email id for details')
+                -> with('success','Image Uploaded Successfully. Please check you email for details')
                 -> with('path',$imageName);
 
 
