@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        Hello User
+                        Hello {{ Auth::user()->name }}
                     </a>
                 </div>
 
