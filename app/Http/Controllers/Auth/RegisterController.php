@@ -89,7 +89,7 @@ class RegisterController extends Controller
     $message->to(Input::get('email'), 'Receiver Name')->subject('Registration Successful');
 
             // Set the sender
-            $message->from('imdadul@simplisticsolutions.in','Greetings');
+            $message->from('chandan@simplisticsolutions.in','Greetings');
 });
 
         return $user;
