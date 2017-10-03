@@ -191,9 +191,7 @@
                     <td class="right border-top">Grand Total</td>
                     <td class="right border-top">{{$total_amount}}</td>
                 </tr>
-                <tr>
-                    <td><a href="{{action('InvoiceCreator@downloadPDF', $drug->id)}}" target="_blank">PDF</a>
-                </tr>
+                
             </tbody>
         </table>
         <p>&nbsp;</p>
@@ -204,6 +202,7 @@
             <tbody>
                 <tr>
                     <td width="50%">
+                        
                         <div align="left"><strong>Declaration:</strong><br>
                            Medicines without Batch no. and expiry date will not be taken back and it will be acceptable within one month from the date of billing. Please
                            consult Doctor before using the medicine.
@@ -221,6 +220,12 @@
                         
                         </div>
                     </td>
+                        <div><a href="{{action('InvoiceCreator@downloadPDF', $drug->id)}}" target="_blank">Download Invoice</a></div>
+                   
+                   
+                
+                    
+                       
                 </tr>
                 
             </tbody>

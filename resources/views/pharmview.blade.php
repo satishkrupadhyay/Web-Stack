@@ -64,7 +64,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                        Hello Pharmacy
+                        Hello Pharmacy 
                     </a>
                 </div>
 

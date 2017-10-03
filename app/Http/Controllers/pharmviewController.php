@@ -6,29 +6,27 @@ use Illuminate\Http\Request;
 
 class pharmviewController extends Controller
 {
-    public function index()
-    {
-      
+    // private $var;
 
-            return view('pharmview');
-      
+    public function index($order_id)
+    {
+            // $this->var = $order_id;
+            $id =  $order_id;
+            return view('pharmview', ['order_id'=> $order_id]);   
     }
 
     public function update(request $request)
     {
-      		
-      	
-      		$medname1 = $request->medname2;
-
-      		$quantity1 = $request->quantity2;
-      		$price1 = $request->price2;
-      		$amount1 = $request->total;
-      		$date_of_delivery = date('Y-m-d H:i:s');
-    		DB::table('orders')
-            ->where('order_id', 42)
-            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=>$date_of_delivery]);
+      		// $id = $this->index();
+          $medname1 = $request->medname2;
+          $quantity1 = $request->quantity2;
+          $price1 = $request->price2;
+          $amount1 = $request->total;
+          $date_of_delivery = date('Y-m-d H:i:s');
+        DB::table('orders')
+            ->where('order_id', $id )
+            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=> $date_of_delivery]);
             return view('pharmview');
-
 
 
       		//collect($request->medname)->each(function($medname){

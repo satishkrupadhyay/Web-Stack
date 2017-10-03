@@ -46,11 +46,11 @@ Route::get('/dashboard', 'pharmController@viewpage');
 
 
 //Pharmacy prescription view and form
-Route::get('pharmview','pharmviewController@index');
+Route::get('pharmview/{order_id}','pharmviewController@index');
 
 
 //updating order data with prescription details
-Route::post('pharmview', 'pharmviewController@update');
+Route::post('pharmview/{order_id}', 'pharmviewController@update');
 
 
 

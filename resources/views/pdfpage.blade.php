@@ -72,8 +72,8 @@
                             <td>
                                 <div class="left">
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong>{{$drug->invoice_no}}<br>
-                                    <strong>Order ID:</strong>{{$drug->id}} <br>
+                                    <strong>Invoice Number:</strong>{{$drug->name}}<br>
+                                    <strong>Order ID:</strong>{{$drug->name}} <br>
                                 </div>
                             </td>
                         </tr>
