@@ -93,11 +93,11 @@
                 </div>
                 <div class="list-group">
                                
-                                ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER
+                                &nbsp; &nbsp;<strong>| ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER|</strong> 
                                 
                            @foreach ($data as $value)
 
-                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> {{$value->order_id}} | {{$value->id}} | {{$value->name}} | {{$value->date_of_purchase}}</a>
+                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}</a>
 
                            @endforeach
 
