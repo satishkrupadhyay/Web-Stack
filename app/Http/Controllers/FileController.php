@@ -55,7 +55,11 @@ class FileController extends Controller
     $message->to($usr_email, 'Receiver Name')->subject('Order Placed');
 
             // Set the sender
+<<<<<<< HEAD
+            $message->from('chandan@simplisticsolutions.in','Greetings');
+=======
             $message->from('satish@simplisticsolutions.in','Greetings');
+>>>>>>> 75e33289eeb47efecd3c9865afa5a7fa203e6148
 });
 
     		

@@ -12,6 +12,7 @@ class InvoiceCreator extends Controller
     public function index($ord_id){
 
       // $drugs = UserDetail::all();
+
       $id=$ord_id;
       $stores = DB::table('medical_store')
       ->where('store_id','=','ad@gmai.com')->get();
@@ -30,8 +31,6 @@ class InvoiceCreator extends Controller
       ->where('order_id','=',$id)->get();
 
      
-
-
 
       return view('invoice1', ['drugs' => $drugs, 'stores' => $stores ]);
     }
