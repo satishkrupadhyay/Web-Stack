@@ -18,7 +18,7 @@ class pharmviewController extends Controller
             //$id =  $order_id;
             //$results = DB::select('select image from orders where order_id = $order_id');
             $results = DB::select( DB::raw("SELECT * FROM orders WHERE order_id = '$order_id'") );
-            echo $results;
+            
             return view('pharmview', ['order_id'=> $order_id, 'results'=>$results]);   
     }
 
