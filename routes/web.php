@@ -44,6 +44,9 @@ Route::post('/dashboard', 'pharmController@handlelogin');
 //pagination
 Route::get('/dashboard', 'pharmController@viewpage');
 
+// Pharmacy recent order view page
+Route::get('/pharmrecent', 'pharmrecentController@viewrecent');
+
 
 //Pharmacy prescription view and form
 Route::get('pharmview/{order_id}','pharmviewController@index');
