@@ -12,7 +12,7 @@
 <body class="no-skin">
 @include('partials.header')
 <div class="main-container" id="main-container">
-  @include('partials.sidebar')
+ 
   <div class="main-content"> 
     <div class="main-content-inner">
       <div class="breadcrumbs" id="breadcrumbs">
