@@ -29,12 +29,12 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
+                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
                         Hello Pharmacy
                     </a>
                 </div>
 
-               <div class="collapse navbar-collapse" id="app-navbar-collapse">
+              <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
@@ -43,14 +43,10 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        <li><a href="{{ url('file') }}">Upload Prescription</a></li>
-                        @if (Auth::guest())
-                            <li><a href="{{ route('pharmlogin') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
+                        <li><a href="{{ url('dashboard') }}">Pending Orders</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    Pharmacy <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -67,7 +63,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        @endif
+  
                         
                     </ul>
                 </div>
@@ -76,6 +72,42 @@
 
         @yield('content')
     </div>
+    <br>
+		<br>
+		<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Past Orders</strong></div>
+
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    
+                   
+
+                
+                <div class="list-group">
+                               
+                                 
+                                
+                           @foreach ($data as $value)
+
+                                <a href="" class="list-group-item"><li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li>  <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li><li style="list-style-type:none"><b>AMOUNT:</b> {{$value->amount}}</li></a>
+
+                           @endforeach
+
+                    </div> 
+                     {{ $data->links() }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

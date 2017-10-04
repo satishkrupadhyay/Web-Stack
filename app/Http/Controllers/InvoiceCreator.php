@@ -15,7 +15,7 @@ class InvoiceCreator extends Controller
 
       $id=$ord_id;
       $stores = DB::table('medical_store')
-      ->where('store_id','=','ad@gmai.com')->get();
+      ->where('store_id','=','pharmacy@gmail.com')->get();
 
 
 

@@ -63,8 +63,9 @@
                         <img src="http://exotel.in/wp-content/uploads/2013/03/exotel.png">  your logo here 
                         
                     </td> -->
+                    <center><strong><h4>TAX INVOICE</h4></strong> 
                     @foreach($stores as $store)
-                                  <center><strong><h4>TAX INVOICE</h4></strong>        
+                                         
                         <p ><strong>{{$store->store_name}}</strong></p>
                         <p>
                  {{$store->address}} | Phone: {{$store->phone}} | e-mail:{{$store->store_id}}</p></center>

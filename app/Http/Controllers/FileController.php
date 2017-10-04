@@ -56,8 +56,14 @@ class FileController extends Controller
 
             // Set the sender
 
+<<<<<<< HEAD
             $message->from('chandan@simplisticsolutions.in','Greetings');
                 
+=======
+
+            $message->from('satish@simplisticsolutions.in','Greetings');
+
+>>>>>>> a66c4b263ee8c3152d7bcbd423207049c5b5dfab
 });
 
     		
