@@ -52,7 +52,7 @@ class pharmController extends Controller
     {
         $data['data'] = DB::table('orders')
         ->leftjoin('users', 'orders.cust_id', '=', 'users.id')
-        ->where('status', 0)->simplePaginate(5);
+        ->where('status', 0)->simplePaginate(3);
 
               if (count($data) > 0) 
               {
