@@ -55,11 +55,9 @@ class FileController extends Controller
     $message->to($usr_email, 'Receiver Name')->subject('Order Placed');
 
             // Set the sender
-<<<<<<< HEAD
+
             $message->from('chandan@simplisticsolutions.in','Greetings');
-=======
-            $message->from('satish@simplisticsolutions.in','Greetings');
->>>>>>> 75e33289eeb47efecd3c9865afa5a7fa203e6148
+                
 });
 
     		
@@ -67,12 +65,10 @@ class FileController extends Controller
                 -> with('success','Image Uploaded Successfully. Please check you email for details')
                 -> with('path',$imageName);
 
-
    		 }else{
        			return 'No file selected';
        			}
 
     }
-
     
 }
