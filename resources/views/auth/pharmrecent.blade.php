@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Pharmacy') }}</title>
+    <title>Pharmacy</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -90,19 +90,19 @@
                     
                    
 
-                </div>
+                
                 <div class="list-group">
                                
-                                &nbsp; &nbsp;<strong>| ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER| AMOUNT</strong> 
+                                 
                                 
                            @foreach ($data as $value)
 
-                                <a href="" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}&emsp;&emsp;&emsp;&emsp; {{$value->amount}}</a>
+                                <a href="" class="list-group-item"><li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li>  <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li><li style="list-style-type:none"><b>AMOUNT:</b> {{$value->amount}}</li></a>
 
                            @endforeach
 
                     </div> 
-                     {{ $data->links() }}
+                     {{ $data->links() }}</div>
             </div>
         </div>
     </div>
