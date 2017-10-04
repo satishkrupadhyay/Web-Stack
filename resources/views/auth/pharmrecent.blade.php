@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Pharmacy</title>
+    <title>{{ config('app.name', 'Pharmacy') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -43,7 +43,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
+                        <li><a href="{{ url('dashboard') }}">Pending Orders</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
@@ -78,7 +78,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Pending Orders</strong></div>
+                <div class="panel-heading"><strong>Past Orders</strong></div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -93,11 +93,11 @@
                 </div>
                 <div class="list-group">
                                
-                                &nbsp; &nbsp;<strong>| ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER|</strong> 
+                                &nbsp; &nbsp;<strong>| ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER| AMOUNT</strong> 
                                 
                            @foreach ($data as $value)
 
-                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}</a>
+                                <a href="" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}&emsp;&emsp;&emsp;&emsp; {{$value->amount}}</a>
 
                            @endforeach
 
