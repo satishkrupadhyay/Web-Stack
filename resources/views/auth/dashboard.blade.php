@@ -97,12 +97,18 @@
                                 
                            @foreach ($data as $value)
 
-                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li> <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li></a>
+                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> 
+                                    <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  
+                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> 
+                                    <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li> 
+                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li>
+                                </a>
 
                            @endforeach
 
                     </div> 
-                     {{ $data->links() }}</div>
+                     {{ $data->links() }}
+                 </div>
             </div>
         </div>
     </div>
