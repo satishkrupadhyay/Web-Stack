@@ -12,6 +12,31 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+        .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+    </style>
   
 </head>
 <body>
@@ -81,17 +106,16 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 		<br>
-		<br>
 		<div class="container"> 
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2>Upload Your Prescription</h2>
+					<h4>Upload Your Prescription</h4>
 					
 				</div>
 				<div class="panel-body">
 					@if (count($errors)>0)
 					<div class="alert alert-danger">
-						<strong>Oops !</strong> There were some problem with your input.<br><br>
+						<strong>Oops !</strong> There were some problem with your file.<br><br>
 						<ul>
 							@foreach ($errors->all() as $error)
 							<li>{{$error}}</li>
@@ -108,7 +132,7 @@
 						
 					</div>
 
-					<img src="/upload/{{ Session::get('path') }}" width="400px" height="600px">
+					
 					@endif
 					@if (session('status'))
     <div class="alert alert-success">
@@ -118,15 +142,34 @@
 					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
 					{{csrf_field()}}
 					<div class="row">
-						<div class="col-md-12">
-						<input type="File" name="image">
-                        <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
-                        <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
+						<div class="col-md-10">
+						<div class="container">
+                            <div class="col-md-9 col-md-offset-1">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id='urlname' type="text" class="form-control" readonly>
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-primary btn-file ">
+                                                Browse <input type="file" id="imgInp" name="image">
+                                            </span>
+                                        </span>
+                                        
+                                    </div>
+                                   </br>
+                                    <img id='img-upload'/> </br></br>
+                                    <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
+                                    <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
+                                    <div class="col-md-10 col-md-offset-5">
+                                    <input type="submit" name="Upload" class="btn-bs-file btn btn-md btn-primary" value="Upload Prescription">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
 
+
+                        
 						</div>
-						<div class="col-md-12">
-						<input type="submit" name="Upload">
-						</div>
+						
 					</div>
 					</form>
 				</div>
@@ -153,6 +196,49 @@
 			<img src="{{ asset('storage/upload/sa.jpeg')}}">
 		</div>
 	-->
+<script type="text/javascript">
+    $(document).ready( function() {
+    
+        $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [label]);
+        });
 
+        $('.btn-file :file').on('fileselect', function(event, label) {
+            
+            var input = $(this).parents('.input-group').find(':text'),
+                log = label;
+            
+            if( input.length ) {
+                input.val(log);
+            } else {
+                if( log ) alert(log);
+            }
+        
+        });
+        
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#img-upload').attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function(){
+            readURL(this);
+        });
+        
+        $("#clear").click(function(){
+            $('#img-upload').attr('src','');
+            $('#urlname').val('');
+        });
+    });
+</script>
 </body>
 </html>
