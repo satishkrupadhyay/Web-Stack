@@ -18,8 +18,18 @@ class pharmviewController extends Controller
             //$id =  $order_id;
             //$results = DB::select('select image from orders where order_id = $order_id');
             $results = DB::select( DB::raw("SELECT * FROM orders WHERE order_id = '$order_id'") );
+
+            // to get customer name on pharmview page
+
+            $cust_name = DB::table('orders')
+                ->join('users', 'users.id', '=', 'orders.cust_id')
+                ->where('order_id','=',$order_id)->get();
+                foreach ($cust_name as $value) {
+                  $name=$value->name;
+                  
+                }
             
-            return view('pharmview', ['order_id'=> $order_id, 'results'=>$results]);   
+            return view('pharmview', ['order_id'=> $order_id, 'results'=>$results, 'name'=>$name]);   
     }
 
     public function update(request $request)
@@ -39,32 +49,32 @@ class pharmviewController extends Controller
          
   //$mailid = DB::select( DB::raw("select email from users join orders where orders.cust_id = users.cust_id"));
  
-$drugs = DB::table('orders')
+          $drugs = DB::table('orders')
 
 
-      ->join('users', 'users.id', '=', 'orders.cust_id')
+                ->join('users', 'users.id', '=', 'orders.cust_id')
 
 
-      ->where('order_id','=',$ord_id)->get();
+                ->where('order_id','=',$ord_id)->get();
 
-foreach ($drugs as $value) {
-  $mailid=$value->email;
-  # code...
-}
+          foreach ($drugs as $value) {
+            $mailid=$value->email;
+            # code...
+          }
 
 
-$template_path = 'dispatch';
-Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($mailid)
-{
-   // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
+          $template_path = 'dispatch';
+          Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($mailid)
+          {
+             // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
 
-   // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
+             // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
 
-    $message->to($mailid, 'Receiver Name')->subject('Order Dispatched');
+              $message->to($mailid, 'Receiver Name')->subject('Order Dispatched');
 
-            // Set the sender
-            $message->from('chandan@simplisticsolutions.in','Greetings');
-});
+                      // Set the sender
+                      $message->from('satish@simplisticsolutions.in','Greetings');
+          });
 
 
 

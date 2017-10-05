@@ -91,8 +91,9 @@ class RegisterController extends Controller
             // Set the sender
 
             $message->from('satish@simplisticsolutions.in','Greetings');
-            $message->from('chandan@simplisticsolutions.in','Greetings');
->>>>>>> 7cdc92f59be1cb2ddd1b38b1ac24fc866f3afdcc
+
+            
+
 });
 
         return $user;

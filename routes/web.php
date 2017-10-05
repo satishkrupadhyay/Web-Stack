@@ -74,9 +74,14 @@ Route::get('/invoice/{ord_id}','InvoiceCreator@index');
 
 //web.php
 
-Route::get('/downloadPDF/{id}','InvoiceCreator@downloadPDF');
+Route::get('/downloadPDF/{ord_id}','InvoiceCreator@downloadPDF');
 
 
 
 //****************************************************************
 
+// Middleware
+Route::group(['middleware' => 'prevent-back-history'],function(){
+	Auth::routes();
+	Route::get('/auth/pharmlogin');
+});

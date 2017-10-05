@@ -118,7 +118,14 @@
                         <div class="row">
                             <div class="col-md-12 ">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><strong>ORDER ID:{{$order_id}}</strong></div>
+                                    <div class="panel-heading">
+                                        <div>
+                                        <strong>ORDER ID:</strong>{{$order_id}}
+                                        </div>
+                                        <div>
+                                         <strong>CUSTOMER NAME:</strong>{{$name}}
+                                        </div>
+                                    </div>
 
                                     <div class="panel-body col-md-4">
                                         
@@ -143,7 +150,7 @@
                                         </div>
 
                                         <div class="col-xs-4">                      
-                                            <input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required>                     
+                                            <input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required onkeyup="calculate();">                     
                                         </div>
 
                                         <div class="col-xs-3">                      
@@ -213,7 +220,7 @@
         var divtest = document.createElement("div");
         divtest.setAttribute("class", "form-group removeclass"+room);
         var rdiv = 'removeclass'+room;
-        divtest.innerHTML = '<div class="col-xs-4"><input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required></div><div class="col-xs-4 nopadding"><input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required></div><div class="col-xs-3 nopadding"><input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required onkeyup="calculate();"></div><div class="col-xs-1 nopadding"><button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div><div class="clear"></div>';
+        divtest.innerHTML = '<div class="col-xs-4"><input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required></div><div class="col-xs-4 nopadding"><input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required onkeyup="calculate();"></div><div class="col-xs-3 nopadding"><input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required onkeyup="calculate();"></div><div class="col-xs-1 nopadding"><button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div><div class="clear"></div>';
         
         objTo.appendChild(divtest)
 
