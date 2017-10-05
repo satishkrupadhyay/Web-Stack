@@ -78,5 +78,8 @@ Route::get('/downloadPDF/{ord_id}','InvoiceCreator@downloadPDF');
 
 
 
+Route::get('/cancel/{ord_id}','InvoiceCreator@cancelorder');
+
+
 //****************************************************************
 
