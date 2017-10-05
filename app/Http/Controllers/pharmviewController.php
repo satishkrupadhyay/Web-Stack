@@ -5,7 +5,7 @@ use App\Http\Controllers\Route;
 use DB;
 use Illuminate\Http\Request;
 
-use Mail;
+
 use Illuminate\Support\Facades\Input;
 
 class pharmviewController extends Controller
@@ -49,32 +49,7 @@ class pharmviewController extends Controller
          
   //$mailid = DB::select( DB::raw("select email from users join orders where orders.cust_id = users.cust_id"));
  
-          $drugs = DB::table('orders')
-
-
-                ->join('users', 'users.id', '=', 'orders.cust_id')
-
-
-                ->where('order_id','=',$ord_id)->get();
-
-          foreach ($drugs as $value) {
-            $mailid=$value->email;
-            # code...
-          }
-
-
-          $template_path = 'dispatch';
-          Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($mailid)
-          {
-             // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
-
-             // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
-
-              $message->to($mailid, 'Receiver Name')->subject('Order Dispatched');
-
-                      // Set the sender
-                      $message->from('imdadul@simplisticsolutions.in','Greetings');
-          });
+          
 
 
 

@@ -70,7 +70,7 @@
     @endforeach
     </div>
     <div class="form-group">
-    <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Cancel Order</a>
+    <a href="{{action('InvoiceCreator@cancelorder', $drug->order_id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Cancel Order</a>
     </div>
     </div>
 
@@ -232,7 +232,7 @@
                     </td>
                     <td width="50%">
                         @foreach($stores as $store)
-                        <div align="right" "><strong>{{$store->store_name}}</strong><br>
+                        <div align="right" ><strong>{{$store->store_name}}</strong><br>
                         @endforeach
                         <br>
                         <br>

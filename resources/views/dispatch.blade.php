@@ -1,4 +1,4 @@
-Your order has been dispatched. You will soon get your medicines. Thank you for shopping with us.
+
 Hello Customer,
 
 We have the pleasure to state that your order has been dispatched by us as per your order. Please by cash to the delivery guy when you receive your medicines.
