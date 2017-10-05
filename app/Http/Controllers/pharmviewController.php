@@ -73,7 +73,7 @@ class pharmviewController extends Controller
               $message->to($mailid, 'Receiver Name')->subject('Order Dispatched');
 
                       // Set the sender
-                      $message->from('satish@simplisticsolutions.in','Greetings');
+                      $message->from('imdadul@simplisticsolutions.in','Greetings');
           });
 
 
