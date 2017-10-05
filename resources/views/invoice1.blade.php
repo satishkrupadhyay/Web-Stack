@@ -62,7 +62,7 @@
 
     <div class="col-md-2">
     <div class="form-group">
-    <a href="{{ url('dashboard') }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+    <a href="{{ url('dashboard') }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Dashboard</a>
     </div>
     <div class="form-group">
     @foreach($drugs as $drug)

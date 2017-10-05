@@ -90,7 +90,7 @@ class RegisterController extends Controller
 
             // Set the sender
 
-            $message->from('imdadul@simplisticsolutions.in','Greetings');
+            $message->from('satish@simplisticsolutions.in','Greetings');
 
             
 
