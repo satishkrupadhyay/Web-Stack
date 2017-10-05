@@ -73,8 +73,8 @@
         @yield('content')
     </div>
     <br>
-		<br>
-		<div class="container">
+        <br>
+        <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -93,20 +93,37 @@
                 </div>
                 <div class="list-group">
                                
+
                                 &nbsp; &nbsp;<strong>| ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER| AMOUNT</strong> 
                                 
                            @foreach ($data as $value)
 
                                 <a href="" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}&emsp;&emsp;&emsp;&emsp; {{$value->amount}}</a>
 
+                                
+                                
+                           @foreach ($data as $value)
+
+                                <a href="" class="list-group-item"> 
+                                    <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li> 
+                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> 
+                                    <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li>  
+                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li> 
+                                    <li style="list-style-type:none"><b>AMOUNT:</b> {{$value->amount}}</li>
+                                </a>
+
                            @endforeach
 
                     </div> 
                      {{ $data->links() }}
+
+
+                     </div>
+
             </div>
         </div>
     </div>
-</div>
+
 
 
     <!-- Scripts -->

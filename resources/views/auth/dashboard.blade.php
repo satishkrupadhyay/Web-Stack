@@ -78,7 +78,11 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Pending Orders</strong></div>
+                <div class="panel-heading"><strong>Pending Orders:&nbsp;</strong>
+                    @foreach ($count as $value1)
+                    <strong>{{$value1->cnt}}</strong>
+                    @endforeach
+                </div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -97,12 +101,23 @@
                                 
                            @foreach ($data as $value)
 
+
                                 <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}</a>
+
+                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> 
+                                    <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  
+                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> 
+                                    <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li> 
+                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li>
+                                </a>
+
 
                            @endforeach
 
                     </div> 
                      {{ $data->links() }}
+
+                 </div>
             </div>
         </div>
     </div>

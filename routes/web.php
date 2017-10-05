@@ -47,6 +47,9 @@ Route::get('/dashboard', 'pharmController@viewpage');
 // Pharmacy recent order view page
 Route::get('/pharmrecent', 'pharmrecentController@viewrecent');
 
+// user purchase history view page
+Route::get('/purchasehistory', 'purchasehistoryController@viewpurchase');
+
 
 //Pharmacy prescription view and form
 Route::get('pharmview/{order_id}','pharmviewController@index');
@@ -76,6 +79,8 @@ Route::get('/invoice/{ord_id}','InvoiceCreator@index');
 
 Route::get('/downloadPDF/{ord_id}','InvoiceCreator@downloadPDF');
 
+
+Route::get('/cancel/{ord_id}','InvoiceCreator@cancelorder');
 
 
 //****************************************************************

@@ -5,7 +5,7 @@ use App\Http\Controllers\Route;
 use DB;
 use Illuminate\Http\Request;
 
-use Mail;
+
 use Illuminate\Support\Facades\Input;
 
 class pharmviewController extends Controller
@@ -49,6 +49,7 @@ class pharmviewController extends Controller
          
   //$mailid = DB::select( DB::raw("select email from users join orders where orders.cust_id = users.cust_id"));
  
+
           $drugs = DB::table('orders')
 
 
