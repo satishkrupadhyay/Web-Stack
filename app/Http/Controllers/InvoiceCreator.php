@@ -123,6 +123,11 @@ foreach ($drug as $value) {
 
                       
           });
+$status=2;
+          DB::table('orders')
+            ->where('order_id', $ord_id )
+            ->update(['status' =>$status]);
+            
 
       return redirect()->back();
     //  return view('auth.dashboard');
