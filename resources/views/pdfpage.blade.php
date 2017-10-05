@@ -55,9 +55,11 @@
 </head>
 <body>
     <div id="page-wrap">
-        <center><strong><h4>TAX INVOICE</h4></strong>        
-                        <p ><strong>STORE NAME</strong></p>
-                     <p>Guwahati | Phone: 9876543210 | e-mail:store@email.com</p></center>
+        <center><strong><h4>INVOICE</h4></strong>
+        @foreach($stores as $store)        
+                        <p ><strong>{{$store->store_name}}</strong></p>
+                     <p>Address:{{$store->address}} | Phone: {{$store->phone}} | E-mail:{{$store->store_id}}</p></center>
+        @endforeach
         <table style="width:100%">
             <tbody>
                 
@@ -66,14 +68,14 @@
                         
                     </td> -->
                                    
-                   
+                   @foreach($drug as $drug)
                   
                         <tr>
                             <td>
                                 <div class="left">
                                     <strong>Date:</strong> <?php echo date('d/M/Y');?><br>
-                                    <strong>Invoice Number:</strong>{{$drug->name}}<br>
-                                    <strong>Order ID:</strong>{{$drug->name}} <br>
+                                    <strong>Invoice Number:</strong>{{$drug->order_id}}<br>
+                                    <strong>Order ID:</strong>{{$drug->order_id}} <br>
                                 </div>
                             </td>
                         </tr>
@@ -120,7 +122,7 @@
                         <tr>
                             <td colspan="2">
                         </tr>
-                    
+                    @endforeach
             </tbody>
         </table>
 

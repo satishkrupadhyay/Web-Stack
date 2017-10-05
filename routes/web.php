@@ -74,7 +74,7 @@ Route::get('/invoice/{ord_id}','InvoiceCreator@index');
 
 //web.php
 
-Route::get('/downloadPDF/{id}','InvoiceCreator@downloadPDF');
+Route::get('/downloadPDF/{ord_id}','InvoiceCreator@downloadPDF');
 
 
 

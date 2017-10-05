@@ -1,5 +1,8 @@
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Invoice</title>
 <style type="text/css">
     #page-wrap {
@@ -54,7 +57,21 @@
 </style>
 </head>
 <body>
-    <div id="page-wrap">
+    <div class="col-md-12">
+    <div class="row"></br></br>
+
+    <div class="col-md-2">
+    <div class="form-group">
+    <a href="{{ url('dashboard') }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+    </div>
+    <div class="form-group">
+    @foreach($drugs as $drug)
+    <a href="{{action('InvoiceCreator@downloadPDF', $drug->order_id)}}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-print"></span> Print Invoice</a>
+    @endforeach
+    </div>
+    </div>
+
+    <div id="page-wrap" class="col-md-10">
         <table  class="outline-border">
         <table style="width:100%">
             <tbody>
@@ -68,7 +85,7 @@
                                          
                         <p ><strong>{{$store->store_name}}</strong></p>
                         <p>
-                 {{$store->address}} | Phone: {{$store->phone}} | e-mail:{{$store->store_id}}</p></center>
+                 {{$store->address}} | Phone: {{$store->phone}} | E-mail:{{$store->store_id}}</p></center>
                  @endforeach   
                 </tr>   
                    
@@ -221,8 +238,8 @@
                         
                         </div>
                     </td>
-                        <div><a href="{{action('InvoiceCreator@downloadPDF', $drug->id)}}" target="_blank">Download Invoice</a></div>
-                   
+
+                            
                    
                 
                     
@@ -231,8 +248,13 @@
                 
             </tbody>
         </table>
+
         <p>&nbsp;</p>
-     </table>   
+     </table>
+
     </div>
+</div>
+    </div>
+
 </body>
 </html>
