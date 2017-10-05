@@ -66,8 +66,11 @@
     </div>
     <div class="form-group">
     @foreach($drugs as $drug)
-    <a href="{{action('InvoiceCreator@downloadPDF', $drug->order_id)}}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-print"></span> Print Invoice</a>
+    <a href="{{action('InvoiceCreator@downloadPDF', $drug->order_id)}}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-print"></span> Print & Confirm</a>
     @endforeach
+    </div>
+    <div class="form-group">
+    <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Cancel Order</a>
     </div>
     </div>
 

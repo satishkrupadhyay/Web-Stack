@@ -54,9 +54,11 @@ class pharmController extends Controller
         ->leftjoin('users', 'orders.cust_id', '=', 'users.id')
         ->where('status', 0)->simplePaginate(3);
 
+        $count['count'] = DB::select( DB::raw("SELECT count(*) as cnt FROM orders WHERE status = '0'") );
+
               if (count($data) > 0) 
               {
-                return view('auth.dashboard', $data);
+                return view('auth.dashboard', $data, $count);
               }
               else{
 

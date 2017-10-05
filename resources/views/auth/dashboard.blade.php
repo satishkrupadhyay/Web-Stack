@@ -78,7 +78,11 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Pending Orders</strong></div>
+                <div class="panel-heading"><strong>Pending Orders:&nbsp;</strong>
+                    @foreach ($count as $value1)
+                    <strong>{{$value1->cnt}}</strong>
+                    @endforeach
+                </div>
 
                 <div class="panel-body">
                     @if (session('status'))
