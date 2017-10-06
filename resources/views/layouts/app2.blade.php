@@ -9,14 +9,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>User Home</title>
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   
+
+
 </head>
 <body>
     <div id="app">
-       <nav class="navbar navbar-default navbar-static-top">
+       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
 
