@@ -112,7 +112,7 @@
                 </div> <!-- end of container -->
 
                 <div class="scrolldown">
-                    <a href="#works_2" class="scroll_btn"></a>
+                    <a href="#video" class="scroll_btn"></a>
                 </div>
 
             </div>
