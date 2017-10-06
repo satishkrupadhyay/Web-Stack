@@ -58,6 +58,10 @@ Route::get('pharmview/{order_id}','pharmviewController@index');
 //updating order data with prescription details
 Route::post('pharmview/{order_id}', 'pharmviewController@update');
 
+//inserting data into inventory
+Route::get('/inventory', 'InventoryController@loadform');
+Route::post('/inventory','InventoryController@submitform')->name('submit.form');
+
 
 
 
@@ -85,8 +89,3 @@ Route::get('/cancel/{ord_id}','InvoiceCreator@cancelorder');
 
 //****************************************************************
 
-// Middleware
-Route::group(['middleware' => 'prevent-back-history'],function(){
-	Auth::routes();
-	Route::get('/auth/pharmlogin');
-});

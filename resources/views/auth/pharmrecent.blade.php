@@ -44,6 +44,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('dashboard') }}">Pending Orders</a></li>
+                        <li><a href="{{ url('inventory') }}">Drug Inventory</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
@@ -86,22 +87,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    
-                   
-
-                </div>
-                <div class="list-group">
-                               
-
-                                &nbsp; &nbsp;<strong>| ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER| AMOUNT</strong> 
-                                
-                           @foreach ($data as $value)
-
-                                <a href="" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}&emsp;&emsp;&emsp;&emsp; {{$value->amount}}</a>
-
-                                
-                                
+                
+                <div class="list-group">      
                            @foreach ($data as $value)
 
                                 <a href="" class="list-group-item"> 
@@ -123,7 +110,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 
     <!-- Scripts -->

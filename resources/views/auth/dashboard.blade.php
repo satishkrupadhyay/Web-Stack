@@ -44,6 +44,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
+                        <li><a href="{{ url('inventory') }}">Drug Inventory</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
@@ -94,15 +95,15 @@
                     
                    
 
-                </div>
+                
                 <div class="list-group">
                                
-                                &nbsp; &nbsp;<strong>| ORDER ID | CUSTOMER ID | CUSTOMER NAME| DATE OF ORDER|</strong> 
+                               
                                 
                            @foreach ($data as $value)
 
 
-                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> {{$value->order_id}}  &emsp;&emsp;&emsp;&emsp; {{$value->id}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{$value->name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  {{$value->date_of_purchase}}</a>
+                                
 
                                 <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> 
                                     <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  

@@ -44,7 +44,6 @@ class InvoiceCreator extends Controller
 
       $drug = DB::table('orders')
 
-
       ->join('users', 'users.id', '=', 'orders.cust_id')
 
 
