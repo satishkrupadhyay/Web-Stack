@@ -241,8 +241,16 @@
                         
                         </div>
                     </td>
+<<<<<<< HEAD
+                        <div>
+                             @foreach($drugs as $drug)
+                            <a href="{{action('InvoiceCreator@downloadPDF', $drug->order_id)}}" target="_blank">Download Invoice</a>
+                        </div>
+                            @endforeach
+=======
 
                             
+>>>>>>> d1f766faabef0e2f7bd47a96d301f035b673bb39
                    
                 
                     

@@ -41,7 +41,7 @@
 </head>
 <body>
     <div id="app">
-       <nav class="navbar navbar-default navbar-static-top">
+       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -55,7 +55,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        Hello User
+                        Hello {{ Auth::user()->name }}
                     </a>
                 </div>
 

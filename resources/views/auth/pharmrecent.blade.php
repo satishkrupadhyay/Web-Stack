@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Pharmacy') }}</title>
+    <title>Pharmacy</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="app">
-       <nav class="navbar navbar-default navbar-static-top">
+       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -44,6 +44,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('dashboard') }}">Pending Orders</a></li>
+                        <li><a href="{{ url('inventory') }}">Drug Inventory</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
@@ -86,15 +87,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    
-                   
-
                 
-                <div class="list-group">
-                               
-                                
-                                
+                <div class="list-group">      
                            @foreach ($data as $value)
 
                                 <a href="" class="list-group-item"> 
@@ -110,7 +104,9 @@
                     </div> 
                      {{ $data->links() }}
 
+
                      </div>
+
             </div>
         </div>
     </div>

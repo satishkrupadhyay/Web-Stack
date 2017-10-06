@@ -44,7 +44,6 @@ class InvoiceCreator extends Controller
 
       $drug = DB::table('orders')
 
-
       ->join('users', 'users.id', '=', 'orders.cust_id')
 
 
@@ -58,16 +57,16 @@ foreach ($drug as $value) {
           }
 
 
-
-
       $stores = DB::table('medical_store')
       ->where('store_id','=','pharmacy@gmail.com')->get();
+
 
       $pdf = PDF::loadView('pdfpage', compact('drug','stores'));
       $pdf->setPaper('A4', 'portrait');
       // return $pdf;
       // return response()->file($pdf);
       $filename = "invoice"."$id2".".pdf";
+
 
 
       $template_path = 'dispatch';
@@ -84,6 +83,7 @@ foreach ($drug as $value) {
 
                       $message->attachData($pdf->output(),$filename);
           });
+
 
       return $pdf->stream("$filename");
 

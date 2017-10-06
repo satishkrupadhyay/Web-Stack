@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+Your order has been dispatched. You will soon get your medicines. Thank you for shopping with us.
+=======
 
 Hello Customer,
 
@@ -11,3 +14,4 @@ The Zeevani Team
 email:
 Contact No.:8899665547
 Address
+>>>>>>> d1f766faabef0e2f7bd47a96d301f035b673bb39

@@ -52,7 +52,7 @@ class pharmController extends Controller
     {
         $data['data'] = DB::table('orders')
         ->leftjoin('users', 'orders.cust_id', '=', 'users.id')
-        ->where('status', 0)->simplePaginate(3);
+        ->where('status', 0)->simplePaginate(5);
 
         $count['count'] = DB::select( DB::raw("SELECT count(*) as cnt FROM orders WHERE status = '0'") );
 

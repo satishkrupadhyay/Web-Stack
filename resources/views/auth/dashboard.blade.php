@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="app">
-       <nav class="navbar navbar-default navbar-static-top">
+       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -44,6 +44,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
+                        <li><a href="{{ url('inventory') }}">Drug Inventory</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
@@ -97,9 +98,12 @@
                 
                 <div class="list-group">
                                
-                                 
+                               
                                 
                            @foreach ($data as $value)
+
+
+                                
 
                                 <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> 
                                     <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  
@@ -108,10 +112,12 @@
                                     <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li>
                                 </a>
 
+
                            @endforeach
 
                     </div> 
                      {{ $data->links() }}
+
                  </div>
             </div>
         </div>
