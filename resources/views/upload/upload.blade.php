@@ -36,6 +36,16 @@
 #img-upload{
     width: 100%;
 }
+
+.demo-droppable {
+    background: #e3f2fd;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  .demo-droppable.dragover {
+    background: #00CC71;
+  }
     </style>
   
 </head>
@@ -139,9 +149,9 @@
         {{ session('status') }}
     </div>
 @endif
-       <center>    <img src="images/upload-2-512.png" style="width:200px; height:200px;" alt="" /> </center> <br><br>
+   <!--    <center>    <img src="images/upload-2-512.png" style="width:200px; height:200px;" alt="" /> </center> <br><br>
 
-
+-->
 
 
 					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
@@ -149,19 +159,24 @@
 					<div class="row">
 						<div class="col-md-10">
 						<div class="container">
-                            <div class="col-md-9 col-md-offset-1">
+                            <div class="col-md-9 col-md-offset-1" >
                                 <div class="form-group">
-                                    <div class="input-group">
-                                        <input id='urlname' type="text" class="form-control" readonly>
+                                 <!--    <div class="input-group">
+                                       <input id='urlname' type="text" class="form-control" readonly>
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file ">
                                                 Browse <input type="file" id="imgInp" name="image">
                                             </span>
                                         </span>
-                                        
-                                    </div>
+                                       
+                                    </div>-->
+
+                                    <div class="demo-droppable" style=" height:280px;">
+  <img src="images/upload-2-512.png" style="width:60px; height:60px;" alt="" /><br>
+    <p style="color:#2c3e50;">Drag files here or click to upload</p>
+</div> <center><div class="img-upload"></div></center>
                                    </br>
-                                    <img id='img-upload'/> </br></br>
+                                    
                                     <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
                                     <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
                                     <div class="col-md-10 col-md-offset-5">
@@ -244,6 +259,71 @@
             $('#urlname').val('');
         });
     });
+</script>
+
+<script type="text/javascript">
+  (function(window) {
+    function triggerCallback(e, callback) {
+      if(!callback || typeof callback !== 'function') {
+        return;
+      }
+      var files;
+      if(e.dataTransfer) {
+        files = e.dataTransfer.files;
+      } else if(e.target) {
+        files = e.target.files;
+      }
+      callback.call(null, files);
+    }
+    function makeDroppable(ele, callback) {
+      var input = document.createElement('input');
+      input.setAttribute('type', 'file');
+      input.setAttribute('multiple', true);
+      input.style.display = 'none';
+      input.addEventListener('change', function(e) {
+        triggerCallback(e, callback);
+      });
+      ele.appendChild(input);
+      
+      ele.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        ele.classList.add('dragover');
+      });
+
+      ele.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        ele.classList.remove('dragover');
+      });
+
+      ele.addEventListener('drop', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        ele.classList.remove('dragover');
+        triggerCallback(e, callback);
+      });
+      
+      ele.addEventListener('click', function() {
+        input.value = null;
+        input.click();
+      });
+    }
+    window.makeDroppable = makeDroppable;
+  })(this);
+  (function(window) {
+    makeDroppable(window.document.querySelector('.demo-droppable'), function(files) {
+      console.log(files);
+      var output = document.querySelector('.img-upload');
+      output.innerHTML = '';
+      for(var i=0; i<files.length; i++) {
+        if(files[i].type.indexOf('image/') === 0) {
+          output.innerHTML += '<img width="500" src="' + URL.createObjectURL(files[i]) + '" />';
+        }
+        output.innerHTML += '<p>'+files[i].name+'</p>';
+      }
+    });
+  })(this);
 </script>
 </body>
 </html>
