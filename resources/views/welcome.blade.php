@@ -264,7 +264,7 @@
                                 
                                 <!-- 4:3 aspect ratio -->
                                 <div class="embed-responsive embed-responsive-4by3">
-                                  <iframe class="embed-responsive-item" style="border-radius:10px;" width="940" height="600" src="https://www.youtube.com/embed/a3LLp5RRt_U" frameborder="0" allowfullscreen></iframe>
+                                  <iframe class="embed-responsive-item" style="border-radius:10px;" width="640" height="480" src="https://drive.google.com/file/d/0B2zFuMt6Wn9lTU5nZmhsNVNNRFE/preview" frameborder="0" allowfullscreen></iframe>
                                 </div> 
                             </div>
                         </div>
