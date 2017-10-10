@@ -62,7 +62,7 @@
 
     <div class="col-md-2">
     <div class="form-group">
-    <a href="{{ url('dashboard') }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Dashboard</a>
+    <a href="{{ url('admin') }}" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Dashboard</a>
     </div>
     <div class="form-group">
     @foreach($drugs as $drug)
@@ -88,7 +88,7 @@
                                          
                         <p ><strong>{{$store->store_name}}</strong></p>
                         <p>
-                 {{$store->address}} | Phone: {{$store->phone}} | E-mail:{{$store->store_id}}</p></center>
+                 {{$store->address}} | Phone: {{$store->phone}} | E-mail:{{$store->store_email}}</p></center>
                  @endforeach   
                 </tr>   
                    
@@ -241,16 +241,16 @@
                         
                         </div>
                     </td>
-<<<<<<< HEAD
+
                         <div>
                              @foreach($drugs as $drug)
                             <a href="{{action('InvoiceCreator@downloadPDF', $drug->order_id)}}" target="_blank">Download Invoice</a>
                         </div>
                             @endforeach
-=======
+
 
                             
->>>>>>> d1f766faabef0e2f7bd47a96d301f035b673bb39
+
                    
                 
                     

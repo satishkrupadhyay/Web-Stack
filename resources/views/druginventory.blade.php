@@ -29,7 +29,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
                         Hello Pharmacy
                     </a>
                 </div>
@@ -44,7 +44,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
-                        <li><a href="{{ url('dashboard') }}">Pending Orders</a></li>
+                        <li><a href="{{ url('admin') }}">Pending Orders</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>

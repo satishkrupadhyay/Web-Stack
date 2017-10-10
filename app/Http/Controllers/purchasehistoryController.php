@@ -8,6 +8,12 @@ use Auth;
 
 class purchasehistoryController extends Controller
 {
+  public function __construct()
+    {
+        $this->middleware('auth');
+       
+    }
+    
     public function viewpurchase()
     {	
     	$usr_id = Auth::user()->id;

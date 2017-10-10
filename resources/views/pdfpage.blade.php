@@ -58,7 +58,7 @@
         <center><strong><h4>INVOICE</h4></strong>
         @foreach($stores as $store)        
                         <p ><strong>{{$store->store_name}}</strong></p>
-                     <p>Address:{{$store->address}} | Phone: {{$store->phone}} | E-mail:{{$store->store_id}}</p></center>
+                     <p>Address:{{$store->address}} | Phone: {{$store->phone}} | E-mail:{{$store->store_email}}</p></center>
         @endforeach
         <table style="width:100%">
             <tbody>

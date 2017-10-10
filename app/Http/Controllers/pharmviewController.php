@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Route;
 use DB;
 use Illuminate\Http\Request;
+use Mail;
 
 
 use Illuminate\Support\Facades\Input;
@@ -11,6 +12,8 @@ use Illuminate\Support\Facades\Input;
 class pharmviewController extends Controller
 {
     //private $var;
+   
+  
 
     public function index($order_id)
     {
