@@ -22,7 +22,7 @@ class InventoryController extends Controller
     {
     	$this->validate($request,[
     			'brandname' => 'required|AlphaNum|min:3|max:50',
-    			'genericname' => 'required|string|min:3|max:5',
+    			'genericname' => 'required|string|min:3|max:50',
     			'price' => 'required|regex:/^\d*(\.\d{2})?$/',
     			'quantity' => 'required|numeric',
     			'manufacturer' => 'required|Alpha|min:3|max:20',
