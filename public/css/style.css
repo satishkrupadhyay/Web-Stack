@@ -208,7 +208,7 @@ p.description {
 /* navbar section */
 .navbar-brand>img {
     width: 70%;
-    margin-top: -12px;	
+    margin-top: -30px;	
 }
 .main-menu {
     background-color: transparent;
@@ -455,7 +455,7 @@ p.bannerDescription{
 
 /* video Icon Section */
 .video_overlay{
-	background:rgba(245, 90, 138, 0.76);
+	background:rgba(155, 89, 182,1.0);
 }
 #video_icon{
 	background:url(../images/videobg.jpg);

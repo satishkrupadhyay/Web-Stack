@@ -178,8 +178,8 @@ $('#portfolio a').nivoLightbox({
 	jQuery(window).scroll(function () {
 	  var top = jQuery(document).scrollTop();
 		var batas = 800;
-                var logo = 'images/Asset 34x.png';
-                var logoScroll = 'images/Asset 34x.png';
+                var logo = 'images/Final Logo3x.png';
+                var logoScroll = 'images/Final Logo3x.png';
 	  //alert(batas);
 	  
 	  if (top > batas) {
