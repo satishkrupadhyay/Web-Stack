@@ -48,7 +48,7 @@
         <script src="js/superslide/jquery.superslides.js"></script>
         <script src="js/wow/wow.min.js"></script>
        
-        <title>HealthAPP</title>
+        <title>Jeevoni</title>
 
         
     </head>
@@ -99,7 +99,7 @@
 
                         <div class="col-sm-7 col-xs-12 heading-text">
                             <div class="single_home_content wow zoomIn" data-wow-duration="1s">
-                                <h1>Introducing <b>ZEEVANI</b> </h1>
+                                <h1>Introducing <b>JEEVONI</b> </h1>
                                 <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Becauese we <b>CARE</b></p>
                                 <div class="button">
                                     <a href="#downloadApps" class="btn">Downlod APP</a>
@@ -264,7 +264,7 @@
                                 
                                 <!-- 4:3 aspect ratio -->
                                 <div class="embed-responsive embed-responsive-4by3">
-                                  <iframe class="embed-responsive-item" style="border-radius:10px;" width="940" height="600" src="https://www.youtube.com/embed/a3LLp5RRt_U" frameborder="0" allowfullscreen></iframe>
+                                  <iframe class="embed-responsive-item" style="border-radius:10px;" width="640" height="480" src="https://drive.google.com/file/d/0B2zFuMt6Wn9lTU5nZmhsNVNNRFE/preview" frameborder="0" allowfullscreen></iframe>
                                 </div> 
                             </div>
                         </div>

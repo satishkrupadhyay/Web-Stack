@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','HomeController@index')->name('home');
 
 
 //Upload image and save in database
@@ -89,3 +89,12 @@ Route::get('/cancel/{ord_id}','InvoiceCreator@cancelorder');
 
 //****************************************************************
 
+//user logout
+//Route::post('/logout', 'logoutController@getLogout');
+
+
+Route::group(['middleware' => 'prevent-back-history'],function(){
+	Auth::routes();
+	Route::get('/home', 'HomeController@index');
+	
+});

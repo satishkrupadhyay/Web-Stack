@@ -9,7 +9,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a  href="#homea" class="navbar-brand"><img src="images/Asset 34x.png" alt="Logo" style="width:40px; height:50px;"/></a>
+                        <a href="#homea" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:70px; height:70px; "/></a>
                          
                     </div>
                     <div class="collapse navbar-collapse">
