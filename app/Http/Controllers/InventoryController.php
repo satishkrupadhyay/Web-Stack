@@ -17,8 +17,8 @@ class InventoryController extends Controller
     	$this->validate($request,[
     			'brandname' => 'required|AlphaNum|min:3|max:50',
     			'genericname' => 'required|string|min:3|max:5',
-    			/*'price' => 'required|email|unique:users',
-    			'quantity' => 'required|numeric',*/
+    			'price' => 'required|regex:/^\d*(\.\d{2})?$/',
+    			'quantity' => 'required|numeric',
     			'manufacturer' => 'required|Alpha|min:3|max:20',
     			/*'exp_date' => 'required|min:3|max:20|same:password',
     			'mfg_date' => 'required'*/
