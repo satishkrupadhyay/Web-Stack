@@ -15,19 +15,23 @@ class InventoryController extends Controller
     public function submitform(request $request)
     {
     	$this->validate($request,[
-    			'brandname' => 'required|min:3|max:50',
-    			'genericname' => 'required|min:3|max:50',
+    			'brandname' => 'required|AlphaNum|min:3|max:50',
+    			'genericname' => 'required|string|min:3|max:5',
     			/*'price' => 'required|email|unique:users',
-    			'quantity' => 'required|numeric',
-    			'manufacturer' => 'required|min:3|max:20',
-    			'exp_date' => 'required|min:3|max:20|same:password',
-    			'mfg_date' => 'required'
-    			'dosage' => 'required'
-    			'type' =>'required'*/
+    			'quantity' => 'required|numeric',*/
+    			'manufacturer' => 'required|Alpha|min:3|max:20',
+    			/*'exp_date' => 'required|min:3|max:20|same:password',
+    			'mfg_date' => 'required'*/
+    			'dosage' => 'required|AlphaNum|Between:3,5',
+    			'type' =>'required'
     		],[
     			'brandname.required' => ' The Brand name field is required.',
+                'brandname.Alpha' => ' The Brand name must be a String.',
     			/*'firstname.min' => ' The first name must be at least 5 characters.',*/
-    			'brandname.max' => ' The brand nujiso name may not be greater than 35 characters.',
+    			'genericname.max' => ' The Generic Name should not exceed 35 characters.',
+                'genericname.min' => ' The Generic Name must be atleast 3 characters.',
+                'dosage.AlphaNum.Between'  => ' The dosage must be in numbers',
+
     			/*'lastname.required' => ' The last name field is required.',
     			'lastname.min' => ' The last name must be at least 5 characters.',
     			'lastname.max' => ' The last name may not be greater than 35 characters.',*/
@@ -56,6 +60,6 @@ class InventoryController extends Controller
 
         // return back()-> with('success','Drug detail added Successfully!');
 
-        return redirect('/inventory')->with('success', 'Drug detail added Successfully!');
+        return redirect('/Drugdetail')->with('success', 'Drug detail added Successfully!');
     }
 }

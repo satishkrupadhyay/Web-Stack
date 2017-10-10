@@ -44,7 +44,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('dashboard') }}">Pending Orders</a></li>
-                        <li><a href="{{ url('inventory') }}">Drug Inventory</a></li>
+                        <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
