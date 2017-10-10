@@ -48,9 +48,9 @@ Route::get('pharmview/{order_id}','pharmviewController@index');
 //updating order data with prescription details
 Route::post('pharmview/{order_id}', 'pharmviewController@update');
 
-//inserting data into inventory
-Route::get('/inventory', 'InventoryController@loadform');
-Route::post('/inventory','InventoryController@submitform')->name('submit.form');
+//inserting data into drug table
+Route::get('/Drugdetail', 'InventoryController@loadform');
+Route::post('/Drugdetail','InventoryController@submitform')->name('submit.form');
 
 /*Routing for Invoice generation*/
 

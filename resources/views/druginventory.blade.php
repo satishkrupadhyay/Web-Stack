@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Drug Inventory</title>
+    <title>Drug Detail</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="app">
-       <nav class="navbar navbar-default navbar-static-top">
+       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -79,7 +79,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Drug Inventory Form</strong></div>
+                <div class="panel-heading"><strong>Drug Detail Form</strong></div>
 
                 <div class="panel-body">
                    
@@ -137,14 +137,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="quantity" class="col-md-4 control-label">Quantity</label>
-
-                            <div class="col-md-6">
-                                <input id="quantity" type="number" class="form-control" name="quantity" value="{{ old('quantity') }}">
-                            </div>
-                        </div>
-
+                       
                         <div class="form-group">
                             <label for="manufacturer" class="col-md-4 control-label">Manufacturer</label>
 
@@ -173,7 +166,7 @@
                             <label for="dosage" class="col-md-4 control-label">Dosage</label>
 
                             <div class="col-md-6">
-                                <input id="dosage" type="text" class="form-control" size="10" name="dosage" value="{{ old('dosage') }}" required >
+                                <input id="dosage" type="text" class="form-control" size="10" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 0-500 mg/ml" required >
                                 @if ($errors->has('dosage'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('dosage') }}</strong>

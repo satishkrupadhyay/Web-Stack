@@ -139,6 +139,11 @@
         {{ session('status') }}
     </div>
 @endif
+       <center>    <img src="images/upload-2-512.png" style="width:80px; height:80px;" alt="" /> </center> <br>
+
+
+
+
 					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
 					{{csrf_field()}}
 					<div class="row">
