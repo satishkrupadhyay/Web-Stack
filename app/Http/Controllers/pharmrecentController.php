@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class pharmrecentController extends Controller
 {
+  public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+  
      public function viewrecent()
     {
         $data['data'] = DB::table('orders')

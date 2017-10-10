@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 class pharmController extends Controller
 {
     
-
-    public function viewlogin()
+    /*public function viewlogin()
     {
         return view('auth.pharmlogin');
     }
@@ -20,18 +19,10 @@ class pharmController extends Controller
 
     public function handlelogin(Request $req)
     {
-        $user = $req->input('email');
+        $email = $req->input('email');
         $pass = $req->input('password');
         // echo $user."-->".$pass;
-        $checklogin = DB::table('medical_store')->where(['store_id'=> $user, 'password'=> $pass])->get();
-
-       /* $data = $request->only('email', 'password');
-        if(\Auth::attempt($data)){
-            return redirect()->intended('dashboard');
-
-        }
-
-        return back()->withInput();*/
+        $checklogin = DB::table('medical_store')->where(['store_email'=> $email, 'password'=> $pass])->get();
 
         if(count($checklogin) > 0)
         {
@@ -43,9 +34,9 @@ class pharmController extends Controller
         {
             echo "Wrong Data!!";
         }
-        //return view('auth.pharmlogin');
+       
         
-    }
+    }*/
 
 
     public function viewpage()
@@ -65,6 +56,8 @@ class pharmController extends Controller
                     return view('auth.dashboard');
               }
     }
+
+
 
     
 }

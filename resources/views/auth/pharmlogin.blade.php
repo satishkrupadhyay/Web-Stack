@@ -15,7 +15,7 @@
                 <div class="panel-heading">Pharmacy Login</div>
 
                 <div class="panel-body">-->
-                    <form class="form-horizontal" method="POST" action="dashboard">
+                    <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

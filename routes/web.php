@@ -14,10 +14,7 @@
 Route::get('/', function () {
 
     return view('welcome');
-});
-
-
-
+})->name('welcome');
 
 Auth::routes();
 
@@ -25,24 +22,17 @@ Route::get('/home','HomeController@index')->name('home');
 
 
 //Upload image and save in database
-//Route::get('upload','FileController@index');
+
 Route::get('file','FileController@index')->name('upload.file');
 Route::post('file','FileController@storeFile');
 
-//Route::post('file', 'FileController@mail');
 
-//Route::post('registermail', 'Auth/RegisterController@regmail');
 
 
 Route::get('/pharmlogin', function () {
     return view('/auth/pharmlogin');
 });
 
-//Login successful method!
-Route::post('/dashboard', 'pharmController@handlelogin');
-
-//pagination
-Route::get('/dashboard', 'pharmController@viewpage');
 
 // Pharmacy recent order view page
 Route::get('/pharmrecent', 'pharmrecentController@viewrecent');
@@ -62,17 +52,6 @@ Route::post('pharmview/{order_id}', 'pharmviewController@update');
 Route::get('/Drugdetail', 'InventoryController@loadform');
 Route::post('/Drugdetail','InventoryController@submitform')->name('submit.form');
 
-
-
-
-
-
-
-// ***********************************************************
-/*Routing for
-Invoice generation*/
-
-
 /*Routing for Invoice generation*/
 
 
@@ -90,11 +69,27 @@ Route::get('/cancel/{ord_id}','InvoiceCreator@cancelorder');
 //****************************************************************
 
 //user logout
-//Route::post('/logout', 'logoutController@getLogout');
 
 
-Route::group(['middleware' => 'prevent-back-history'],function(){
+Route::group(['middleware' => 'preventbackhistory'],function(){
 	Auth::routes();
 	Route::get('/home', 'HomeController@index');
+	Route::get('/file','FileController@index')->name('upload.file');
+	Route::get('/purchasehistory', 'purchasehistoryController@viewpurchase');
+
+	//Route::get('/admin', 'AdminController@viewpage')->name('admin.home');
+
 	
 });
+
+
+//Route::post('/pharmlogout', 'logoutController@getLogout');
+
+
+
+//New code for pharmacy login and logout
+
+Route::get('/admin/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/admin/login','Auth\AdminLoginController@login')->name('admin.login.submit');
+Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+Route::get('/admin', 'AdminController@viewpage')->name('admin.home');

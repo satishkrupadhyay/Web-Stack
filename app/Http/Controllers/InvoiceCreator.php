@@ -16,8 +16,8 @@ class InvoiceCreator extends Controller
       // $drugs = UserDetail::all();
 
       $id=$ord_id;
-      $stores = DB::table('medical_store')
-      ->where('store_id','=','pharmacy@gmail.com')->get();
+      $stores = DB::table('admins')
+      ->where('store_email','=','pharmacy@gmail.com')->get();
 
 
 
@@ -57,8 +57,8 @@ foreach ($drug as $value) {
           }
 
 
-      $stores = DB::table('medical_store')
-      ->where('store_id','=','pharmacy@gmail.com')->get();
+      $stores = DB::table('admins')
+      ->where('store_email','=','pharmacy@gmail.com')->get();
 
 
       $pdf = PDF::loadView('pdfpage', compact('drug','stores'));
