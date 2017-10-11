@@ -45,6 +45,7 @@
                         <!-- Authentication Links -->
 
                         <li><a href="{{ url('admin') }}">Pending Orders</a></li>
+
                         <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
 
                             <li class="dropdown">
