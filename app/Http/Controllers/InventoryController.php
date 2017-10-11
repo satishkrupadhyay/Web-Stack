@@ -8,10 +8,7 @@ use DB;
 class InventoryController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
+    
     
     public function loadform()
     {
@@ -47,14 +44,13 @@ class InventoryController extends Controller
     	$brand_name   = $request->get('brandname'); 
     	$generic_name = $request->get('genericname'); 
     	$price        = $request->get('price');
-    	$quantity     = $request->get('quantity');
+    	//$quantity     = $request->get('quantity');
     	$manufacturer = $request->get('manufacturer');
     	$exp_date     = $request->get('exp_date');
     	$mfg_date     = $request->get('mfg_date');
     	$dosage       = $request->get('dosage');
     	$type         = $request->get('type');
-    	$data = array('brand_name' =>$brand_name,'generic_name' =>$generic_name, 'price' =>$price,
-    	 			  'quantity' =>$quantity, 'manufacturer'=>$manufacturer, 'exp_date'=>$exp_date,
+    	$data = array('brand_name' =>$brand_name,'generic_name' =>$generic_name, 'price' =>$price, 'manufacturer'=>$manufacturer, 'exp_date'=>$exp_date,
     	 			  'mfg_date'=>$mfg_date, 'dosage'=>$dosage, 'type'=>$type);
        
         DB::table('drug')->insert($data);
