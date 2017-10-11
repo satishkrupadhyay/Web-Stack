@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'prevent-back-history' => \App\Http\Middleware\PreventBackHistory::class,
+        'preventbackhistory' => \App\Http\Middleware\PreventBackHistory::class,
     ];
 
     /**
