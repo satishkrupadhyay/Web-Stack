@@ -2,9 +2,22 @@
 
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+<!--<div class="container">-->
+    <div class="row ">
+        <div class="col-md-12">
+        <div class="col-md-3" style="border-radius: 10px; border: 1px solid #bdc3c7; padding: 10px; width: 250px;  margin-left: 5px;" >
+          <center> <img src="images/Asset 34x.png" alt="" style="width: 60px; height: 60px;"/>
+               <p> Pharmacy Name</p>
+               <img src="images/08.jpg" alt="" style="width: 200px; height: 200px;"/>
+               <p> Offer Name</p>
+               <p> Offer Short description</p>
+               <p> Offer Short description</p>
+               <p> Offer Short description</p>
+               <p> Pharmacy Details</p>
+               <p> Pharmacy Details</p>
+          </center>  
+        </div>
+        <div class="col-md-7 ">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
@@ -24,6 +37,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-3" style="border-radius: 10px; border: 1px solid #bdc3c7; padding: 10px; width: 250px;  margin-left: 5px;" >
+          <center> <img src="images/Asset 34x.png" alt="" style="width: 60px; height: 60px;"/>
+               <p> Pharmacy Name</p>
+               <img src="images/08.jpg" alt="" style="width: 200px; height: 200px;"/>
+               <p> Offer Name</p>
+               <p> Offer Short description</p>
+               <p> Offer Short description</p>
+               <p> Offer Short description</p>
+               <p> Pharmacy Details</p>
+               <p> Pharmacy Details</p>
+          </center>  
+        </div>
     </div>
 </div>
+<!--</div>-->
 @endsection
