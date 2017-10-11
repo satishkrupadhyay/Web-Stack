@@ -2,9 +2,16 @@
 
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+<!--<div class="container">-->
+    <div class="row ">
+        <div class="col-md-12">
+        <div class="col-md-3"  >
+          <center> 
+            <img src="images/flier.jpg" alt="" style="width: 70%; "/>
+                  
+          </center>  
+        </div>
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
@@ -24,6 +31,14 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-3"  >
+          <center> <img src="images/flier.jpg" alt="" style="width: 70%;"/>
+               
+               
+          </center>  
+        </div>
     </div>
 </div>
+<!--</div>-->
 @endsection

@@ -61,7 +61,7 @@ class Kernel extends HttpKernel
         'preventbackhistory' => \App\Http\Middleware\PreventBackHistory::class,
         'prevent' => \App\Http\Middleware\PreventBackHistory::class,
 
-        
+
 
     ];
 }

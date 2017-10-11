@@ -48,7 +48,7 @@
         <script src="js/superslide/jquery.superslides.js"></script>
         <script src="js/wow/wow.min.js"></script>
        
-        <title>Jeevoni</title>
+        <title>Jivoni</title>
 
         
     </head>
@@ -99,7 +99,7 @@
 
                         <div class="col-sm-7 col-xs-12 heading-text">
                             <div class="single_home_content wow zoomIn" data-wow-duration="1s">
-                                <h1>Introducing <b>JEEVONI</b> </h1>
+                                <h1>Introducing <b>JIVONI</b> </h1>
                                 <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Becauese we <b>CARE</b></p>
                                 <div class="button">
                                     <a href="#downloadApps" class="btn">Downlod APP</a>
@@ -253,7 +253,7 @@
         
 
 
-        <!-- Video Section -->
+        <!-- Video Section 
 
         <section id="video">
             <div class="video_overlay">
@@ -262,7 +262,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="video_text center-content">
                                 
-                                <!-- 4:3 aspect ratio -->
+                                 4:3 aspect ratio 
                                 <div class="embed-responsive embed-responsive-4by3">
                                   <iframe class="embed-responsive-item" style="border-radius:10px;" width="640" height="480" src="https://drive.google.com/file/d/0B2zFuMt6Wn9lT0ZrWFF6QjhYVm8/preview" frameborder="0" allowfullscreen></iframe>
                                 </div> 
@@ -271,7 +271,7 @@
                     </div>
                 </div>
             </div>  
-        </section>
+        </section> -->
 
         <!-- Our Testimonial  
 
