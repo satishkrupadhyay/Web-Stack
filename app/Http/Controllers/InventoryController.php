@@ -7,20 +7,13 @@ use DB;
 
 class InventoryController extends Controller
 {
-<<<<<<< HEAD
-     public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
-    
-=======
+
 
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
->>>>>>> ccb90c860a5c91048e1912ec48babc66e3a76020
-    
+
     public function loadform()
     {
     	return view('druginventory');
@@ -52,12 +45,9 @@ class InventoryController extends Controller
 
     	$brand_name   = $request->get('brandname'); 
     	$generic_name = $request->get('genericname'); 
-<<<<<<< HEAD
-    	$price        = $request->get('price');    	
-=======
+
     	$price        = $request->get('price');
-    	// $quantity     = $request->get('quantity');
->>>>>>> ccb90c860a5c91048e1912ec48babc66e3a76020
+    	
     	$manufacturer = $request->get('manufacturer');
     	$exp_date     = $request->get('exp_date');
     	$mfg_date     = $request->get('mfg_date');
