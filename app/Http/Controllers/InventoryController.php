@@ -14,6 +14,8 @@ class InventoryController extends Controller
         $this->middleware('auth:admin');
     }
 
+    
+
     public function loadform()
     {
     	return view('druginventory');
@@ -41,12 +43,14 @@ class InventoryController extends Controller
     		]);
 
 
-    	$brand_name   = $request->get('brandname'); 
+    	
+
     	$generic_name = $request->get('genericname'); 
 
     	$price        = $request->get('price');
     	
     	$manufacturer = $request->get('manufacturer');
+
     	$exp_date     = $request->get('exp_date');
     	$mfg_date     = $request->get('mfg_date');
     	$dosage       = $request->get('dosage');

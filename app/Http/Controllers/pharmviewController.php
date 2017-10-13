@@ -31,6 +31,8 @@ class pharmviewController extends Controller
                   $name=$value->name;
                   
                 }
+
+                
             
             return view('pharmview', ['order_id'=> $order_id, 'results'=>$results, 'name'=>$name]);   
     }

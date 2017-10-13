@@ -130,7 +130,7 @@
                                     <div class="panel-body col-md-4">
                                         
                                         @foreach ($results as $value)
-                                       <img src="/upload/{{$value->image}}" width="400px" height="600px">
+                                       <img src="/new/{{$value->image}}" width="400px" height="600px">
                                        @endforeach
                                     </div>
 
