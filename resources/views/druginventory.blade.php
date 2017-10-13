@@ -45,6 +45,7 @@
                         <!-- Authentication Links -->
                         <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
                         <li><a href="{{ url('admin') }}">Pending Orders</a></li>
+                        <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
@@ -99,7 +100,7 @@
                             <label for="brandname" class="col-md-4 control-label">Drug/brand Name</label>
 
                             <div class="col-md-6">
-                                <input id="brandname" type="text" class="form-control" name="brandname" value="{{ old('brandname') }}" required autofocus >
+                                <input id="brandname" type="text" class="form-control" name="brandname" value="{{ old('brandname') }}" placeholder="e.g. Calpol 500 MG" required autofocus >
 
                                 @if ($errors->has('brandname'))
                                     <span class="help-block">
@@ -113,7 +114,7 @@
                             <label for="genericname" class="col-md-4 control-label">Generic Name</label>
 
                             <div class="col-md-6">
-                                <input id="genericname" type="text" class="form-control" name="genericname" value="{{ old('genericname') }}" required  >
+                                <input id="genericname" type="text" class="form-control" name="genericname" value="{{ old('genericname') }}" placeholder="e.g. Paracetamol" required  >
 
                                 @if ($errors->has('genericname'))
                                     <span class="help-block">
@@ -127,7 +128,7 @@
                             <label for="price" class="col-md-4 control-label">Price</label>
 
                             <div class="col-md-6">
-                                <input id="price" type="numeric" class="form-control" name="price" value="{{ old('price') }}" required>
+                                <input id="price" type="numeric" class="form-control" name="price" value="{{ old('price') }}" placeholder="16.50" required>
 
                                 @if ($errors->has('price'))
                                     <span class="help-block">
@@ -142,7 +143,7 @@
                             <label for="manufacturer" class="col-md-4 control-label">Manufacturer</label>
 
                             <div class="col-md-6">
-                                <input id="manufacturer" type="text" class="form-control" name="manufacturer" value="{{ old('manufacturer') }}" required>
+                                <input id="manufacturer" type="text" class="form-control" name="manufacturer" value="{{ old('manufacturer') }}" placeholder="e.g.  Glaxosmithkline Pharmaceuticals Ltd" required>
                             </div>
                         </div>
 
@@ -150,7 +151,7 @@
                             <label for="exp_date" class="col-md-4 control-label">Expiry Date</label>
 
                             <div class="col-md-6">
-                                <input id="exp_date" type="Date" class="form-control" name="exp_date" value="{{ old('exp_date') }}" >
+                                <input id="exp_date" type="Date" class="form-control" name="exp_date" value="{{ old('exp_date') }}" placeholder=" Hello Wprld" >
                             </div>
                         </div>
 
@@ -166,7 +167,7 @@
                             <label for="dosage" class="col-md-4 control-label">Dosage</label>
 
                             <div class="col-md-6">
-                                <input id="dosage" type="text" class="form-control" size="10" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 0-500 mg/ml" required >
+                                <input id="dosage" type="text" class="form-control" size="10" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 0-500 mg/ml/gm" required >
                                 @if ($errors->has('dosage'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('dosage') }}</strong>

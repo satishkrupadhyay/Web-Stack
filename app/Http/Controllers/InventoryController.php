@@ -39,9 +39,7 @@ class InventoryController extends Controller
     			
     			'genericname.max' => ' The Generic Name should not exceed 35 characters.',
                 'genericname.min' => ' The Generic Name must be atleast 3 characters.',
-                'dosage.AlphaNum.Between'  => ' The dosage must be in numbers',
-
-    			
+                'dosage.AlphaNum.Between'  => ' The dosage must be in numbers',	
     		]);
 
 
@@ -63,13 +61,21 @@ class InventoryController extends Controller
        
         DB::table('drug')->insert($data);
 
-
-        
-
-    	
-
         // return back()-> with('success','Drug detail added Successfully!');
 
         return redirect('/Drugdetail')->with('success', 'Drug detail added Successfully!');
+    }
+
+    public function viewdetail()
+    {
+        $data['data'] = DB::table('drug')->simplePaginate(3);
+
+              if (count($data) > 0) 
+              {
+                return view('drugdetail', $data);
+              }
+              else{
+                    return view('auth.dashboard');
+              }
     }
 }

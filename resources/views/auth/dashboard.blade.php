@@ -45,6 +45,7 @@
                         <!-- Authentication Links -->
                         <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
                         <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
+                        <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
