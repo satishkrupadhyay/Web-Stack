@@ -46,6 +46,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('file') }}">Upload Prescription</a></li>
+                        <li><a href="{{ url('recentupload') }}">Recent Upload</a></li>
                         <li><a href="{{ url('purchasehistory') }}">Purchase History</a></li>
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -81,6 +82,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+   
 </body>
 </html>

@@ -1,6 +1,6 @@
 @extends('layouts.app2')
 
-
+<script src="{{ asset('js/app.js') }}"></script>
 @section('content')
 <!--<div class="container">-->
     <div class="row ">
