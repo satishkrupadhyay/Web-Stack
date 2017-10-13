@@ -52,6 +52,9 @@ Route::post('pharmview/{order_id}', 'pharmviewController@update');
 Route::get('/Drugdetail', 'InventoryController@loadform');
 Route::post('/Drugdetail','InventoryController@submitform')->name('submit.form');
 
+//View Drug Detail
+Route::get('/ViewDrugdetail', 'InventoryController@viewdetail')->name('view.form');
+
 /*Routing for Invoice generation*/
 
 
