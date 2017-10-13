@@ -63,7 +63,7 @@
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('view.form') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
@@ -84,7 +84,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Past Orders</strong></div>
+                <div class="panel-heading"><strong>Recently added Drug Details</strong></div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -93,25 +93,57 @@
                         </div>
                     @endif
                 
-                <div class="list-group">      
+                <!-- <div class="list-group">  -->
+                <div class="table-responsive"> 
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Drug ID</th>
+                        <th>Drug Name</th>
+                        <th>Generic Name</th>
+                        <th>Price</th>
+                        <th>Manufacturer</th>
+                        <th>Exp. Date</th>
+                        <th>Mfd. Date</th>
+                        <th>Dosage</th>
+                        <th>Price</th>
+                        <th>Drug Type</th>
+                      </tr>
+                    </thead>
+                        <tbody>
                            @foreach ($data as $value)
 
-                                <a href="" class="list-group-item"> 
-                                    <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li> 
-                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> 
-                                    <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li>  
-                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li> 
-                                    <li style="list-style-type:none"><b>AMOUNT:</b> {{$value->amount}}</li>
-                                </a>
+                                <!-- <a href="" class="list-group-item"> 
+                                    <li style="list-style-type:none"><b>Drug Name:</b> {{$value->brand_name}}</li> 
+                                    <li style="list-style-type:none"><b>Generic name:</b> {{$value->generic_name}}</li> 
+                                    <li style="list-style-type:none"><b>Price:</b> {{$value->price}}</li>  
+                                    <li style="list-style-type:none"><b>Manufacturer:</b> {{$value->manufacturer}}</li> 
+                                    <li style="list-style-type:none"><b>Expiry Date:</b> {{$value->exp_date}}</li>
+                                    <li style="list-style-type:none"><b>Manufactured Date:</b> {{$value->mfg_date}}</li>
+                                    <li style="list-style-type:none"><b>Dosage:</b> {{$value->dosage}}</li>
+                                    <li style="list-style-type:none"><b>Type:</b> {{$value->type}}</li>
+                                </a> -->
+                                <tr>
+                                    <td>{{$value->drug_id}}</td>
+                                    <td>{{$value->brand_name}}</td>
+                                    <td>{{$value->generic_name}}</td>
+                                    <td>{{$value->price}}</td>
+                                    <td>{{$value->manufacturer}}</td>
+                                    <td>{{$value->exp_date}}</td>
+                                    <td>{{$value->mfg_date}}</td>
+                                    <td>{{$value->dosage}}</td>
+                                    <td>{{$value->price}}</td>
+                                    <td>{{$value->type}}</td>
+                                </tr>
 
                            @endforeach
+                           </tbody>
+                        </table> 
 
                     </div> 
                      {{ $data->links() }}
 
-
-                     </div>
-
+                </div>
             </div>
         </div>
     </div>

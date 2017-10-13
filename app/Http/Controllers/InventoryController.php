@@ -7,20 +7,15 @@ use DB;
 
 class InventoryController extends Controller
 {
-<<<<<<< HEAD
-     public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
-    
-=======
+
 
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
->>>>>>> ccb90c860a5c91048e1912ec48babc66e3a76020
+
     
+
     public function loadform()
     {
     	return view('druginventory');
@@ -44,21 +39,18 @@ class InventoryController extends Controller
     			
     			'genericname.max' => ' The Generic Name should not exceed 35 characters.',
                 'genericname.min' => ' The Generic Name must be atleast 3 characters.',
-                'dosage.AlphaNum.Between'  => ' The dosage must be in numbers',
-
-    			
+                'dosage.AlphaNum.Between'  => ' The dosage must be in numbers',	
     		]);
 
 
-    	$brand_name   = $request->get('brandname'); 
+    	
+
     	$generic_name = $request->get('genericname'); 
-<<<<<<< HEAD
-    	$price        = $request->get('price');    	
-=======
+
     	$price        = $request->get('price');
-    	// $quantity     = $request->get('quantity');
->>>>>>> ccb90c860a5c91048e1912ec48babc66e3a76020
+    	
     	$manufacturer = $request->get('manufacturer');
+
     	$exp_date     = $request->get('exp_date');
     	$mfg_date     = $request->get('mfg_date');
     	$dosage       = $request->get('dosage');
@@ -69,13 +61,21 @@ class InventoryController extends Controller
        
         DB::table('drug')->insert($data);
 
-
-        
-
-    	
-
         // return back()-> with('success','Drug detail added Successfully!');
 
         return redirect('/Drugdetail')->with('success', 'Drug detail added Successfully!');
+    }
+
+    public function viewdetail()
+    {
+        $data['data'] = DB::table('drug')->simplePaginate(3);
+
+              if (count($data) > 0) 
+              {
+                return view('drugdetail', $data);
+              }
+              else{
+                    return view('auth.dashboard');
+              }
     }
 }

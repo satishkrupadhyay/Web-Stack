@@ -31,4 +31,6 @@ class purchasehistoryController extends Controller
                     return view('home');
               }
     }
+
+    
 }
