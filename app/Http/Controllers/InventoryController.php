@@ -1,12 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-namespace Jivoni\Http\Controllers;
 
-=======
-namespace App\Http\Controllers;
+namespace Jivoni\Http\Controllers;
 use Auth;
->>>>>>> 7ff195b4902e9ba8db9b853ae9944a84e8505242
+
 use Illuminate\Http\Request;
 use DB;
 
