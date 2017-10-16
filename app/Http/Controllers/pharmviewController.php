@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Http\Controllers\Route;
+namespace Jivoni\Http\Controllers;
+use Jivoni\Http\Controllers\Route;
 use DB;
 use Illuminate\Http\Request;
 use Mail;

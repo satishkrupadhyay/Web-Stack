@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Jivoni\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use Auth;

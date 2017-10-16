@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console;
+namespace Jivoni\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -22,9 +22,9 @@ class Kernel extends ConsoleKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \Jivoni\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'preventbackhistory' => \App\Http\Middleware\PreventBackHistory::class,
+        'preventbackhistory' => \Jivoni\Http\Middleware\PreventBackHistory::class,
     ];
 
     /**

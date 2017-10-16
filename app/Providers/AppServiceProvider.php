@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Jivoni\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

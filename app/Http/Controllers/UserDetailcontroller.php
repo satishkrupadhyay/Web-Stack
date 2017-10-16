@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Jivoni\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\UserDetail;
+use Jivoni\UserDetail;
 use PDF;
 use DB;
 class UserDetailcontroller extends Controller

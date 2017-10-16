@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Kolkata',
 
     /*
     |--------------------------------------------------------------------------
@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Jivoni\Providers\AppServiceProvider::class,
+        Jivoni\Providers\AuthServiceProvider::class,
+        // Jivoni\Providers\BroadcastServiceProvider::class,
+        Jivoni\Providers\EventServiceProvider::class,
+        Jivoni\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
