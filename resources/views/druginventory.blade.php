@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/admin') }}">
-                        Hello Pharmacy
+                         Hello {{Auth::user()->store_name}}
                     </a>
                 </div>
 
@@ -48,7 +48,7 @@
                         <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Pharmacy <span class="caret"></span>
+                                    {{Auth::user()->store_name}} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

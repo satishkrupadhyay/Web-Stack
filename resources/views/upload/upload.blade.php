@@ -90,7 +90,7 @@
                                     <img id='img-upload' style="height: 600px; width: 700px; border: none;" class="col-md-4 col-md-offset-2" />
                                     <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
                                     <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
-<<<<<<< HEAD
+
                                     <input type="hidden" name="user_locality" value="{{ Auth::user()->user_locality }}">
                                     <div class="col-md-10 col-md-offset-5">
                                     <input type="submit" name="Upload" class="btn-bs-file btn btn-md btn-primary" value="Upload Prescription">
@@ -98,10 +98,10 @@
                                 </div>
                             </div>
                             </div>
-=======
+
                                     
                            
->>>>>>> c29a2667fd292b0a416f10ac4a99db2b560044e5
+
 
                         </div>
                       
