@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
-
+use Auth;
 class pharmrecentController extends Controller
 {
   public function __construct()
@@ -13,9 +13,10 @@ class pharmrecentController extends Controller
   
      public function viewrecent()
     {
+        $pharmacy_id= Auth::user()->id;
         $data['data'] = DB::table('orders')
         ->leftjoin('users', 'orders.cust_id', '=', 'users.id')
-        ->where('status', 1)->simplePaginate(3);
+        ->where([['status', 1],['pharmacy_id',$pharmacy_id]])->simplePaginate(3);
 
               if (count($data) > 0) 
               {

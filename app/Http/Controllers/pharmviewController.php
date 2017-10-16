@@ -5,6 +5,7 @@ use App\Http\Controllers\Route;
 use DB;
 use Illuminate\Http\Request;
 use Mail;
+use Auth;
 
 
 use Illuminate\Support\Facades\Input;
@@ -12,7 +13,10 @@ use Illuminate\Support\Facades\Input;
 class pharmviewController extends Controller
 {
     //private $var;
-   
+   public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
   
 
     public function index($order_id)
@@ -38,7 +42,8 @@ class pharmviewController extends Controller
     }
 
     public function update(request $request)
-    {
+    {     
+          $pharmacy_id = $request->pharmacy_id;
       		$ord_id = $request->ord_id;
 
           $medname1 = $request->medname2;
@@ -49,7 +54,7 @@ class pharmviewController extends Controller
           $status = 1;
         DB::table('orders')
             ->where('order_id', $ord_id )
-            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=> $date_of_delivery, 'status' =>$status]);
+            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=> $date_of_delivery, 'status' =>$status, 'pharmacy_id' =>$pharmacy_id]);
             //return view('pharmview');
          
   //$mailid = DB::select( DB::raw("select email from users join orders where orders.cust_id = users.cust_id"));

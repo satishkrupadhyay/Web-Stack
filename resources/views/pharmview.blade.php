@@ -63,8 +63,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                        Hello Pharmacy 
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
+                        Hello {{Auth::user()->store_name}}
                     </a>
                 </div>
 
@@ -185,6 +185,7 @@
                                         <input type="hidden" id="medname2" name="medname2">
                                         <input type="hidden" id="quantity2" name="quantity2">
                                         <input type="hidden" id="price2" name="price2">
+                                        <input type="hidden" id="pharmacy_id" name="pharmacy_id" value="{{Auth::user()->id}}">
 
                                         <input type="hidden" id="ord_id" name="ord_id" value="{{$order_id}}">
 

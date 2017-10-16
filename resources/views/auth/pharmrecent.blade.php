@@ -98,7 +98,7 @@
 
                                 <a href="" class="list-group-item"> 
                                     <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li> 
-                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> 
+                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->cust_id}}</li> 
                                     <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li>  
                                     <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li> 
                                     <li style="list-style-type:none"><b>AMOUNT:</b> {{$value->amount}}</li>

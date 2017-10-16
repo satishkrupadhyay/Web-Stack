@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/admin') }}">
-                        Hello Pharmacy
+                        Hello {{Auth::user()->store_name}}
                     </a>
                 </div>
 
@@ -83,6 +83,7 @@
                 <div class="panel-heading"><strong>Pending Orders:&nbsp;</strong>
                     @foreach ($count as $value1)
                     <strong>{{$value1->cnt}}</strong>
+
                     @endforeach
                 </div>
 

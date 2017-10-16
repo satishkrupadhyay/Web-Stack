@@ -27,6 +27,24 @@ class FileController extends Controller
 
     public function storeFile(request $request)
     {
+
+      $user_locality = $request->user_locality;
+      //get pharmacy id based on location of order
+      $pharm_data['pharm_data'] = DB::table('admins')
+        ->where('locality', $user_locality)->get()->first();
+
+
+      //$pharm_data = DB::select( DB::raw("SELECT id FROM admins WHERE locality = $user_locality") );
+      
+      foreach ($pharm_data as $value) {
+                  $pharmacy_id=$value->id;
+                  
+                }
+
+
+
+
+
        //$contactEmail = $req->input('email'); 
         $usr_email = $request->get('usr_email');
       //  $Data = array('emaily' => $contactEmail);
@@ -48,7 +66,7 @@ class FileController extends Controller
    			//$filename = $request->image->getClientOriginalName();
         //$request->image->storeAs('upload',$imageName);
 
-        $data = array('image' =>$imageName,'cust_id' =>$user_id);
+        $data = array('image' =>$imageName,'cust_id' =>$user_id,'pharmacy_id'=>$pharmacy_id);
         DB::table('orders')->insert($data);
 
         Mail::send(['text'=> $template_path ], array('email' => $request->get('email')), function($message) use ($usr_email)

@@ -71,7 +71,7 @@ Route::get('/cancel/{ord_id}','InvoiceCreator@cancelorder');
 
 //****************************************************************
 
-//user logout
+//user logout 
 
 
 Route::group(['middleware' => 'preventbackhistory'],function(){
