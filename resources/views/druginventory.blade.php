@@ -190,7 +190,7 @@
                                 
                             </div>
                         </div>
-
+                        <input type="hidden"  name="pharmacy_id" value="{{Auth::user()->id}}">
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

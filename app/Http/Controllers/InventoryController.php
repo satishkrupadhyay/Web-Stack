@@ -49,7 +49,7 @@ class InventoryController extends Controller
 
 
     	
-
+        $pharmacy_id = $request->get('pharmacy_id');
     	$generic_name = $request->get('genericname'); 
         $brand_name   = $request->get('brandname');
     	$price        = $request->get('price');
@@ -60,7 +60,7 @@ class InventoryController extends Controller
     	$mfg_date     = $request->get('mfg_date');
     	$dosage       = $request->get('dosage');
     	$type         = $request->get('type');
-    	$data = array('brand_name' =>$brand_name,'generic_name' =>$generic_name, 'price' =>$price,
+    	$data = array('pharmacy_id' =>$pharmacy_id,'brand_name' =>$brand_name,'generic_name' =>$generic_name, 'price' =>$price,
                         'manufacturer'=>$manufacturer, 'exp_date'=>$exp_date,
     	 			  'mfg_date'=>$mfg_date, 'dosage'=>$dosage, 'type'=>$type);
        
@@ -72,8 +72,9 @@ class InventoryController extends Controller
     }
 
     public function viewdetail()
-    {
-        $data['data'] = DB::table('drug')->simplePaginate(3);
+    {   
+        $pharmacy_id = Auth::user()->id;
+        $data['data'] = DB::table('drug')->where('pharmacy_id',$pharmacy_id)->simplePaginate(3);
 
               if (count($data) > 0) 
               {
