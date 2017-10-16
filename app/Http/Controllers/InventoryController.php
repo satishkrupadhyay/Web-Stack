@@ -46,7 +46,7 @@ class InventoryController extends Controller
     	
 
     	$generic_name = $request->get('genericname'); 
-
+        $brand_name =$request->get('brandname');
     	$price        = $request->get('price');
     	
     	$manufacturer = $request->get('manufacturer');

@@ -2,7 +2,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <div class="socail_bookmark">
+                        <div class="socail_bookmark" >
                             <a href=""><i class="fa fa-twitter"></i></a>
                             <a href=""><i class="fa fa-facebook"></i></a>
                             <a href=""><i class="fa fa-linkedin"></i></a>
