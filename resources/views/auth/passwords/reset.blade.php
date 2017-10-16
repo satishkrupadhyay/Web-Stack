@@ -1,13 +1,22 @@
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 @extends('layouts.app')
 
+
 @section('content')
-<div class="container">
+
+<div class="container" style="padding-top: 80px;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-
                 <div class="panel-body">
+                    <center><img src="../../../../images/Final Logo3x.png" alt="Logo" style="width:85px; height:85px; "/>
+                        <h2 style=" margin-top:-10px;"><b>Jivoni</b></h2>
+                        <h4 style=" margin-top:30px;">Reset Password</h4>
+                    </center>
+                </div>
+
+                <div class="panel-body" style=" margin-top:-20px;">
                     <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
 
