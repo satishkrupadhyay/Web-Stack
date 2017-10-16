@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Jivoni\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Order;
+use Jivoni\Order;
 use PDF;
 use DB;
 use Mail;

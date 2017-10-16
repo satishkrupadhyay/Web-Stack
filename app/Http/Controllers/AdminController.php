@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace Jivoni\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Mail;

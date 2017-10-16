@@ -1,7 +1,7 @@
 <?php
-namespace App\Http\Controllers\Auth;
+namespace Jivoni\Http\Controllers\Auth;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Jivoni\Http\Controllers\Controller;
 use Auth;
 class AdminLoginController extends Controller
 {

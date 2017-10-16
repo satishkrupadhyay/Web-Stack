@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Jivoni\Http\Controllers;
 
 
 use Illuminate\Http\Request;
 use DB;
-//use App\Http\Request;
-//use App\file;
+//use Jivoni\Http\Request;
+//use Jivoni\file;
 use Illuminate\Support\Facades\Input;
 use Mail;
 
