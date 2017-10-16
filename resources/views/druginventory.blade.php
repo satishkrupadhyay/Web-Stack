@@ -151,7 +151,7 @@
                             <label for="exp_date" class="col-md-4 control-label">Expiry Date</label>
 
                             <div class="col-md-6">
-                                <input id="exp_date" type="Date" class="form-control" name="exp_date" value="{{ old('exp_date') }}" placeholder=" Hello Wprld" >
+                                <input id="exp_date" type="Date" class="form-control" name="exp_date" value="{{ old('exp_date') }}" required >
                             </div>
                         </div>
 
@@ -159,7 +159,7 @@
                             <label for="mfg_date" class="col-md-4 control-label">Manufactured Date</label>
 
                             <div class="col-md-6">
-                                <input id="mfg_date" type="Date" class="form-control" name="mfg_date" value="{{ old('mfg_date') }}" >
+                                <input id="mfg_date" type="Date" class="form-control" name="mfg_date" value="{{ old('mfg_date') }}" required >
                             </div>
                         </div>
 

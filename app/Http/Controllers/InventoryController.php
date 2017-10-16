@@ -1,7 +1,12 @@
 <?php
 
+<<<<<<< HEAD
 namespace Jivoni\Http\Controllers;
 
+=======
+namespace App\Http\Controllers;
+use Auth;
+>>>>>>> 7ff195b4902e9ba8db9b853ae9944a84e8505242
 use Illuminate\Http\Request;
 use DB;
 
@@ -24,20 +29,23 @@ class InventoryController extends Controller
     public function submitform(request $request)
     {
     	$this->validate($request,[
-    			'brandname' => 'required|AlphaNum|min:3|max:50',
-    			'genericname' => 'required|string|min:3|max:50',
+    			'brandname' => 'required|min:3|max:50|regex:/^[\s\w-]*$/',
+    			'genericname' => 'required|min:3|max:50|regex:/^[\s\w-]*$/',
     			'price' => 'required|regex:/^\d*(\.\d{2})?$/',
     			
-    			'manufacturer' => 'required|Alpha|min:3|max:20',
+    			'manufacturer' => 'required|min:3|max:20|regex:/^[\s\w-]*$/',
     			'exp_date' => 'required',
     			'mfg_date' => 'required',
     			'dosage' => 'required|AlphaNum|Between:3,5',
     			'type' =>'required',
     		],[
-    			'brandname.required' => ' The Brand name field is required.',
-                'brandname.Alpha' => ' The Brand name must be a String.',
+    			'brandname.required' => ' The Brand name field is required',
+                'price.regex' => 'Price must be in format: 12.36',
+                'brandname.regex'    => 'Special characters like ( !, @, #, $, %, ^, &, *, (), +, =  ) are not allowed',
+                'genericname.regex'  => 'Special characters like ( !, @, #, $, %, ^, &, *, (), +, =  ) are not allowed',
+                'manufacturer.regex' => 'Special characters like ( !, @, #, $, %, ^, &, *, (), +, =  ) are not allowed',
     			
-    			'genericname.max' => ' The Generic Name should not exceed 35 characters.',
+    			'genericname.max' => ' The Generic Name should not exceed 50 characters.',
                 'genericname.min' => ' The Generic Name must be atleast 3 characters.',
                 'dosage.AlphaNum.Between'  => ' The dosage must be in numbers',	
     		]);
@@ -46,7 +54,7 @@ class InventoryController extends Controller
     	
 
     	$generic_name = $request->get('genericname'); 
-        $brand_name =$request->get('brandname');
+        $brand_name   = $request->get('brandname');
     	$price        = $request->get('price');
     	
     	$manufacturer = $request->get('manufacturer');
