@@ -60,12 +60,14 @@ foreach ($drug as $value) {
       $stores = DB::table('admins')
       ->where('store_email','=','pharmacy@gmail.com')->get();
 
-
-      $pdf = PDF::loadView('pdfpage', compact('drug','stores'));
+      $filename = "invoice"."$id2".".pdf";
+      $pdf = PDF::loadView('pdfpage', compact('drug','stores'))->save('prescription_file/'.$filename);
       $pdf->setPaper('A4', 'portrait');
       // return $pdf;
       // return response()->file($pdf);
-      $filename = "invoice"."$id2".".pdf";
+      DB::table('orders')
+            ->where('order_id', $ord_id )
+            ->update(['file' =>$filename]);
 
 
 

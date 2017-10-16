@@ -1,116 +1,40 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app2')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>User Upload Prescription</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style type="text/css">
         .btn-file {
     position: relative;
     overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
 
-#img-upload{
-    width: 100%;
-}
+    #img-upload{
+        width: 100%;
+    }
     </style>
-  
-</head>
-<body>
-    <div id="app">
-       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!--Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
-                        Hello {{ Auth::user()->name }}
-                    </a>
-                </div>
-
-               <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        <li><a href="{{ url('file') }}">Upload Prescription</a></li>
-                        <li><a href="{{ url('purchasehistory') }}">Purchase History</a></li>
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        @yield('content')
-    </div>
-
-    <!-- Scripts -->
+    
+    
     <script src="{{ asset('js/app.js') }}"></script>
-		<br>
+  
+		
+    @section('content')
 		<div class="container"> 
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h4>Upload Your Prescription</h4>
-					
+					<h4>Upload Your Prescription</h4>					
 				</div>
 				<div class="panel-body">
 					@if (count($errors)>0)
@@ -135,35 +59,38 @@
 					
 					@endif
 					@if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-@endif
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                     @endif  
        <center>    <img src="images/upload-2-512.png" style="width:80px; height:80px;" alt="" /> </center> <br>
 
 
 
 
-					<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
+	<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post" >
 					{{csrf_field()}}
-					<div class="row">
-						<div class="col-md-10">
-						<div class="container">
-                            <div class="col-md-9 col-md-offset-1">
-                                <div class="form-group">
-                                    <div class="input-group">
+					
+                <div class="col-md-12">
+                    
+                                    <div class="input-group col-xs-12">
                                         <input id='urlname' type="text" class="form-control" readonly>
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file ">
                                                 Browse <input type="file" id="imgInp" name="image">
                                             </span>
-                                        </span>
+                                        </span>                                   
                                         
                                     </div>
-                                   </br>
-                                    <img id='img-upload'/> </br></br>
+                                  <br>
+                                    <div class="input-group col-xs-12">
+                                    <input type="submit" name="Upload" class="btn btn-md btn-success pull-right" value="Upload">
+                                    </div>
+                                
+                                    <img id='img-upload' style="height: 600px; width: 700px; border: none;" class="col-md-4 col-md-offset-2" />
                                     <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
                                     <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
+<<<<<<< HEAD
                                     <input type="hidden" name="user_locality" value="{{ Auth::user()->user_locality }}">
                                     <div class="col-md-10 col-md-offset-5">
                                     <input type="submit" name="Upload" class="btn-bs-file btn btn-md btn-primary" value="Upload Prescription">
@@ -171,37 +98,22 @@
                                 </div>
                             </div>
                             </div>
+=======
+                                    
+                           
+>>>>>>> c29a2667fd292b0a416f10ac4a99db2b560044e5
 
+                        </div>
+                      
+				</form>
+				
 
-                        
-						</div>
-						
-					</div>
-					</form>
-				</div>
+                </div>
 			</div>
 		</div>
 
-
-		<!--
-		<div class="col-lg-offset-4 col-lg-4">
-		<center><h1>Upload a File</h1></center>
-
-		<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post">
-		{{csrf_field()}}
-			<input type="File" name="image">
-			<br>
-			<input type="submit" name="Upload">
-				
-		</form>
-			
-		</div>
-
-		<div class="row">
-			<h2> Show file</h2>
-			<img src="{{ asset('storage/upload/sa.jpeg')}}">
-		</div>
-	-->
+@endsection
+		
 <script type="text/javascript">
     $(document).ready( function() {
     
@@ -246,5 +158,3 @@
         });
     });
 </script>
-</body>
-</html>

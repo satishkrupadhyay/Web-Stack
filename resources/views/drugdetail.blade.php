@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico">
   
 </head>
 <body>
@@ -79,12 +80,12 @@
         @yield('content')
     </div>
     <br>
-        <br>
+       
         <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Recently added Drug Details</strong></div>
+                <div class="panel-heading"><strong>Added Drug Details</strong></div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -106,7 +107,7 @@
                         <th>Exp. Date</th>
                         <th>Mfd. Date</th>
                         <th>Dosage</th>
-                        <th>Price</th>
+                        
                         <th>Drug Type</th>
                       </tr>
                     </thead>
@@ -132,7 +133,7 @@
                                     <td>{{$value->exp_date}}</td>
                                     <td>{{$value->mfg_date}}</td>
                                     <td>{{$value->dosage}}</td>
-                                    <td>{{$value->price}}</td>
+                                    
                                     <td>{{$value->type}}</td>
                                 </tr>
 

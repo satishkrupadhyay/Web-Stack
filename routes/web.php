@@ -23,8 +23,8 @@ Route::get('/home','HomeController@index')->name('home');
 
 //Upload image and save in database
 
-Route::get('file','FileController@index')->name('upload.file');
-Route::post('file','FileController@storeFile');
+Route::get('/file','FileController@index')->name('upload.file');
+Route::post('/file','FileController@storeFile');
 
 
 
@@ -39,6 +39,8 @@ Route::get('/pharmrecent', 'pharmrecentController@viewrecent');
 
 // user purchase history view page
 Route::get('/purchasehistory', 'purchasehistoryController@viewpurchase');
+Route::get('/recentupload', 'recentuploadController@recentupload');
+Route::get('/cancelorder/{o_id}','recentuploadController@cancelorder');
 
 
 //Pharmacy prescription view and form

@@ -52,6 +52,7 @@
         background:#ddd;
     }
 </style>
+<link rel="icon" href="images/favicon.ico">
 </head>
 <body>
     <div id="page-wrap">

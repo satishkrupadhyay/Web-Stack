@@ -7,9 +7,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <title>Pharmacy</title>
-
+    <link rel="icon" href="images/favicon.ico">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   
@@ -79,10 +79,10 @@
         @yield('content')
     </div>
     <br>
-        <br>
+        
         <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Past Orders</strong></div>
 

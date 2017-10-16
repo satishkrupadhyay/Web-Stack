@@ -13,7 +13,7 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
         <!-- font awesome -->
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-
+        <link rel="icon" href="images/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         
 
@@ -98,12 +98,14 @@
                         </div>
 
                         <div class="col-sm-7 col-xs-12 heading-text">
+
                             <div class="single_home_content wow zoomIn" data-wow-duration="1s">
+
                                 <h1>Introducing <b>JIVONI</b> </h1>
                                 <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Becauese we <b>CARE</b></p>
-                                <div class="button">
-                                    <a href="#downloadApps" class="btn">Downlod APP</a>
-                                    <a href="#video" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
+                                <div class="button" style="margin-top:-50px;margin-left:-20px;">
+                                    <a href="#downloadApps" class="btn">Download APP</a>
+                               <!--     <a href="#video" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>-->
                                 </div>
                             </div>
                         </div>
@@ -112,7 +114,7 @@
                 </div> <!-- end of container -->
 
                 <div class="scrolldown">
-                    <a href="#video" class="scroll_btn"></a>
+                    <a href="#description_second" class="scroll_btn"></a>
                 </div>
 
             </div>
