@@ -31,7 +31,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/admin') }}">
-                        Hello Pharmacy
+                         Hello {{Auth::user()->store_name}}
                     </a>
                 </div>
 
@@ -53,7 +53,7 @@
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Pharmacy <span class="caret"></span>
+                                    {{Auth::user()->store_name}} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -64,7 +64,7 @@
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('view.form') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>

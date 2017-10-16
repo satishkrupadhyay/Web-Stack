@@ -64,11 +64,10 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/admin') }}">
-<<<<<<< HEAD
+
                         Hello {{Auth::user()->store_name}}
-=======
-                        Hello Pharmacy 
->>>>>>> c29a2667fd292b0a416f10ac4a99db2b560044e5
+
+                       
                     </a>
                 </div>
 

@@ -77,6 +77,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="user_locality" class="col-md-4 control-label">Locality</label>
+                            <div class="col-md-6">
+                            <select class="form-control" id="user_locality" name="user_locality" value="{{ old('user_locality') }}" required autofocus>
+                            <option hidden >Select</option>
+                            <option>Guwahati</option>
+                            <option>Mangoldoi</option>
+                            
+                            </select>
+                            </div>
+
+                            
+                        </div>
+
                          <div class="form-group">
                             <label for="dob" class="col-md-4 control-label">Date of Birth</label>
 

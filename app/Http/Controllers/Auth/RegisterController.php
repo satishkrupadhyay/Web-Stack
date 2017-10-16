@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'phone' => 'required|regex:/[0-9]{10}/',
+            'user_locality' =>  'required',
         ]);
     }
 
@@ -74,6 +75,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'address' => $data['address'],
+            'user_locality' => $data['user_locality'],
             'dob' => $data['dob'],
             'gender' => $data['gender'],
             'phone' => $data['phone'],
