@@ -10,7 +10,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <center><img src="../../../../images/Final Logo3x.png" alt="Logo" style="width:85px; height:85px; "/>
+                    <center><img src="../../images/Final Logo3x.png" alt="Logo" style="width:85px; height:85px; "/>
                         <h2 style=" margin-top:-10px;"><b>Jivoni</b></h2>
                         <h4 style=" margin-top:30px;">Reset Password</h4>
                     </center>
