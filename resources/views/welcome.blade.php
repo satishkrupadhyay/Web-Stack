@@ -423,7 +423,7 @@
         </section>-->
 
 
-        <!-- message section -->
+        <!-- message section 
 
         <section id="message">
             <div class="container">
@@ -451,7 +451,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Subject">
-                                    </div> <!-- end of form-group -->
+                                    </div> <!-- end of form-group 
 
                                     <div class="form-group">
                                         <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
@@ -467,8 +467,8 @@
                 </div>
 
 
-            </div> <!-- end of container -->
-        </section>
+            </div> <!-- end of container 
+        </section>-->
 
 
         @include('partials.footer')
