@@ -13,7 +13,7 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
         <!-- font awesome -->
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-
+        <link rel="icon" href="images/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         
 

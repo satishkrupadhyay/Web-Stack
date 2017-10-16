@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Pharmacy</title>
-
+    <link rel="icon" href="images/favicon.ico">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -63,7 +63,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
                         Hello Pharmacy 
                     </a>
                 </div>
@@ -78,6 +78,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
+                        <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
+                        <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
+                       
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Pharmacy <span class="caret"></span>
