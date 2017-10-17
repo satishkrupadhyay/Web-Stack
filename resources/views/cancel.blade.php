@@ -6,7 +6,7 @@ Sorry for the inconvenience caused this time. But do soon check with us again fo
 
 Regards,
 
-The Zeevani Team
+The Jivoni Team
 email:
 Contact No.:8899665547
 Address

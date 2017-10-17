@@ -7,7 +7,7 @@ We thank you for this order and hope it will meet your satisfaction. We assure y
 
 Regards,
 
-The Zeevani Team
+The Jivoni Team
 email:
 Contact No.:8899665547
 Address
