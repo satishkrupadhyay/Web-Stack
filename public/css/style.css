@@ -193,6 +193,18 @@ p.description {
     border-radius: 5px;
     margin-top: 25px;
 }
+.btn-custom{
+    width: 100px;
+    height: 38px;    
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    padding: 6px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-top: 25px;
+}
 
 .btn-sm:hover{
     text-decoration:none;
@@ -239,7 +251,7 @@ p.description {
     line-height: 22px;
     color: #fff;
     border-bottom: 3px solid transparent;
-	text-transform:uppercase;
+	
 } 
  
 .main-menu.tiny .navbar-nav > li.active > a {

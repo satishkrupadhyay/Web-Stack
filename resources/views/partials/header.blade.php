@@ -19,13 +19,14 @@
                                     @if (Auth::check())
                                          <a href="{{ url('/home') }}">Home</a>
                                     @else
-                                    <a href="" class="" data-toggle="modal" data-target="#myModal"><b>SignUp/Login</b></a></li>
+                                    <a href="{{ url('/login') }}" class="" data-toggle="modal" data-target="#loginmodal" style="text-transform:uppercase;"><b>SignUp/Login</b></a></li>
                                     @endif
                                 @endif
 
-                            <li><a href="#pricing" class=""><b>Search</b></a></li>
-                            <li><a href="#downloadApps" class=""><b>Download</b></a></li>\
-                            <li><a href="#description_second" class=""><b>About</b></a></li>
+                            <li><a href="#pricing" class="" style="text-transform:uppercase;"><b>Search</b></a></li>
+                            <li><a href="#downloadApps" class="" style="text-transform:uppercase;"><b>Download</b></a></li>
+                            <li><a href="#description_second" class="" style="text-transform:uppercase;"><b>About</b></a></li>
+                            <li><a href="{{ url('/pharmlogin') }}" class="" data-toggle="modal" data-target="#pharmlogin" style=" font-style: italic; font-family: cursive; text-decoration: underline;"><b>Enter as Pharmacy</b></a></li>
 
                         </ul>
 
@@ -33,7 +34,7 @@
                 </div>
             </div>  <!--end of navbar--> 
         </header>
-            <!-- Modal -->
+            <!-- Modal 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -54,8 +55,8 @@
                 <button  style="display: block; margin: 0 auto; height:50px; width:80px;" type="button" class="btn btn-primary btn-xs" data-dismiss="modal" >Close</button>
                 
             </div>
-        </div> <!-- /.modal-content -->
-    </div> <!-- /.modal-dialog -->
+        </div> <!-- /.modal-content 
+    </div> <!-- /.modal-dialog 
 </div> <!-- /.modal -->
 
 <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
@@ -76,10 +77,10 @@
         <div class="modal-content">
             
 
-         <!--   <div class="modal-footer">
+            <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
-            </div>-->
+            </div>
         </div> <!-- /.modal-content -->
     </div> <!-- /.modal-dialog -->
 </div> <!-- /.modal -->

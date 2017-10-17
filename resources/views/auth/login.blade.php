@@ -52,21 +52,23 @@
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 ">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
                                 <a href="{{ route('password.request') }}" data-toggle="modal" data-target="#forgot" >
                                     Forgot Your Password?
                                 </a>
-                                <a class="btn btn-primary" data-remote="{{ url('/register') }}"  data-toggle="modal" data-target="#registermodal" >
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="form-horizontal col-md-offset-2 ">
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    Login
+                                </button>
+
+                                
+                                <a class="btn btn-primary btn-custom" data-remote="{{ url('/register') }}"  data-toggle="modal" data-target="#registermodal" >
                                     Register
                                 </a>
+
                             </div>
                         </div>
                     </form>

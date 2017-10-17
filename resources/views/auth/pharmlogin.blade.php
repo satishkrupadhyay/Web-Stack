@@ -53,18 +53,19 @@
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
                                 </div>
+                                <a href="{{ route('password.request') }}" data-toggle="modal" data-target="#forgot">
+                                    Forgot Your Password?
+                                </a>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary" >
+                                <button type="submit" class="btn btn-primary btn-custom" >
                                     Login
                                 </button>
 
-                                <a href="{{ route('password.request') }}" data-toggle="modal" data-target="#forgot">
-                                    Forgot Your Password?
-                                </a>
+                                
                             </div>
                         </div>
                     </form>
