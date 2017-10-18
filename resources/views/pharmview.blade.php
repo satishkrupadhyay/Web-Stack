@@ -18,17 +18,15 @@
 
 
     <style>
-            body {
-                font-family: sans-serif;
-            }
+            
             #summation {
                 font-size: 18px;
-                font-weight: bold;
+                
                 color:#174C68;
             }
             .txt {
                 background-color: #FEFFB0;
-                font-weight: bold;
+                
                 text-align: right;
             }
         </style>
@@ -50,7 +48,7 @@
 </head>
 <body>
     <div id="app">
-       <nav class="navbar navbar-default navbar-static-top">
+       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
 
