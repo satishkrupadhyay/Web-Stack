@@ -20,7 +20,7 @@
     <style>
             
             #summation {
-                font-size: 18px;
+                
                 
                 color:#174C68;
             }
