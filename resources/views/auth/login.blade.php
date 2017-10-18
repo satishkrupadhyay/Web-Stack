@@ -65,7 +65,7 @@
                                 </button>
 
                                 
-                                <a class="btn btn-primary btn-custom" data-remote="{{ url('/register') }}"  data-toggle="modal" data-target="#registermodal" >
+                                <a class="btn btn-primary btn-custom" href="{{ url('/register') }}"  data-toggle="modal" data-target="#registermodal" >
                                     Register
                                 </a>
 
