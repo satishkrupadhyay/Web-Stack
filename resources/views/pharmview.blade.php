@@ -196,6 +196,9 @@
       
 
                                         </div>
+                                         <div class="form-group">
+                                        <a href="{{action('InvoiceCreator@cancelorder', $drug->order_id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Cancel Order</a>
+                                        </div>
                                         <div class="form-group">
                                             <div class="col-md-4 col-md-offset-10">
                                                 <button type="submit" class="btn btn-success">Proceed</button>
