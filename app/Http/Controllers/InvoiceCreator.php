@@ -132,6 +132,7 @@ $status=2;
             
 
       return redirect()->back();
+      return Redirect::to('home');
     //  return view('auth.dashboard');
 
     }
