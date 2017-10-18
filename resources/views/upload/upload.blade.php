@@ -92,6 +92,11 @@
                                     <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
 
                                     <input type="hidden" name="user_locality" value="{{ Auth::user()->user_locality }}">
+
+                                    <input type="hidden" name="user_name" value="{{ Auth::user()->name }}">
+
+                                    <input type="hidden" name="user_phone" value="{{ Auth::user()->phone }}">
+
                                     <div class="col-md-10 col-md-offset-5">
                                     <input type="submit" name="Upload" class="btn-bs-file btn btn-md btn-primary" value="Upload Prescription">
                                     </div>
