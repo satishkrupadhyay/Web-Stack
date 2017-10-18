@@ -18,17 +18,15 @@
 
 
     <style>
-            body {
-                font-family: sans-serif;
-            }
+            
             #summation {
-                font-size: 18px;
-                font-weight: bold;
+                
+                
                 color:#174C68;
             }
             .txt {
                 background-color: #FEFFB0;
-                font-weight: bold;
+                
                 text-align: right;
             }
         </style>
@@ -50,7 +48,7 @@
 </head>
 <body>
     <div id="app">
-       <nav class="navbar navbar-default navbar-static-top">
+       <nav class="navbar navbar-default navbar-static-top" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -197,6 +195,9 @@
 
       
 
+                                        </div>
+                                         <div class="form-group">
+                                        <a href="{{action('InvoiceCreator@cancelorder', $drug->order_id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Cancel Order</a>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-4 col-md-offset-10">

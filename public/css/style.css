@@ -140,7 +140,7 @@ section:nth-of-type(odd) {
 }
 
 .btn:hover {
-    background-color: #e0356e;
+    background-color: #d83535;
     color: #fff;
     text-decoration: none;
 }
@@ -758,7 +758,7 @@ a.info_right_text{
 .socail_bookmark a:hover i{
     color: #fff;
     border: 1px solid #fff;
-    background: #FF3366;
+    background: #d83535;
 	transform:scale(1.2);
 }
 
@@ -781,7 +781,7 @@ a.info_right_text{
 }
 .copyright_text p a{
 	padding:0px 10px;
-	color:green;
+	color:#d83535;
 }
 
 /*scollup icon*/

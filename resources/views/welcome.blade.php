@@ -346,7 +346,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6">
                                         <div class="second_single_text">
-                                            <i class="fa fa-car"></i>
+                                            <i class="fa fa-car" style="color:#d83535;"></i>
                                             <div class="right_bottom_description">
                                                 <h6>Home Delivery</h6>
                                                 <p>Get your medicines from the ease of your home.</p>
@@ -355,7 +355,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="second_single_text">
-                                            <i class="fa fa-magic"></i>
+                                            <i class="fa fa-magic" style="color:#d83535;"></i>
                                             <div class="right_bottom_description">
                                                 <h6>Ease of use</h6>
                                                 <p>User Friendly environment for all.</p>
@@ -364,7 +364,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="second_single_text">
-                                            <i class="fa fa-file-text"></i>
+                                            <i class="fa fa-file-text" style="color:#d83535;"></i>
                                             <div class="right_bottom_description">
                                                 <h6>Directly Upload your Precription</h6>
                                                 <p>Upload and save your prescription to get your medicines.</p>
@@ -373,7 +373,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="second_single_text">
-                                            <i class="fa fa-location-arrow"></i>
+                                            <i class="fa fa-location-arrow" style="color:#d83535;"></i>
                                             <div class="right_bottom_description">
                                                 <h6>Location based access</h6>
                                                 <p>Get you medicine from your nearest pharamcy.</p>
