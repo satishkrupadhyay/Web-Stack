@@ -140,7 +140,7 @@ section:nth-of-type(odd) {
 }
 
 .btn:hover {
-    background-color: #e0356e;
+    background-color: #d83535;
     color: #fff;
     text-decoration: none;
 }
