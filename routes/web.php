@@ -107,3 +107,6 @@ Route::post('/admin/login','Auth\AdminLoginController@login')->name('admin.login
 Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 Route::get('/admin', 'AdminController@viewpage')->name('admin.home');
 
+Route::get('/SendMessage','TextMessageController@SendMessage')->name('text.form');
+
+

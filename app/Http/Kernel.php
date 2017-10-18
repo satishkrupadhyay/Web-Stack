@@ -60,6 +60,7 @@ class Kernel extends HttpKernel
 
         'preventbackhistory' => \Jivoni\Http\Middleware\PreventBackHistory::class,
         'prevent' => \Jivoni\Http\Middleware\PreventBackHistory::class,
+        'checkSession' => \App\Http\Middleware\checkSession::class
 
 
 

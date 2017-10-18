@@ -1,1 +1,1 @@
-You have been succesfully registered to our survices. Please login to use our services.
+You have been succesfully registered to our services. Please login to use our services.
