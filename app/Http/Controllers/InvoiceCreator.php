@@ -254,7 +254,8 @@ $status=2;
           /*-----------end of Cancel Confirmation Message-----------*/
 
 
-      return redirect()->back();
+      //return redirect()->back();
+      return redirect('/admin');
     //  return view('auth.dashboard');
 
     }

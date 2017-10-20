@@ -196,12 +196,16 @@
       
 
                                         </div>
-                                         <div class="form-group">
-                                        <a href="{{action('InvoiceCreator@cancelorder', $drug->order_id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Cancel Order</a>
-                                        </div>
+                                         
+                                        
+                                        
                                         <div class="form-group">
-                                            <div class="col-md-4 col-md-offset-10">
+                                            <div class="col-md-8 col-md-offset-8">
+                                                 @foreach ($results as $value)
+                                                  <a href="{{action('InvoiceCreator@cancelorder', $value->order_id)}}" class="btn btn-danger"> Cancel Order</a>
+                                                  @endforeach
                                                 <button type="submit" class="btn btn-success">Proceed</button>
+
                                             </div>
                                         </div>
                                         </form>
