@@ -31,20 +31,23 @@ class InventoryController extends Controller
     			'price' => 'required|regex:/^\d*(\.\d{2})?$/',
     			
     			'manufacturer' => 'required|min:3|max:20|regex:/^[\s\w-]*$/',
-    			'exp_date' => 'required',
-    			'mfg_date' => 'required',
-    			'dosage' => 'required|AlphaNum|Between:3,5',
+    			'exp_date' => 'required|date',
+    			'mfg_date' => 'required|date',
+    			'dosage' => 'required|min:3|max:6|regex:/^(?!0+)[1-9][0-9]{1,3}[m][g]$/',
     			'type' =>'required',
     		],[
     			'brandname.required' => ' The Brand name field is required',
-                'price.regex' => 'Price must be in format: 12.36',
+                
                 'brandname.regex'    => 'Special characters like ( !, @, #, $, %, ^, &, *, (), +, =  ) are not allowed',
                 'genericname.regex'  => 'Special characters like ( !, @, #, $, %, ^, &, *, (), +, =  ) are not allowed',
+                'price.regex' => 'Price must be in format: 12.36',
                 'manufacturer.regex' => 'Special characters like ( !, @, #, $, %, ^, &, *, (), +, =  ) are not allowed',
     			
     			'genericname.max' => ' The Generic Name should not exceed 50 characters.',
                 'genericname.min' => ' The Generic Name must be atleast 3 characters.',
-                'dosage.AlphaNum.Between'  => ' The dosage must be in numbers',	
+                'dosage.regex'  => ' The dosage must be in format: e.g. 500mg/200gm/750ml. (*Whitespace not allowed)',
+                'dosage.max'    => 'Plese enter the atmost value: e.g. 9999mg',
+                'dosage.min'	=> 'Plese enter the least value: e.g. 1mg',
     		]);
 
 

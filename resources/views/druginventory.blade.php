@@ -159,7 +159,7 @@
                             <label for="mfg_date" class="col-md-4 control-label">Manufactured Date</label>
 
                             <div class="col-md-6">
-                                <input id="mfg_date" type="Date" class="form-control" name="mfg_date" value="{{ old('mfg_date') }}" required >
+                                <input id="mfg_date" type="Date" max="<?=date('Y-m-d')?>" class="form-control" name="mfg_date" value="{{ old('mfg_date') }}" required >
                             </div>
                         </div>
 
@@ -167,7 +167,7 @@
                             <label for="dosage" class="col-md-4 control-label">Dosage</label>
 
                             <div class="col-md-6">
-                                <input id="dosage" type="text" class="form-control" size="10" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 0-500 mg/ml/gm" required >
+                                <input id="dosage" type="text" class="form-control" size="10" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 1-9999 mg/ml/gm" required >
                                 @if ($errors->has('dosage'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('dosage') }}</strong>
