@@ -150,6 +150,7 @@ foreach ($drug as $value) {
 
 
       return $pdf->stream("$filename");
+      //return redirect('/admin');
 
     }
 
