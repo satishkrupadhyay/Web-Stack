@@ -1,12 +1,13 @@
+
+@extends('layouts.app')
 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                  <h4 class="modal-title">User Login/SignUp</h4>
 </div>
-@extends('layouts.app')
-<div class="modal-body">
 
 
 @section('content')
+<div class="modal-body">
 <!--<div class="container">
     <div class="row">
         <div class="col-md-6 ">
@@ -79,8 +80,8 @@
 <!--</div>-->
 
                 
-            </div>
-    @endsection
+</div>
+@endsection
         
             
 <div class="modal fade" id="registermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">

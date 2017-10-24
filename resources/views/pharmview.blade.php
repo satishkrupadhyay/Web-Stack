@@ -230,7 +230,7 @@
    
 
 
-    <!-- Scripts -->
+    <!-- Scripts for alert on proceed -->
     <script type="text/javascript">
     $('form').submit(function(e) {
         var currentForm = this;
@@ -241,7 +241,7 @@
             }
         });
     });
-</script>
+    </script>
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script>

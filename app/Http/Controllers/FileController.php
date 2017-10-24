@@ -66,6 +66,7 @@ class FileController extends Controller
         $request->image->move(base_path() . '/public/pres' ,$imageName);
    			//$filename = $request->image->getClientOriginalName();
         //$request->image->storeAs('upload',$imageName);
+        //$date_of_purchase = date('d-m-y H:i:s');
 
         $data = array('image' =>$imageName,'cust_id' =>$user_id,'pharmacy_id'=>$pharmacy_id);
         DB::table('orders')->insert($data);
