@@ -64,14 +64,15 @@ foreach ($drug as $value) {
       $stores = DB::table('admins')
       ->where('store_email','=','pharmacy@gmail.com')->get();
 
-      $filename = "invoice"."$id2".".pdf";
+      $filename = "INV"."$id2".".pdf";
+      $invoice_name = "INV"."$id2";
       $pdf = PDF::loadView('pdfpage', compact('drug','stores'))->save('prescription_file/'.$filename);
       $pdf->setPaper('A4', 'portrait');
       // return $pdf;
       // return response()->file($pdf);
       DB::table('orders')
             ->where('order_id', $ord_id )
-            ->update(['file' =>$filename]);
+            ->update(['file' =>$filename,'invoice_no' =>$invoice_name]);
 
 
 
@@ -101,7 +102,7 @@ foreach ($drug as $value) {
               $senderId = "Jivoni";
 
               //Your message to send, Add URL encoding here.
-              $message = urlencode('Hello '.$customer_name.','."\nYour order has been dispatched by us. Please pay by cash to the delivery person when you receive your medicines."."\nYour Invoice "." $filename" ." for\n Rs."."$invoice_amount");
+              $message = urlencode('Hello '.$customer_name.','."\nYour order has been dispatched by us. Please pay by cash to the delivery person when you receive your medicines."."\nYour Invoice no. is "." $invoice_name" ." for\n Rs."."$invoice_amount");
 
               //Define route 
               $route = "4";
@@ -150,6 +151,7 @@ foreach ($drug as $value) {
 
 
       return $pdf->stream("$filename");
+      //return redirect('/admin');
 
     }
 

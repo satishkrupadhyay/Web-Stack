@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
+    <!-- alert for confirmation -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" data-semver="3.1.1" data-require="bootstrap-css" />
+     <script src="http://code.jquery.com/jquery-2.0.3.min.js" data-semver="2.0.3" data-require="jquery"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" data-semver="3.1.1" data-require="bootstrap"></script>
+    <script src="http://bootboxjs.com/bootbox.js"></script>
+
+
     <style>
             
             #summation {
@@ -206,6 +213,8 @@
                                                   @endforeach
                                                 <button type="submit" class="btn btn-success">Proceed</button>
 
+                                                
+
                                             </div>
                                         </div>
                                         </form>
@@ -221,7 +230,19 @@
    
 
 
-    <!-- Scripts -->
+    <!-- Scripts for alert on proceed -->
+    <script type="text/javascript">
+    $('form').submit(function(e) {
+        var currentForm = this;
+        e.preventDefault();
+        bootbox.confirm("Do you want to proceed ?", function(result) {
+            if (result) {
+                currentForm.submit();
+            }
+        });
+    });
+    </script>
+
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
     var room = 1;

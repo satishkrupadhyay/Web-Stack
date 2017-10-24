@@ -83,20 +83,20 @@ class RegisterController extends Controller
 
 
         Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($user)
-{
-   // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
+          {
+             // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
 
-   // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
+             // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
 
-    $message->to(Input::get('email'), 'Receiver Name')->subject('Registration Successful');
+              $message->to(Input::get('email'), 'Receiver Name')->subject('Registration Successful');
 
-            // Set the sender
+                      // Set the sender
 
-            $message->from('satish@simplisticsolutions.in','Greetings');
+                      $message->from('satish@simplisticsolutions.in','Greetings');
 
-            
+                      
 
-});
+          });
             /*------------Successful Registration Confirmation Message---------------*/
 
 

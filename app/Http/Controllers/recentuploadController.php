@@ -19,7 +19,7 @@ class recentuploadController extends Controller
     { 
       $usr_id = Auth::user()->id;
 
-        $data['data'] = DB::table('orders')->where([['cust_id', $usr_id],['status', 0]])->simplePaginate(3);
+        $data['data'] = DB::table('orders')->where([['cust_id', $usr_id],['status', 0]])->orderByRaw('order_id DESC')->simplePaginate(3);
         
         //$data['data'] = DB::select( DB::raw("SELECT * FROM orders WHERE cust_id = '$usr_id' AND status='1'") );
 

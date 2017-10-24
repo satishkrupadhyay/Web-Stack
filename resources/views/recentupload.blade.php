@@ -47,7 +47,7 @@
                                     <div class="col-md-12 list-group-item">
                                     <div class="col-md-8">
                                     <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li> 
-                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li></br> 
+                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{\Carbon\Carbon::parse($value->date_of_purchase)->format('d-M-Y')}}</li></br> 
                                     <a href="{{action('recentuploadController@cancelorder', $value->order_id)}}" class="btn btn-danger btn-xs">Cancel Order</a>
                                     </div>
                                     <div class="col-md-4">

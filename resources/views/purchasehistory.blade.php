@@ -42,7 +42,7 @@
                                     <li style="list-style-type:none"><b>PRICES:</b> {{$value->price}}</li> 
                                     <li style="list-style-type:none"><b>QUANTITY:</b> {{$value->quantity}}</li>
                                     <li style="list-style-type:none"><b>AMOUNT:</b> {{$value->amount}}</li>   
-                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{$value->date_of_purchase}}</li>
+                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{\Carbon\Carbon::parse($value->date_of_purchase)->format('d-M-Y')}}</li>
                                     <a href="/prescription_file/{{$value->file}}" class="btn btn-primary btn-xs" target="_blank">Download Invoice</a> 
                                     </div>
                                     <div class="col-md-4">

@@ -130,8 +130,8 @@
                                     <td>{{$value->generic_name}}</td>
                                     <td>{{$value->price}}</td>
                                     <td>{{$value->manufacturer}}</td>
-                                    <td>{{$value->exp_date}}</td>
-                                    <td>{{$value->mfg_date}}</td>
+                                    <td>{{\Carbon\Carbon::parse($value->exp_date)->format('d-M-Y')}}</td>
+                                    <td>{{\Carbon\Carbon::parse($value->mfg_date)->format('d-M-Y')}}</td>
                                     <td>{{$value->dosage}}</td>
                                     
                                     <td>{{$value->type}}</td>
