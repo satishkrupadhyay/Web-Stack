@@ -49,6 +49,12 @@
         <script src="js/wow/wow.min.js"></script>
        
         <title>Jivoni</title>
+        <style type="text/css">
+            body {
+                padding-right: 0px !important;
+                }
+           
+        </style>
 
         
     </head>
