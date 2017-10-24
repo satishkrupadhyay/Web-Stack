@@ -104,9 +104,9 @@ class RegisterController extends Controller
               $authKey = "179537A8dc5PRixK59e43aea";
 
               //Multiple mobiles numbers separated by comma
-              $mobileNumber = Input::get('phone');
+              $mobileNumber = $user['phone'];
               // Customer Name
-              $cutomer_name = Input::get('name');
+              $customer_name = $user['name'];
               
               //Sender ID,While using route4 sender id should be 6 characters long.
               $senderId = "Jivoni";
