@@ -72,19 +72,16 @@ class FileController extends Controller
         DB::table('orders')->insert($data);
 
         Mail::send(['text'=> $template_path ], array('email' => $request->get('email')), function($message) use ($usr_email)
-{
-   // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
+          {
+             
 
-   // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
-
-    $message->to($usr_email, 'Receiver Name')->subject('Order Placed');
-
-            // Set the sender
+              $message->to($usr_email, 'Receiver Name')->subject('Order Placed');
+               // Set the sender
 
 
-            $message->from('satish@simplisticsolutions.in','Greetings');
+              $message->from('satish@simplisticsolutions.in','Greetings');
 
-});
+          });
 
     		
 

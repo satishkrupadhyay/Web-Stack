@@ -70,9 +70,10 @@ foreach ($drug as $value) {
       $pdf->setPaper('A4', 'portrait');
       // return $pdf;
       // return response()->file($pdf);
+      $status=1;
       DB::table('orders')
             ->where('order_id', $ord_id )
-            ->update(['file' =>$filename,'invoice_no' =>$invoice_name]);
+            ->update(['file' =>$filename,'invoice_no' =>$invoice_name,'status' =>$status]);
 
 
 

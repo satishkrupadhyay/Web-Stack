@@ -34,7 +34,7 @@
 		<div class="container"> 
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h4>Upload Your Prescription</h4>					
+					<h4>Upload prescription to place your order</h4>					
 				</div>
 				<div class="panel-body">
 					@if (count($errors)>0)
@@ -98,7 +98,8 @@
                                     <input type="hidden" name="user_phone" value="{{ Auth::user()->phone }}">
 
                                     <div class="col-md-10 col-md-offset-5">
-                                    <input type="submit" name="Upload" class="btn-bs-file btn btn-md btn-primary" value="Upload Prescription">
+                                    </br>
+                                    <input type="submit" name="Upload" class="btn-bs-file btn btn-md btn-success" value="Upload">
                                     </div>
                                 </div>
                             </div>
