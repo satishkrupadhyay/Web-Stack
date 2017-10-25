@@ -110,3 +110,10 @@ Route::get('/admin', 'AdminController@viewpage')->name('admin.home');
 Route::get('/SendMessage','TextMessageController@SendMessage')->name('text.form');
 
 
+
+
+
+/*Route::get('login', function () {
+
+    return view('auth.login');
+})->name('login');*/
