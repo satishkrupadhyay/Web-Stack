@@ -26,6 +26,7 @@ class recentuploadController extends Controller
               if (count($data) > 0) 
               {
                 return view('recentupload', $data);
+                
               }
               else{
 
