@@ -57,13 +57,13 @@ class FileController extends Controller
 
       $user_id = $request->usr_id;
       //image validate
-      $this->validate($request,['image'=>'required|image|mimes:jpeg,jpg,png|max:2048',]);
+      $this->validate($request,['file'=>'required|image|mimes:jpeg,jpg,png|max:2048',]);
 
-    	if ($request->hasFile('image')) {
+    	if ($request->hasFile('file')) {
    		
-   		  $imageName= time().'.'.$request->image->getClientOriginalExtension();
+   		  $imageName= time().'.'.$request->file->getClientOriginalExtension();
         //$orderDate = date();
-        $request->image->move(base_path() . '/public/pres' ,$imageName);
+        $request->file->move(base_path() . '/public/pres' ,$imageName);
    			//$filename = $request->image->getClientOriginalName();
         //$request->image->storeAs('upload',$imageName);
         //$date_of_purchase = date('d-m-y H:i:s');

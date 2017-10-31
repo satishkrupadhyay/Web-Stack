@@ -28,6 +28,14 @@
                     </div>
                     @endif
 
+                     @if (count($data)== 0)
+                    <div>                    
+                       
+                        <h5>You haven't purchased anything yet ! </h5>
+                                         
+                    </div>
+                    @endif
+
                    <div class="list-group">
                                
                                 

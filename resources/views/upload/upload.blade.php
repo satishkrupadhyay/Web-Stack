@@ -1,7 +1,16 @@
 @extends('layouts.app2')
 
     <style type="text/css">
-        .btn-file {
+
+    body
+    {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
+    }
+    .btn-file {
     position: relative;
     overflow: hidden;
     }
@@ -32,11 +41,21 @@
 		
     @section('content')
 		<div class="container"> 
-			<div class="panel panel-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
 					<h4>Upload prescription to place your order</h4>					
 				</div>
 				<div class="panel-body">
+
+                    @if (count($errors)== 0)
+                    <div>                    
+                        <ul>
+                            <li><h6>The File must be of type: jpeg, jpg, png </h6></li>
+                            <li><h6>The Size must be < 2MB</h6></li>
+                        </ul>                           
+                    </div>
+                    @endif
+
 					@if (count($errors)>0)
 					<div class="alert alert-danger">
 						<strong>Oops !</strong> There were some problem with your file.<br><br>
@@ -71,23 +90,26 @@
 	<form action="{{ route('upload.file')}}" enctype="multipart/form-data" method="post" >
 					{{csrf_field()}}
 					
-                <div class="col-md-12">
+                
                     
-                                    <div class="input-group col-xs-12">
+                                    <div class="input-group">
                                         <input id='urlname' type="text" class="form-control" readonly>
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file ">
-                                                Browse <input type="file" id="imgInp" name="image">
+                                                Browse <input type="file" id="imgInp" name="file">
                                             </span>
                                         </span>                                   
                                         
                                     </div>
                                   <br>
-                                    <div class="input-group col-xs-12">
+                                    <div>
                                     <input type="submit" name="Upload" class="btn btn-md btn-success pull-right" value="Upload">
                                     </div>
-                                
-                                    <img id='img-upload' style="height: 600px; width: 700px; border: none;" class="col-md-4 col-md-offset-2" />
+                                </br>
+                                    <div class="col-md-6 col-md-offset-3">
+                                    <img id='img-upload' />
+                                    </div>
+
                                     <input type="hidden" name="usr_id" value="{{ Auth::user()->id }}">
                                     <input type="hidden" name="usr_email" value="{{ Auth::user()->email }}">
 
@@ -96,22 +118,15 @@
                                     <input type="hidden" name="user_name" value="{{ Auth::user()->name }}">
 
                                     <input type="hidden" name="user_phone" value="{{ Auth::user()->phone }}">
-
+                                </br>
+                                <!--
                                     <div class="col-md-10 col-md-offset-5">
-                                    </br>
+                                    
                                     <input type="submit" name="Upload" class="btn-bs-file btn btn-md btn-success" value="Upload">
                                     </div>
-                                </div>
-                            </div>
-                            </div>
-
-                                    
-                           
-
-
-                        </div>
+                                -->
                       
-				</form>
+				    </form>
 				
 
                 </div>

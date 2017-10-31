@@ -13,7 +13,9 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+   
 
 
 </head>
@@ -32,6 +34,8 @@
                     </button>
 
                     <!-- Branding Image -->
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+
                     <a class="navbar-brand" href="{{ url('/home') }}">
                         Hello {{ Auth::user()->name }}
                     </a>
@@ -55,7 +59,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

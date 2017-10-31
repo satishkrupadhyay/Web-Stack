@@ -22,7 +22,7 @@
      <script src="http://code.jquery.com/jquery-2.0.3.min.js" data-semver="2.0.3" data-require="jquery"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" data-semver="3.1.1" data-require="bootstrap"></script>
     <script src="http://bootboxjs.com/bootbox.js"></script>
-
+    <!-- end alert for confirmation -->
 
     <style>
             
@@ -242,8 +242,9 @@
         });
     });
     </script>
+    <!-- end Scripts for alert on proceed -->
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!--<script src="{{ asset('js/app.js') }}"></script>-->
     <script>
     var room = 1;
     function education_fields() {
