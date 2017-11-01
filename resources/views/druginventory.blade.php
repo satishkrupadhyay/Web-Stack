@@ -124,20 +124,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
-                            <label for="price" class="col-md-4 control-label">Price</label>
-
-                            <div class="col-md-6">
-                                <input id="price" type="numeric" class="form-control" name="price" value="{{ old('price') }}" placeholder="16.50" required>
-
-                                @if ($errors->has('price'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('price') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
                        
                         <div class="form-group">
                             <label for="manufacturer" class="col-md-4 control-label">Manufacturer</label>
@@ -147,40 +133,46 @@
                             </div>
                         </div>
 
-                         <div class="form-group">
-                            <label for="exp_date" class="col-md-4 control-label">Expiry Date</label>
+                        <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
+                            <label for="price" class="col-md-4 control-label">Price</label>
 
                             <div class="col-md-6">
-                                <input id="exp_date" type="Date" class="form-control" name="exp_date" value="{{ old('exp_date') }}" required >
-                            </div>
-                        </div>
+                                <input id="price" type="numeric" class="form-control" name="price" style="width: 30%" value="{{ old('price') }}" placeholder="16.50" required>
 
-                        <div class="form-group">
-                            <label for="mfg_date" class="col-md-4 control-label">Manufactured Date</label>
-
-                            <div class="col-md-6">
-                                <input id="mfg_date" type="Date" max="<?=date('Y-m-d')?>" class="form-control" name="mfg_date" value="{{ old('mfg_date') }}" required >
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="dosage" class="col-md-4 control-label">Dosage</label>
-
-                            <div class="col-md-6">
-                                <input id="dosage" type="text" class="form-control" size="10" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 1-9999 mg/ml/gm" required >
-                                @if ($errors->has('dosage'))
+                                @if ($errors->has('price'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('dosage') }}</strong>
+                                        <strong>{{ $errors->first('price') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group">
+                            <label for="dosage" class="col-md-4 control-label">Strength</label>
+
+                            <div class="col-md-3">
+                                <input id="dosage" type="text" class="form-control" style="width: 50%" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 1-10000 " required >
+                                @if ($errors->has('dosage'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('dosage') }}</strong>
+                                    </span>
+                                @endif      
+                           </div>
+                           <div class="col-md-3" style="margin-left: -130px">
+                                <select id ="strength_unit" class = "form-control" name="strength_unit" style="width: 35%" value="{{ old('strength_unit') }}" required>
+                                      <option value="mg">mg</option>
+                                      <option value="ml">ml</option>
+                                      <option value="gm">gm</option>
+                                </select>
+                            </div> 
+                            
+                        </div>
+
+                        <div class="form-group">
                             <label for="type" class="col-md-4 control-label">Drug Type</label>
 
                             <div class="col-md-6">
-                                <select id ="type" class = "form-control" name="type" value="{{ old('type') }}" required>
+                                <select id ="type" class = "form-control" name="type" style="width: 30%" value="{{ old('type') }}" required>
                                       <option value="tablets">Tablets</option>
                                       <option value="syrup">Syrup</option>
                                       <option value="gel">Gel</option>
