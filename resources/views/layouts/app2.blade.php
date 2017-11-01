@@ -13,7 +13,22 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Notifiacatio  -->
+    <style type="text/css">
+        .badge-notify{
+           background:#d83535;
+           position:relative;
+           top: -8px;
+           
+          }
+    </style>
+    
+
+     <!-- End Notifiacatio  -->
+   
 
 
 </head>
@@ -32,6 +47,8 @@
                     </button>
 
                     <!-- Branding Image -->
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+
                     <a class="navbar-brand" href="{{ url('/home') }}">
                         Hello {{ Auth::user()->name }}
                     </a>
@@ -48,6 +65,14 @@
                         <!-- Authentication Links -->
                         <li><a href="{{ url('file') }}">Upload Prescription</a></li>
                         <li><a href="{{ url('recentupload') }}">Recent Upload</a></li>
+ 
+ <!--SHOW NOTIFICATIONS. <span class="badge badge-notify"></span> -->
+                       
+  
+
+                        
+ <!-- END SHOW NOTIFICATIONS.-->
+
                         <li><a href="{{ url('purchasehistory') }}">Purchase History</a></li>
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -55,7 +80,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -86,3 +111,32 @@
    
 </body>
 </html>
+
+<script>
+
+        $(document).ready(function () {
+            var badge = $(this).find(".badge");
+            var count = 1;
+
+            if (count > 0) {
+                badge.text(count);
+            } else {
+                badge.hide();
+            }
+        });
+
+        $(document).on("click", ".like-btn", function(e) {
+            e.preventDefault();
+
+            var $label = $(this).find('.text'),
+                $badge = $(this).find('.badge'),
+                count = Number($badge.text()),
+                active = $(this).hasClass('active');
+
+            $label.text(active ? 'Like' : 'Liked');
+            $badge.text(active ? count * 0 : count * 0);
+            $(this).toggleClass('active');
+                        
+                        
+        });
+    </script>

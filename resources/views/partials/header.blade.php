@@ -17,7 +17,7 @@
 
                             <li>@if (Route::has('login'))
                                     @if (Auth::check())
-                                         <a href="{{ url('/home') }}">Home</a>
+                                         <a href="{{ url('/home') }}"><b>DASHBOARD</b></a>
                                     @else
                                     <a href="{{ url('/login') }}" class="" data-toggle="modal" data-target="#loginmodal" style="text-transform:uppercase;"><b>SignUp/Login</b></a></li>
                                     @endif

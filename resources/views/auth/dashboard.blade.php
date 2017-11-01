@@ -92,9 +92,16 @@
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
-                        </div>
+                </div>
                     @endif
 
+                    @if (count($data)== 0)
+                    <div>                    
+                       
+                        <h5>There are no pending orders ! </h5>
+                                         
+                    </div>
+                    @endif  
                     
                    
 

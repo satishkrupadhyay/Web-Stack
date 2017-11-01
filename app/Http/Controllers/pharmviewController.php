@@ -36,6 +36,10 @@ class pharmviewController extends Controller
                   
                 }
 
+              DB::table('orders')
+            ->where('order_id', $order_id )
+            ->update(['status' => 5]);
+
                 
             
             return view('pharmview', ['order_id'=> $order_id, 'results'=>$results, 'name'=>$name]);   
@@ -51,10 +55,10 @@ class pharmviewController extends Controller
           $price1 = $request->price2;
           $amount1 = $request->total;
           $date_of_delivery = date('Y-m-d H:i:s');
-          $status = 1;
+          //$status = 1;
         DB::table('orders')
             ->where('order_id', $ord_id )
-            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=> $date_of_delivery, 'status' =>$status, 'pharmacy_id' =>$pharmacy_id]);
+            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=> $date_of_delivery, 'pharmacy_id' =>$pharmacy_id]);
             //return view('pharmview');
          
   //$mailid = DB::select( DB::raw("select email from users join orders where orders.cust_id = users.cust_id"));
