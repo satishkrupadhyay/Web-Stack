@@ -36,6 +36,10 @@ class pharmviewController extends Controller
                   
                 }
 
+              DB::table('orders')
+            ->where('order_id', $order_id )
+            ->update(['status' => 5]);
+
                 
             
             return view('pharmview', ['order_id'=> $order_id, 'results'=>$results, 'name'=>$name]);   
