@@ -1,7 +1,5 @@
 <?php
-
 namespace Jivoni\Http\Controllers;
-
 use Illuminate\Http\Request;
 use DB;
 use Auth;

@@ -84,7 +84,12 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Past Orders</strong></div>
+                <div class="panel-heading"><strong>Past Orders:&nbsp;</strong>
+                    @foreach ($count as $value1)
+                    <strong>{{$value1->cnt}}</strong>
+
+                    @endforeach
+                </div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -92,6 +97,14 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    @if (count($data)== 0)
+                    <div>                    
+                       
+                        <h5>There are no Past orders ! </h5>
+                                         
+                    </div>
+                    @endif 
                 
                 <div class="list-group">      
                            @foreach ($data as $value)

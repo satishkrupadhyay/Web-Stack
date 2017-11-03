@@ -11,7 +11,7 @@
         margin: 0 auto;
         border: 1.5px solid;
         border-spacing: 100px;
-    }
+    } 
     .center-justified {
         text-align: justify;
         margin: 0 auto;

@@ -154,28 +154,40 @@
                       
                                         <div class="panel-heading"><strong>Medicine Details:</strong></div>
                                         <div class="panel-body">
-                                          
-                                        
-                                        <div class="col-xs-4">                      
-                                            <input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required>                      
+                                        <div class="col-xs-4">
+                                        <label for="medicine">Medicine</label>
+                                        </div>
+                                        <div class="col-xs-4">
+                                        <label for="quantity">Quantity</label>
+                                        </div>
+                                        <div class="col-xs-3">
+                                        <label for="price">Price</label>
+                                        </div>   
+
+                                        <div class="col-xs-4">
+                                                             
+                                            <input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="" required>                      
                                         </div>
 
-                                        <div class="col-xs-4">                      
-                                            <input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required onkeyup="calculate();">                     
+                                        <div class="col-xs-4">
+                                                              
+                                            <input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="" required onkeyup="calculate();">                     
                                         </div>
 
-                                        <div class="col-xs-3">                      
-                                            <input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required onkeyup="calculate();">                      
+                                        <div class="col-xs-3">
+                                                             
+                                            <input type="text" class="form-control" id="price" name="price[]" value="" placeholder="" required onkeyup="calculate();">                      
                                         </div>
 
                                         <div class="col-xs-1">                 
                                                 <button class="btn btn-success" type="button"  onclick="education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>                                                 
                                         </div>
-                                        <br><br>
+                                        <br><br><br>
 
                                         <div id="education_fields" class="panel-body">
                                                   
                                         </div>
+
 
 
                                         <div class="clear"></div>
@@ -209,7 +221,8 @@
                                         <div class="form-group">
                                             <div class="col-md-8 col-md-offset-8">
                                                  @foreach ($results as $value)
-                                                  <a href="{{action('InvoiceCreator@cancelorder', $value->order_id)}}" class="btn btn-danger"> Cancel Order</a>
+                                                  <a href="{{action('InvoiceCreator@cancelorder', $value->order_id)}}" class="btn btn-danger" id="cancel" name="cancel" > Cancel Order</a>
+
                                                   @endforeach
                                                 <button type="submit" class="btn btn-success">Proceed</button>
 
@@ -235,7 +248,7 @@
     $('form').submit(function(e) {
         var currentForm = this;
         e.preventDefault();
-        bootbox.confirm("Do you want to proceed ?", function(result) {
+        bootbox.confirm("<p>Once you <b>Proceed</b> you wont be able to come back to this page.</p>Are you sure you want to <b>proceed</b> ?", function(result) {
             if (result) {
                 currentForm.submit();
             }
@@ -244,7 +257,75 @@
     </script>
     <!-- end Scripts for alert on proceed -->
 
+    <!-- Scripts for valid quantity of numeric type only -->
+    <script type="text/javascript">
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        $(function () {
+            $("#quantity").bind("keypress", function (e) {
+                var keyCode = e.which ? e.which : e.keyCode
+                var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+                return ret;
+            });
+            $("#quantity").bind("paste", function (e) {
+                return false;
+            });
+            $("#quantity").bind("drop", function (e) {
+                return false;
+            });
+        });
+    </script>
+    <!-- end Scripts for valid quantity of numeric type only -->
+
+    <!-- Scripts for valid price -->
+     <script type="text/javascript">
+
+      $("#price").on("input", function(evt) {
+       var self = $(this);
+       self.val(self.val().replace(/[^0-9\.]/g, ''));
+       if ((evt.which != 46 || self.val().indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) 
+       {
+         evt.preventDefault();
+       }
+     });
+
+    </script>
+});
+     <!-- end Scripts for valid price -->
+
+    <!-- Scripts for alert on cancel -->
+    <!-- <script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#cancel").click(function(e){
+
+        var currentForm = this;
+        e.preventDefault();
+            bootbox.confirm({
+            message: "Are you sure you want to cancel this order ?",
+            buttons: {
+                confirm: {
+                    label: 'No',
+                    className: 'btn-danger'
+                },
+                cancel: {
+                    label: 'Yes',
+                    className: 'btn-success'
+                }
+            },
+            callback: function (result) {
+                 if (result) {
+             window.location = $("a[data-bb='cancel']").attr('href');
+                }
+            }
+            });
+            });
+    });
+    </script> -->
+<!-- end Scripts for alert on cancel -->
+
     <!--<script src="{{ asset('js/app.js') }}"></script>-->
+
     <script>
     var room = 1;
     function education_fields() {
@@ -254,7 +335,7 @@
         var divtest = document.createElement("div");
         divtest.setAttribute("class", "form-group removeclass"+room);
         var rdiv = 'removeclass'+room;
-        divtest.innerHTML = '<div class="col-xs-4"><input type="text" class="form-control" id="medname" name="medname[]" value="" placeholder="Medicine" required></div><div class="col-xs-4 nopadding"><input type="number" class="form-control" id="quantity" name="quantity[]" value="" placeholder="Quantity" required onkeyup="calculate();"></div><div class="col-xs-3 nopadding"><input type="number" class="form-control" id="price" name="price[]" value="" placeholder="Price" required onkeyup="calculate();"></div><div class="col-xs-1 nopadding"><button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div><div class="clear"></div>';
+        divtest.innerHTML = '<div class="col-xs-4"><input type="text" class="form-control" id="medname" name="medname[]" value=""  required></div><div class="col-xs-4 nopadding"><input type="number" class="form-control" id="quantity" name="quantity[]" value=""  required onkeyup="calculate();"></div><div class="col-xs-3 nopadding"><input type="text" class="form-control" id="price" name="price[]" value="" required onkeyup="calculate();"></div><div class="col-xs-1 nopadding"><button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div><div class="clear"></div>';
         
         objTo.appendChild(divtest)
 
@@ -304,8 +385,16 @@
 
    
 </script>
+<!-- script for back button disable -->
+<script>
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
 
-
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+</script>
+<!-- end script for back button disable -->
 </body>
 </html>
 

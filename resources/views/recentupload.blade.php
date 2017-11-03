@@ -87,8 +87,6 @@
 
 <!-- Scripts for alert on proceed -->
     <script type="text/javascript">
-     
-
 
     $(document).ready(function(){
         $("#cancel").click(function(e){
@@ -96,7 +94,7 @@
         var currentForm = this;
         e.preventDefault();
             bootbox.confirm({
-            message: "Are you sure you want to cancle your order ?",
+            message: "Are you sure you want to cancel your order ?",
             buttons: {
                 confirm: {
                     label: 'Yes',

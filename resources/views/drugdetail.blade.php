@@ -99,19 +99,20 @@
                 <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th>Drug ID</th>
+                        <th>Sl. No</th>
                         <th>Drug Name</th>
                         <th>Generic Name</th>
                         <th>Price</th>
                         <th>Manufacturer</th>
-                        <th>Exp. Date</th>
-                        <th>Mfd. Date</th>
+                        <!-- <th>Exp. Date</th>
+                        <th>Mfd. Date</th> -->
                         <th>Dosage</th>
                         
                         <th>Drug Type</th>
                       </tr>
                     </thead>
                         <tbody>
+                            <?php $i=1; ?>
                            @foreach ($data as $value)
 
                                 <!-- <a href="" class="list-group-item"> 
@@ -125,18 +126,18 @@
                                     <li style="list-style-type:none"><b>Type:</b> {{$value->type}}</li>
                                 </a> -->
                                 <tr>
-                                    <td>{{$value->drug_id}}</td>
+                                    <td>{{$i}}</td>
                                     <td>{{$value->brand_name}}</td>
                                     <td>{{$value->generic_name}}</td>
                                     <td>{{$value->price}}</td>
                                     <td>{{$value->manufacturer}}</td>
-                                    <td>{{\Carbon\Carbon::parse($value->exp_date)->format('d-M-Y')}}</td>
-                                    <td>{{\Carbon\Carbon::parse($value->mfg_date)->format('d-M-Y')}}</td>
+                                    <!-- <td>{{\Carbon\Carbon::parse($value->exp_date)->format('d-M-Y')}}</td>
+                                    <td>{{\Carbon\Carbon::parse($value->mfg_date)->format('d-M-Y')}}</td> -->
                                     <td>{{$value->dosage}}</td>
                                     
                                     <td>{{$value->type}}</td>
                                 </tr>
-
+                               <?php $i++;?>
                            @endforeach
                            </tbody>
                         </table> 

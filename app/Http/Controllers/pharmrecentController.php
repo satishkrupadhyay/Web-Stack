@@ -18,9 +18,11 @@ class pharmrecentController extends Controller
         ->leftjoin('users', 'orders.cust_id', '=', 'users.id')
         ->where([['status', 1],['pharmacy_id',$pharmacy_id]])->simplePaginate(3);
 
+        $count['count'] = DB::select( DB::raw("SELECT count(*) as cnt FROM orders WHERE status = '1' AND pharmacy_id=$pharmacy_id") );
+
               if (count($data) > 0) 
               {
-                return view('auth.pharmrecent', $data);
+                return view('auth.pharmrecent', $data, $count);
               }
               else{
 
