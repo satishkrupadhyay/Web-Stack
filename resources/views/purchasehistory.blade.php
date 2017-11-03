@@ -46,6 +46,7 @@
                                     <div class="col-md-12 list-group-item">
                                     <div class="col-md-8">
                                     <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li> 
+                                     <li style="list-style-type:none"><b>PHARMACY NAME:</b> {{$value->store_name}}</li> 
                                     <li style="list-style-type:none"><b>INVOICE NO:</b> {{$value->invoice_no}}</li>
                                <!--     <li style="list-style-type:none"><b>DRUGS:</b> {{$value->drug_name}}</li>
                                     <li style="list-style-type:none"><b>PRICES:</b> {{$value->price}}</li> 

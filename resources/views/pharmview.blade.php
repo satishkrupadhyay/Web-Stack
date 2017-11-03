@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Pharmacy</title>
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="../images/favicon.ico">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -221,7 +221,7 @@
                                         <div class="form-group">
                                             <div class="col-md-8 col-md-offset-8">
                                                  @foreach ($results as $value)
-                                                  <a href="{{action('InvoiceCreator@cancelorder', $value->order_id)}}" class="btn btn-danger" id="cancel" name="cancel" > Cancel Order</a>
+                                                  <a href="{{action('InvoiceCreator@cancelorder', $value->order_id)}}" class="btn btn-danger" id="cancel" name="cancel" data-bb="confirm" > Cancel Order</a>
 
                                                   @endforeach
                                                 <button type="submit" class="btn btn-success">Proceed</button>
@@ -248,14 +248,56 @@
     $('form').submit(function(e) {
         var currentForm = this;
         e.preventDefault();
-        bootbox.confirm("<p>Once you <b>Proceed</b> you wont be able to come back to this page.</p>Are you sure you want to <b>proceed</b> ?", function(result) {
-            if (result) {
-                currentForm.submit();
+         bootbox.confirm({
+            message: "<p>Once you <b>Proceed</b> you wont be able to come back to this page.</p>Are you sure you want to <b>proceed</b> ?",
+            buttons: {
+                confirm: {
+                    label: 'Yes',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                 if (result) {
+                            currentForm.submit();
+                            }
             }
-        });
+            });
     });
     </script>
     <!-- end Scripts for alert on proceed -->
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#cancel").click(function(e){
+
+        var currentForm = this;
+        e.preventDefault();
+            bootbox.confirm({
+            message: "Are you sure you want to cancel order ?",
+            buttons: {
+                confirm: {
+                    label: 'Yes',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                 if (result) {
+             window.location = $("a[data-bb='confirm']").attr('href');
+                }
+            }
+            });
+            });
+    });
+    </script>
 
     <!-- Scripts for valid quantity of numeric type only -->
     <script type="text/javascript">

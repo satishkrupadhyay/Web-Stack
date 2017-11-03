@@ -18,7 +18,11 @@ class purchasehistoryController extends Controller
     {	
     	$usr_id = Auth::user()->id;
 
-        $data['data'] = DB::table('orders')->where([['cust_id', $usr_id],['status', 1]])->orderByRaw('order_id DESC')->simplePaginate(3);
+        $data['data'] = DB::table('orders')
+        ->join('admins', 'admins.id', '=', 'orders.pharmacy_id')
+        ->where([['cust_id', $usr_id],['status', 1]])
+        ->orderByRaw('order_id DESC')
+        ->simplePaginate(3);
         
         //$data['data'] = DB::select( DB::raw("SELECT * FROM orders WHERE cust_id = '$usr_id' AND status='1'") );
 
