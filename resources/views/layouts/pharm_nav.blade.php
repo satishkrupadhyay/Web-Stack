@@ -8,7 +8,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
 
-                        <li><a href="{{ url('admin') }}">Pending Orders</a></li>
+                        <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
 
                         <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
 

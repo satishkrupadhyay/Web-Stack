@@ -57,6 +57,22 @@ Route::post('/Drugdetail','InventoryController@submitform')->name('submit.form')
 //View Drug Detail
 Route::get('/ViewDrugdetail', 'InventoryController@viewdetail')->name('view.form');
 
+//Editing drug details
+Route::get('/ViewDrugdetail/ajax-edit-drugs', 'InventoryController@editDrugs');
+Route::get('/ViewDrugdetail/ajax-postedit-drugs', 'InventoryController@submiteditDrugs');
+
+
+//Edit pharmacy profile and change password
+
+Route::get('/admin/profile', 'InventoryController@getPharmProfile')->name('view.pharm.profile');
+
+Route::post('/admin/profile', 'InventoryController@postPharmProfile')->name('view.pharm.profile');
+
+Route::get('/admin/change-password', 'InventoryController@getPharmChangePass')->name('view.pharm.changepass');
+Route::post('/admin/change-password', 'InventoryController@postPharmChangePass')->name('view.pharm.changepass');
+
+
+
 /*Routing for Invoice generation*/
 
 

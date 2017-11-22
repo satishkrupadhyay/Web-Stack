@@ -12,6 +12,7 @@
     <link rel="icon" href="images/favicon.ico">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 </head>
 <body>
@@ -29,50 +30,15 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/admin') }}">
-                        Hello {{Auth::user()->store_name}}
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Hello {{ Auth::user()->store_name  }}
                     </a>
                 </div>
 
-              <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-
-                        <li><a href="{{ url('admin') }}">Pending Orders</a></li>
-
-                        <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
-
-                        <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                   {{Auth::user()->store_name}} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-  
-                        
-                    </ul>
-                </div>
+                @include('layouts.pharm_nav')
+              
             </div>
         </nav>
 
@@ -87,7 +53,6 @@
                 <div class="panel-heading"><strong>Past Orders:&nbsp;</strong>
                     @foreach ($count as $value1)
                     <strong>{{$value1->cnt}}</strong>
-
                     @endforeach
                 </div>
 
