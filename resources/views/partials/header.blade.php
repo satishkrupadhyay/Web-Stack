@@ -9,8 +9,8 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="#homea" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:70px; height:70px; "/></a>
-                         <a href="#homea" class="navbar-brand" style="font-weight: bold; color:#fff; font-size: 14px; margin-top:15px;">JIVONI</a>
+                        <a href="{{ route('welcome') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:70px; height:70px; "/></a>
+                         <a href="{{ route('welcome') }}" class="navbar-brand" style="font-weight: bold; color:#fff; font-size: 14px; margin-top:15px;" id="jiv">JIVONI</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">

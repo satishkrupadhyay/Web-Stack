@@ -71,6 +71,23 @@ Route::post('/admin/profile', 'InventoryController@postPharmProfile')->name('vie
 Route::get('/admin/change-password', 'InventoryController@getPharmChangePass')->name('view.pharm.changepass');
 Route::post('/admin/change-password', 'InventoryController@postPharmChangePass')->name('view.pharm.changepass');
 
+// ajax request for unique email and phone check while registering
+Route::get('/ajax-check-unique-email', 'Auth\RegisterController@check_email')->name('ajax.unique.email');
+Route::get('/ajax-check-unique-phone', 'Auth\RegisterController@check_phone')->name('ajax.unique.phone');
+
+
+
+
+//Customer profile section and change password
+
+Route::get('/home/profile', 'HomeController@getCustProfile')->name('view.cust.profile');
+Route::post('/home/profile', 'HomeController@postCustProfile')->name('view.cust.profile');
+
+
+Route::get('/home/change-password', 'HomeController@getCustChangePass')->name('view.cust.changepass');
+Route::post('/home/change-password', 'HomeController@postCustChangePass')->name('view.cust.changepass');
+
+
 
 
 /*Routing for Invoice generation*/
