@@ -14,7 +14,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="{{ asset('css/jquery.datatables.min.css') }}">
     
     <style type="text/css">
@@ -22,7 +21,6 @@
             display: none;
         }
     </style>
-
 </head>
 <body>
     <div id="app">
@@ -46,47 +44,7 @@
                     </a>
                 </div>
 
-
-              <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-
-                      <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
-
-                        <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
-
-                        <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-  
-                        
-                    </ul>
-                </div>
-      @include('layouts.pharm_nav')
+               @include('layouts.pharm_nav')
                
             </div>
         </nav>
@@ -126,27 +84,6 @@
                       </tr>
                     </thead>
                         <tbody>
-
-                            <?php $i=1; ?>
-                           @foreach ($data as $value)
-
-                                <!-- <a href="" class="list-group-item"> 
-                                    <li style="list-style-type:none"><b>Drug Name:</b> {{$value->brand_name}}</li> 
-                                    <li style="list-style-type:none"><b>Generic name:</b> {{$value->generic_name}}</li> 
-                                    <li style="list-style-type:none"><b>Price:</b> {{$value->price}}</li>  
-                                    <li style="list-style-type:none"><b>Manufacturer:</b> {{$value->manufacturer}}</li> 
-                                    <li style="list-style-type:none"><b>Expiry Date:</b> {{$value->exp_date}}</li>
-                                    <li style="list-style-type:none"><b>Manufactured Date:</b> {{$value->mfg_date}}</li>
-                                    <li style="list-style-type:none"><b>Dosage:</b> {{$value->dosage}}</li>
-                                    <li style="list-style-type:none"><b>Type:</b> {{$value->type}}</li>
-                                </a> -->
-                                <tr>
-                                   <!--  <td>{{$i}}</td> -->
-                                    <td>{{$value->brand_name}}</td>
-                                    <td>{{$value->generic_name}}</td>
-                                    <td>{{$value->price}}</td>
-                                    <td>{{$value->manufacturer}}</td>
-
                            @foreach($data as $value)
 
                                 <tr id="row-{{ $value->drug_id }}" >
@@ -162,7 +99,6 @@
                                     <td>
                                         {{$value->manufacturer}}
                                     </td>
-
                                     <!-- <td>{{\Carbon\Carbon::parse($value->exp_date)->format('d-M-Y')}}</td>
                                     <td>{{\Carbon\Carbon::parse($value->mfg_date)->format('d-M-Y')}}</td> -->
                                     <td>

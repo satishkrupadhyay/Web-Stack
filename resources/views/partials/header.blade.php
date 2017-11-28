@@ -9,13 +9,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-<<<<<<< HEAD
-                        <a href="#home" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:70px; height:70px; "/></a>
-                         <a href="#home" class="navbar-brand" style="font-weight: bold; font-family:Seravek; color:#fff; font-size: 24px; margin-top:15px;">Jivoni</a>
-=======
+
                         <a href="{{ route('welcome') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:70px; height:70px; "/></a>
-                         <a href="{{ route('welcome') }}" class="navbar-brand" style="font-weight: bold; color:#fff; font-size: 14px; margin-top:15px;" id="jiv">JIVONI</a>
->>>>>>> c79270fbb32b93e1d92157fcd91c348aea5e8796
+                         <a href="{{ route('welcome') }}" class="navbar-brand" style="font-weight: bold; font-family:Seravek; color:#fff; font-size: 24px; margin-top:15px;" id="jiv">Jivoni</a>
+
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">

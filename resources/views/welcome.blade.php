@@ -10,7 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
         <!-- font awesome -->
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
         <link rel="icon" href="images/favicon.ico">
@@ -848,7 +847,10 @@
                 $('#password').val('');
                 $('#p').text('');
                 $("#p img:last-child").remove()
-                $('#address').val('');
+                $('#user_locality').val('Guwahati');
+                 $('#address').val('');
+                $("#u img:last-child").remove();
+                
 
            }
           });
