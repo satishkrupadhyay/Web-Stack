@@ -13,6 +13,7 @@
     <link rel="icon" href="images/favicon.ico">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 </head>
 <body>
@@ -30,8 +31,10 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/admin') }}">
-                        Hello {{Auth::user()->store_name}}
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Hello {{ Auth::user()->store_name }}
                     </a>
                 </div>
 
@@ -49,7 +52,7 @@
                         <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                   {{Auth::user()->store_name}} <span class="caret"></span>
+                                   <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -81,21 +84,30 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
+                @if(Session::has('message'))
+                    <div class="alert alert-danger fade in">
+                        
+                            {{ Session::get('message') }}
+                        
+                    </div>
+                @endif
                 <div class="panel-heading"><strong>Pending Orders:&nbsp;</strong>
+                @if(isset($count))
                     @foreach ($count as $value1)
                     <strong>{{$value1->cnt}}</strong>
-
                     @endforeach
+                @endif
                 </div>
 
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
-                </div>
+                        </div>
                     @endif
 
-                    @if (count($data)== 0)
+
+                    @if (isset($data) && count($data) == 0)
                     <div>                    
                        
                         <h5>There are no pending orders ! </h5>
@@ -109,7 +121,7 @@
                 <div class="list-group">
                                
                                
-                                
+                            @if(isset($data))
                            @foreach ($data as $value)
 
 
@@ -124,9 +136,12 @@
 
 
                            @endforeach
+                           @endif
 
                     </div> 
+                    @if(isset($data))
                      {{ $data->links() }}
+                     @endif
 
                  </div>
             </div>
@@ -144,6 +159,18 @@
        //$('#my_div').load('/admin');
     }, 15000) /* time in milliseconds (ie 2 seconds)*/
 
+
+
+   /* @if(isset($status) && $status == 2)
+
+    alert("Cancelled" );
+    <?php
+    $status = 0 ;
+    ?>
+    @endif*/
+
     </script>
+
+
 </body>
 </html>

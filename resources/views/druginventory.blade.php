@@ -12,6 +12,7 @@
     <link rel="icon" href="images/favicon.ico">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 </head>
 <body>
@@ -29,8 +30,10 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/admin') }}">
-                         Hello {{Auth::user()->store_name}}
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Hello {{ Auth::user()->store_name  }}
                     </a>
                 </div>
 
@@ -44,11 +47,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
-                        <li><a href="{{ url('admin') }}">Pending Orders</a></li>
+                        <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
                         <li><a href="{{ url('ViewDrugdetail') }}">View Drug Detail</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{Auth::user()->store_name}} <span class="caret"></span>
+                                    <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -130,6 +133,12 @@
 
                             <div class="col-md-6">
                                 <input id="manufacturer" type="text" class="form-control" name="manufacturer" value="{{ old('manufacturer') }}" placeholder="e.g.  Glaxosmithkline Pharmaceuticals Ltd" required>
+
+                                @if ($errors->has('manufacturer'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('manufacturer') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -151,7 +160,7 @@
                             <label for="dosage" class="col-md-4 control-label">Strength</label>
 
                             <div class="col-md-3">
-                                <input id="dosage" type="text" class="form-control" style="width: 50%" name="dosage" value="{{ old('dosage') }}" placeholder="e.g. 1-10000 " required >
+                                <input id="strength" type="text" class="form-control" style="width: 50%" name="strength" value="{{ old('strength') }}" placeholder="e.g. 1-10000 " required >
                                 @if ($errors->has('dosage'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('dosage') }}</strong>
@@ -214,3 +223,31 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+
+<!-- Scripts for valid price -->
+     <script type="text/javascript">
+
+      $("#price").on("input", function(evt) {
+       var self = $(this);
+       self.val(self.val().replace(/[^0-9\.]/g, ''));
+       if ((evt.which != 46 || self.val().indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) 
+       {
+         evt.preventDefault();
+       }
+     });
+
+    </script>
+});
+     <!-- end Scripts for valid price -->
+
+<!-- Scripts for valid strength(only numbers) -->
+     <script type="text/javascript">
+
+     $("#strength").on("input",function (event) {    
+           $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+    </script>
+<!-- end Scripts for valid strength(only numbers) -->

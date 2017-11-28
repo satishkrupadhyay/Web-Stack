@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 </head>
 <body>
@@ -30,8 +31,10 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/admin') }}">
-                         Hello {{Auth::user()->store_name}}
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Hello {{ Auth::user()->store_name  }}
                     </a>
                 </div>
 
@@ -45,7 +48,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
 
-                        <li><a href="{{ url('admin') }}">Pending Orders</a></li>
+                      <li><a href="{{ url('pharmrecent') }}">Past Orders</a></li>
 
                         <li><a href="{{ url('Drugdetail') }}">Add Drug Detail</a></li>
 
@@ -53,7 +56,7 @@
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{Auth::user()->store_name}} <span class="caret"></span>
+                                    <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -99,14 +102,14 @@
                 <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th>Sl. No</th>
+                        <!-- <th>Sl. No</th> -->
                         <th>Drug Name</th>
                         <th>Generic Name</th>
                         <th>Price</th>
                         <th>Manufacturer</th>
                         <!-- <th>Exp. Date</th>
                         <th>Mfd. Date</th> -->
-                        <th>Dosage</th>
+                        <th>Strength</th>
                         
                         <th>Drug Type</th>
                       </tr>
@@ -126,7 +129,7 @@
                                     <li style="list-style-type:none"><b>Type:</b> {{$value->type}}</li>
                                 </a> -->
                                 <tr>
-                                    <td>{{$i}}</td>
+                                   <!--  <td>{{$i}}</td> -->
                                     <td>{{$value->brand_name}}</td>
                                     <td>{{$value->generic_name}}</td>
                                     <td>{{$value->price}}</td>

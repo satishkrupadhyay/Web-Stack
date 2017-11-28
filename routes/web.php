@@ -33,6 +33,10 @@ Route::get('/pharmlogin', function () {
     return view('/auth/pharmlogin');
 });
 
+//Route when Order has been cancelled by Customer 
+Route::get('/pharmviewback', function () {
+    return view('/auth/dashboard');
+});
 
 // Pharmacy recent order view page
 Route::get('/pharmrecent', 'pharmrecentController@viewrecent');

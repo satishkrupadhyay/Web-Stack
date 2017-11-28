@@ -12,6 +12,7 @@
     <link rel="icon" href="images/favicon.ico">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 </head>
 <body>
@@ -29,8 +30,10 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/admin') }}">
-                        Hello {{Auth::user()->store_name}}
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Hello {{ Auth::user()->store_name  }}
                     </a>
                 </div>
 
@@ -52,7 +55,7 @@
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                   {{Auth::user()->store_name}} <span class="caret"></span>
+                                   <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -87,7 +90,6 @@
                 <div class="panel-heading"><strong>Past Orders:&nbsp;</strong>
                     @foreach ($count as $value1)
                     <strong>{{$value1->cnt}}</strong>
-
                     @endforeach
                 </div>
 

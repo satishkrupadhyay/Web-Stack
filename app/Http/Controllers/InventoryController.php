@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use DB;
 
 class InventoryController extends Controller
-{
+{   
 
 
     public function __construct()
@@ -28,12 +28,12 @@ class InventoryController extends Controller
     	$this->validate($request,[
     			'brandname' => 'required|min:3|max:50|regex:/^[\s\w-]*$/',
     			'genericname' => 'required|min:3|max:50|regex:/^[\s\w-]*$/',
-    			'price' => 'required|regex:/^\d*(\.\d{2})?$/',
+    			'price' => 'required',
     			
     			'manufacturer' => 'required|min:3|max:20|regex:/^[\s\w-]*$/',
     			/*'exp_date' => 'required|date',
     			'mfg_date' => 'required|date',*/
-    			'dosage' => 'required|regex:/^([1-9]|[1-9]\d|100)$/',
+    			'strength' => 'required',
     			'type' =>'required',
     		],[
     			'brandname.required' => ' The Brand name field is required',
@@ -45,9 +45,8 @@ class InventoryController extends Controller
     			
     			'genericname.max' => ' The Generic Name should not exceed 50 characters.',
                 'genericname.min' => ' The Generic Name must be atleast 3 characters.',
-                'dosage.regex'  => ' The dosage must be between: e.g. 1 - 10000.',
-                'dosage.max'    => 'Plese enter the atmost value: e.g. 9999 mg',
-                'dosage.min'	=> 'Plese enter the least value: e.g. 1 mg',
+                'strength.regex'  => ' The dosage must be between: e.g. 1 - 10000.',
+                
     		]);
 
 
@@ -61,11 +60,11 @@ class InventoryController extends Controller
 
     	/*$exp_date     = $request->get('exp_date');
     	$mfg_date     = $request->get('mfg_date');*/
-    	$strength     = $request->get('dosage');
+    	$strength     = $request->get('strength');
         $strength_unit= $request->get('strength_unit');
-        $strength     = $strength."".$strength_unit;
+        $new_strength     = $strength."".$strength_unit;
     	$type         = $request->get('type');
-    	$data = array('pharmacy_id' =>$pharmacy_id,'brand_name' =>$brand_name,'generic_name' =>$generic_name, 'price' =>$price,'manufacturer'=>$manufacturer, 'dosage'=>$strength, 'type'=>$type);
+    	$data = array('pharmacy_id' =>$pharmacy_id,'brand_name' =>$brand_name,'generic_name' =>$generic_name, 'price' =>$price,'manufacturer'=>$manufacturer, 'dosage'=>$new_strength, 'type'=>$type);
        
         DB::table('drug')->insert($data);
 
@@ -82,7 +81,7 @@ class InventoryController extends Controller
               if (count($data) > 0) 
               {
                 return view('drugdetail', $data);
-              }
+              }     
               else{
                     return view('auth.dashboard');
               }
