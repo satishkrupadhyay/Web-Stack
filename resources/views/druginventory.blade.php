@@ -37,6 +37,7 @@
                     </a>
                 </div>
 
+<<<<<<< HEAD
               <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -72,6 +73,9 @@
                         
                     </ul>
                 </div>
+=======
+               @include('layouts.pharm_nav')
+>>>>>>> c79270fbb32b93e1d92157fcd91c348aea5e8796
             </div>
         </nav>
 

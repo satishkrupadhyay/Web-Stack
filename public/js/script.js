@@ -177,7 +177,7 @@ $('#portfolio a').nivoLightbox({
 
 	jQuery(window).scroll(function () {
 	  var top = jQuery(document).scrollTop();
-		var batas = 800;
+		var batas = 50;
                 var logo = 'images/Final Logo3x.png';
                 var logoScroll = 'images/Final Logo3x.png';
 	  //alert(batas);
@@ -186,9 +186,11 @@ $('#portfolio a').nivoLightbox({
 		jQuery('.main-menu').addClass('tiny');
 		jQuery('.main-menu').css('opacity','1');
         jQuery('.navbar-brand img').attr('src',logoScroll);
+        jQuery('#jiv').addClass('jivoniTag');
 	  } else {
 	   jQuery('.main-menu').removeClass('tiny'); 
         jQuery('.navbar-brand img').attr('src',logo);
+        jQuery('#jiv').removeClass('jivoniTag');
 	  }
 	});
 

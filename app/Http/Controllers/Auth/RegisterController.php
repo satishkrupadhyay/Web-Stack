@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Mail;
+use DB;
 use Illuminate\Support\Facades\Input;
 class RegisterController extends Controller
+
 {
     /*
     |--------------------------------------------------------------------------
@@ -47,16 +49,16 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'phone' => 'required|regex:/[0-9]{10}/',
-            'user_locality' =>  'required',
-        ]);
-    }
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|string|email|max:255|unique:users',
+    //         'password' => 'required|string|min:6|confirmed',
+    //         'phone' => 'required|regex:/[0-9]{10}/',
+    //         'user_locality' =>  'required',
+    //     ]);
+    // }
 
     /**
      * Create a new user instance after a valid registration.
@@ -161,6 +163,44 @@ class RegisterController extends Controller
 
         return $user;
     }
+
+
+
+
+
+
+
+     public function check_email(Request $request) {
+
+      $email = DB::table('users')
+                  ->where('email', '=', $request->email)
+                  ->get();
+
+      if( count($email) > 0 ) {
+        echo 1;
+      } else {
+        echo 2;
+      }
+
+    }
+
+
+      public function check_phone(Request $request) {
+
+      $phone = DB::table('users')
+                  ->where('phone', '=', $request->phone)
+                  ->get();
+
+      if( count($phone) > 0 ) {
+        echo 1;
+      } else {
+        echo 2;
+      }
+
+
+    }
+
+
 
 
 }

@@ -47,7 +47,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="../images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
 
                     <a class="navbar-brand" href="{{ url('/home') }}">
                         Hello {{ Auth::user()->name }}
@@ -84,6 +84,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('view.cust.profile') }}">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('view.cust.changepass') }}">Change Password</a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

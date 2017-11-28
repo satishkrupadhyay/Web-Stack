@@ -331,9 +331,9 @@ p.bannerDescription{
 
 
 
-.scrolldown {
+/*.scrolldown {
 	padding-top: 24px;
-}
+}*/
 
 #bgimage .scroll_btn {
 	background: url(../images/scroll.gif) 50% 50% no-repeat rgba(215, 181 ,94, 0);
@@ -854,5 +854,29 @@ a.info_right_text{
 	background-size:100% 100%;	
 	
 }
+
+
+.welcomeHeader {
+    margin-left: -73px;
+}
+
+
+.remodal {
+    width: 510px !important;
+}
+
+
+.jivoniTag {
+    color: #666 !important;
+}
+
+@media (max-width: 768px) {
+
+    .welcomeHeader {
+        margin-left: 0 !important;
+    }
+}
+
+
 
 
