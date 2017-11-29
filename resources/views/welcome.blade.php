@@ -11,7 +11,6 @@
         
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
         <!-- font awesome -->
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
         <link rel="icon" href="images/favicon.ico">
@@ -149,7 +148,7 @@
  <div class='preloader'><div class='loaded'>&nbsp;</div></div>
        @include('partials.header')
 
-        <section id="homea">
+        <section id="home">
             <div id="bgimage" class="header-image">
                 <div class="container-fluid">
                     <div class="row">
@@ -855,6 +854,11 @@
                 $('#user_locality').val('Guwahati');
                 $("#u img:last-child").remove()
                 $("#u").text('');
+                $('#user_locality').val('Guwahati');
+                 $('#address').val('');
+                $("#u img:last-child").remove();
+                
+
 
            }
           });

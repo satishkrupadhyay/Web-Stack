@@ -63,6 +63,8 @@ class InventoryController extends Controller
     	$mfg_date     = $request->get('mfg_date');*/
     	$strength     = $request->get('strength');
         $strength_unit= $request->get('strength_unit');
+
+        
         $new_strength     = $strength." ".$strength_unit;
     	$type         = $request->get('type');
     	$data = array('pharmacy_id' =>$pharmacy_id,'brand_name' =>$brand_name,'generic_name' =>$generic_name, 'price' =>$price,'manufacturer'=>$manufacturer, 'dosage'=>$new_strength, 'type'=>$type);
@@ -81,7 +83,9 @@ class InventoryController extends Controller
 
               if (count($data) > 0) 
               {
+
                 return view('drugdetail')->with('data', $data);
+
               }     
               else{
                     return view('auth.dashboard');

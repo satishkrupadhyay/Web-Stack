@@ -8,8 +8,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
+
                         <a href="{{ route('welcome') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:70px; height:70px; "/></a>
-                         <a href="{{ route('welcome') }}" class="navbar-brand" style="font-weight: bold; color:#fff; font-size: 14px; margin-top:15px;" id="jiv">JIVONI</a>
+                         <a href="{{ route('welcome') }}" class="navbar-brand" style="font-weight: bold; font-family:Seravek; color:#fff; font-size: 24px; margin-top:15px;" id="jiv">Jivoni</a>
+
                     </div>
 
                     

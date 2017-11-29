@@ -96,18 +96,24 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <div>
+                                            @if(isset($order_id))
                                         <strong>ORDER ID:</strong>{{$order_id}}
+                                            @endif
                                         </div>
                                         <div>
+                                            @if(isset($name))
                                          <strong>CUSTOMER NAME:</strong>{{$name}}
+                                            @endif
                                         </div>
                                     </div>
 
                                     <div class="panel-body col-md-4">
                                         
+                                    @if(isset($results))    
                                         @foreach ($results as $value)
                                        <img src="/pres/{{$value->image}}" width="400px" height="600px">
                                        @endforeach
+                                    @endif
                                     </div>
 
                                      <div class="panel-body col-md-7 col-md-offset-1">
@@ -175,20 +181,21 @@
                                         <input type="hidden" id="price2" name="price2">
                                         <input type="hidden" id="pharmacy_id" name="pharmacy_id" value="{{Auth::user()->id}}">
 
+                                        if()
                                         <input type="hidden" id="ord_id" name="ord_id" value="{{$order_id}}">
 
-      
 
                                         </div>
                                          
                                         
-                                        
                                         <div class="form-group">
                                             <div class="col-md-8 col-md-offset-8">
+                                            @if( count($results) > 0 && isset($results)) 
                                                  @foreach ($results as $value)
                                                   <a href="{{action('InvoiceCreator@cancelorder', $value->order_id)}}" class="btn btn-danger" id="cancel" name="cancel" data-bb="confirm" > Cancel Order</a>
 
                                                   @endforeach
+                                            @endif
                                                 <button type="submit" class="btn btn-success">Proceed</button>
 
                                                 
@@ -295,6 +302,15 @@
          evt.preventDefault();
        }
      });
+
+
+    @if(isset($status) && $status == 2)
+        
+        var order_id = $order_id;
+        alert("$status is been Cancelled" + order_id);
+        window.location = '/admin';
+        
+    @endif
 
     </script>
 });

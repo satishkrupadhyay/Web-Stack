@@ -38,6 +38,7 @@
                 </div>
 
                @include('layouts.pharm_nav')
+
             </div>
         </nav>
 

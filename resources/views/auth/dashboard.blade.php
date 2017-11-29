@@ -51,21 +51,30 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
+                @if(Session::has('message'))
+                    <div class="alert alert-danger fade in">
+                        
+                            {{ Session::get('message') }}
+                        
+                    </div>
+                @endif
                 <div class="panel-heading"><strong>Pending Orders:&nbsp;</strong>
+                @if(isset($count))
                     @foreach ($count as $value1)
                     <strong>{{$value1->cnt}}</strong>
-
                     @endforeach
+                @endif
                 </div>
 
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
-                </div>
+                        </div>
                     @endif
 
 
+<<<<<<< HEAD
                      @if(Session::has('welcome_message'))
                         <div class="alert alert-success">
                             {{ Session::get('welcome_message') }}
@@ -77,6 +86,8 @@
                     
 
                     @if (count($data)== 0)
+
+                    @if (isset($data) && count($data) == 0)
                     <div>                    
                        
                         <h5>There are no pending orders ! </h5>
@@ -90,7 +101,7 @@
                 <div class="list-group">
                                
                                
-                                
+                            @if(isset($data))
                            @foreach ($data as $value)
 
 
@@ -105,9 +116,12 @@
 
 
                            @endforeach
+                           @endif
 
                     </div> 
+                    @if(isset($data))
                      {{ $data->links() }}
+                     @endif
 
                  </div>
             </div>
@@ -125,6 +139,18 @@
        //$('#my_div').load('/admin');
     }, 15000) /* time in milliseconds (ie 2 seconds)*/
 
+
+
+   /* @if(isset($status) && $status == 2)
+
+    alert("Cancelled" );
+    <?php
+    $status = 0 ;
+    ?>
+    @endif*/
+
     </script>
+
+
 </body>
 </html>

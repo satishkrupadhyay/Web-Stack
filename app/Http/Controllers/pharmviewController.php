@@ -36,11 +36,7 @@ class pharmviewController extends Controller
                   
                 }
 
-              DB::table('orders')
-            ->where('order_id', $order_id )
-            ->update(['status' => 5]);
-
-                
+         
             
             return view('pharmview', ['order_id'=> $order_id, 'results'=>$results, 'name'=>$name]);   
     }
@@ -55,21 +51,35 @@ class pharmviewController extends Controller
           $price1 = $request->price2;
           $amount1 = $request->total;
           $date_of_delivery = date('Y-m-d H:i:s');
-          //$status = 1;
-        DB::table('orders')
+          $status = 1;
+
+          // $results = DB::select( DB::raw("SELECT status FROM orders WHERE order_id = '$ord_id'") );
+          /*$results = DB::table('orders')
+          ->select('status')
+          ->where('order_id', '=', '$ord_id')->get();*/
+           // var_dump($results);
+           // die();
+
+           $results = DB::select("select status from orders where order_id = $ord_id");
+           
+           foreach( $results as $r ) {
+           $r_status = $r->status;
+            
+           }
+    
+          if($r_status == 0)
+          {
+            DB::table('orders')
             ->where('order_id', $ord_id )
-            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=> $date_of_delivery, 'pharmacy_id' =>$pharmacy_id]);
+            ->update(['drug_name' => $medname1, 'quantity' => $quantity1, 'price' => $price1, 'amount'=>$amount1, 'date_of_delivery'=> $date_of_delivery, 'pharmacy_id' =>$pharmacy_id,         'status' => $status] );
             //return view('pharmview');
          
   //$mailid = DB::select( DB::raw("select email from users join orders where orders.cust_id = users.cust_id"));
- 
+           
+           
 
           $drugs = DB::table('orders')
-
-
                 ->join('users', 'users.id', '=', 'orders.cust_id')
-
-
                 ->where('order_id','=',$ord_id)->get();
 
           foreach ($drugs as $value) {
@@ -106,7 +116,16 @@ class pharmviewController extends Controller
       			//$string .= $medname.',';
       			//return($string);
       		//});
-      	
+      	}
+        else
+        {
+          // dd("else part");
+            $status = 2;
+          // echo "Order canceled by user!";
+            return redirect('admin')->with('message', 'Order has been cancelled');
+          // return view('auth.dashboard', ['status'=>$status, 'order_id' => $ord_id, '$data' => null, '$count' => null]);
+          
+        }
       
     }
 }
