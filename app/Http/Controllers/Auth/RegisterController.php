@@ -219,10 +219,7 @@ class RegisterController extends Controller
 
           drug.generic_name LIKE '$toSearch'";
 
-        
         $drugDetails = DB::select( DB::raw($dataString) );
-
-
 
         echo json_encode($drugDetails);
     }

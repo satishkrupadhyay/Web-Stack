@@ -367,7 +367,7 @@
 
 <script type="text/javascript">
     
-    $('#drug').on('keypress', function() {
+    $('#drug').on('keyup', function() {
 
         $.ajax({
                 url: "{{ Route('ajax.live.search') }}",
