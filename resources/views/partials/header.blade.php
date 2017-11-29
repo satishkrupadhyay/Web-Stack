@@ -98,7 +98,7 @@
             <div class="col-md-6 col-md-offset-4">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="remember"> Remember Me
+                        <input type="checkbox" name="remember_user" id="remember_user"> Remember Me
                     </label>
                 </div>
                 <a href="{{ route('password.request') }}" data-toggle="modal" data-target="#forgot" >
@@ -168,7 +168,7 @@
             <div class="col-md-6 col-md-offset-4">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="remember"> Remember Me
+                        <input type="checkbox" name="remember_pharm" id="remember_pharm"> Remember Me
                     </label>
                 </div>
                 <a href="{{ route('password.request') }}" data-toggle="modal" data-target="#forgot">
@@ -213,8 +213,13 @@
         var e_flag = false;
         var p_flag = false;
 
-        var email = $('#login_email').val();
-        var password = $('#login_password').val();
+        var postData = 
+        {
+            'email' : $('input[name="email"]').val(),
+            'password': $('input[name="password"]').val(),
+            'remember' : $('input[name="remember_user"]').is(':checked'),
+        }
+
 
         var filter = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
 
@@ -251,9 +256,10 @@
         $.ajax({
                 url: "{{ Route('ajax.login.check') }}",
                 type: 'GET',
-                data: 'email=' + $('#login_email').val() + '&password=' + $('#login_password').val(),
+                data: postData,
 
                 success: function(response) {
+
 
                     if( response == 1 ) {
                         $('#e_div').html('<img src="images/if_cross.png" alt="" /> Sorry! E-mail id not found');
@@ -295,8 +301,13 @@
         var pe_flag = false;
         var pp_flag = false;
 
-        var p_email = $('#p_email').val();
-        var p_password = $('#p_password').val();
+        var postData = 
+        {
+            'email' : $('#p_email').val(),
+            'password': $('#p_password').val(),
+            'remember' : $('input[name="remember_pharm"]').is(':checked'),
+        }
+
 
         var filter = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
 
@@ -333,7 +344,7 @@
         $.ajax({
                 url: "{{ Route('ajax.login.check.pharmacy') }}",
                 type: 'GET',
-                data: 'email=' + $('#p_email').val() + '&password=' + $('#p_password').val(),
+                data: postData,
 
                 success: function(response) {
 

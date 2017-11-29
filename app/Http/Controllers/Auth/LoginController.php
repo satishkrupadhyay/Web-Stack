@@ -53,6 +53,13 @@ class LoginController extends Controller
     } 
 
 
+    public function logout(Request $request) {
+
+        Auth::logout();
+        return redirect('/');
+    }
+
+
 
 
     public function validateCredentials(Request $request) {
@@ -61,6 +68,16 @@ class LoginController extends Controller
 
         $email = $request->email;
         $password = $request->password;
+
+        $rememberMe = false;
+
+        if($request->remember == 'true'){
+            $rememberMe = true;
+        }
+    
+
+       
+
 
         $userDetails = DB::table('users')
                             ->where('email', '=', $email)
@@ -78,7 +95,7 @@ class LoginController extends Controller
                     'email' => $request->email,
                     'password' => $request->password,
                 );
-                if( Auth::attempt($inputs) ) {
+                if( Auth::attempt($inputs, $rememberMe) ) {
                     Session::flash('welcome_message' , "Welcome $username");
                     echo "passed";
                 } else {
@@ -98,6 +115,15 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
 
+        $rememberMe = false;
+        
+        if($request->remember == 'true'){
+            $rememberMe = true;
+        }
+
+
+
+
         $pharmDetails = DB::table('admins')
                             ->where('store_email', '=', $email)
                             ->first();
@@ -114,7 +140,7 @@ class LoginController extends Controller
                     'store_email' => $request->email,
                     'password' => $request->password,
                 );
-                if( $this->guard()->attempt($inputs) ) {
+                if( $this->guard()->attempt($inputs, $rememberMe) ) {
                     Session::flash('welcome_message' , "Welcome $username");
                     echo "passed";
                 } else {

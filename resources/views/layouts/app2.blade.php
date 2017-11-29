@@ -91,13 +91,13 @@
                                         <a href="{{ route('view.cust.changepass') }}">Change Password</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a href="{{ route('cust.logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('cust.logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
