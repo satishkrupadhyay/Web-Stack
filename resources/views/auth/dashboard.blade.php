@@ -65,6 +65,17 @@
                 </div>
                     @endif
 
+
+                     @if(Session::has('welcome_message'))
+                        <div class="alert alert-success">
+                            {{ Session::get('welcome_message') }}
+                        </div>
+                    @endif
+
+
+
+                    
+
                     @if (count($data)== 0)
                     <div>                    
                        

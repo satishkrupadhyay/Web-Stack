@@ -201,6 +201,32 @@ class RegisterController extends Controller
     }
 
 
+ public function liveSearch(Request $request) {
+
+        $name = $request->name;
+
+        $toSearch = $name . '%';
+
+        $dataString = "SELECT drug.brand_name, drug.generic_name, drug_category.category_name 
+
+          FROM drug INNER JOIN drug_category
+
+          ON drug_category.drug_category_id = drug.drug_category_id
+
+          WHERE drug.brand_name LIKE '$toSearch'
+
+          OR
+
+          drug.generic_name LIKE '$toSearch'";
+
+        
+        $drugDetails = DB::select( DB::raw($dataString) );
+
+
+
+        echo json_encode($drugDetails);
+    }
+
 
 
 }

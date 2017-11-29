@@ -32,6 +32,12 @@
                         </div>
                     @endif
 
+                   @if(Session::has('welcome_message'))
+                        <div class="alert alert-success">
+                            {{ Session::get('welcome_message') }}
+                        </div>
+                    @endif
+
                     You are logged in!
                      @if (session('statusreg'))
     <div class="alert alert-success">

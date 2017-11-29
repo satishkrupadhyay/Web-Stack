@@ -8,6 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
@@ -143,6 +144,8 @@
         </div>
 
  -->
+
+
  <div class='preloader'><div class='loaded'>&nbsp;</div></div>
        @include('partials.header')
 
@@ -849,6 +852,9 @@
                 $('#p').text('');
                 $("#p img:last-child").remove()
                 $('#address').val('');
+                $('#user_locality').val('Guwahati');
+                $("#u img:last-child").remove()
+                $("#u").text('');
 
            }
           });
@@ -946,7 +952,7 @@
 
     $('#phone').on('focusout', function(){
         if( $('#phone').val() == '' ) {
-            $('#ph').html('<img src="images/if_cross.png" alt="" /> not cool');
+            $('#ph').html('<img src="images/if_cross.png" alt="" /> required');
             $(this).addClass('borderred');    
             $('#submit').prop('disabled', true);
         } else if( $('#phone').val().length != 10 ) {

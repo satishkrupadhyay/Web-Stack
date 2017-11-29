@@ -4,6 +4,11 @@ namespace Jivoni\Http\Controllers\Auth;
 
 use Jivoni\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use DB;
+use Auth;
+use Hash;
+use Session;
 
 class LoginController extends Controller
 {
@@ -39,6 +44,85 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
        
+    }
+
+
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    } 
+
+
+
+
+    public function validateCredentials(Request $request) {
+
+        $checkFlag = false;
+
+        $email = $request->email;
+        $password = $request->password;
+
+        $userDetails = DB::table('users')
+                            ->where('email', '=', $email)
+                            ->first();
+
+        if( count($userDetails) == 0 ) {
+            echo 1;
+        } else {
+            $username = $userDetails->name;
+            if( !Hash::check($password, $userDetails->password) ) {
+                $checkFlag = true;
+                echo 2;
+            } else {
+                $inputs = array(
+                    'email' => $request->email,
+                    'password' => $request->password,
+                );
+                if( Auth::attempt($inputs) ) {
+                    Session::flash('welcome_message' , "Welcome $username");
+                    echo "passed";
+                } else {
+                    echo "fail";
+                }
+            }    
+        }
+
+    }
+
+
+
+        public function validatePharmCredentials(Request $request) {
+
+        $checkFlag = false;
+
+        $email = $request->email;
+        $password = $request->password;
+
+        $pharmDetails = DB::table('admins')
+                            ->where('store_email', '=', $email)
+                            ->first();
+
+        if( count($pharmDetails) == 0 ) {
+            echo 1;
+        } else {
+            $username = $pharmDetails->owner_name;
+            if( !Hash::check($password, $pharmDetails->password) ) {
+                $checkFlag = true;
+                echo 2;
+            } else {
+                $inputs = array(
+                    'store_email' => $request->email,
+                    'password' => $request->password,
+                );
+                if( $this->guard()->attempt($inputs) ) {
+                    Session::flash('welcome_message' , "Welcome $username");
+                    echo "passed";
+                } else {
+                    echo "fail";
+                }
+            }    
+        }
+
     }
 
     

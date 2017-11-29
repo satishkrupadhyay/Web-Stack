@@ -76,8 +76,6 @@ Route::get('/ajax-check-unique-email', 'Auth\RegisterController@check_email')->n
 Route::get('/ajax-check-unique-phone', 'Auth\RegisterController@check_phone')->name('ajax.unique.phone');
 
 
-
-
 //Customer profile section and change password
 
 Route::get('/home/profile', 'HomeController@getCustProfile')->name('view.cust.profile');
@@ -86,6 +84,18 @@ Route::post('/home/profile', 'HomeController@postCustProfile')->name('view.cust.
 
 Route::get('/home/change-password', 'HomeController@getCustChangePass')->name('view.cust.changepass');
 Route::post('/home/change-password', 'HomeController@postCustChangePass')->name('view.cust.changepass');
+
+
+// check login credentials while logging in for user
+
+
+Route::get('/ajax-login-check-user', 'Auth\LoginController@validateCredentials')->name('ajax.login.check');
+
+Route::get('/ajax-login-check-pharmacy', 'Auth\LoginController@validatePharmCredentials')->name('ajax.login.check.pharmacy');
+
+//live search
+Route::get('/ajax-live-search', 'Auth\RegisterController@liveSearch')->name('ajax.live.search');
+
 
 
 
