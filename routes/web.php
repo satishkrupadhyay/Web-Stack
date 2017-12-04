@@ -121,7 +121,7 @@ Route::get('/cancel/{ord_id}','InvoiceCreator@cancelorder');
 //****************************************************************
 
 //user logout 
-
+Route::get('/logout', 'Auth\LoginController@logout')->name('cust.logout');
 
 Route::group(['middleware' => 'preventbackhistory'],function(){
 	Auth::routes();

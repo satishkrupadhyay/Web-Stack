@@ -74,7 +74,6 @@
                     @endif
 
 
-
                      @if(Session::has('welcome_message'))
                         <div class="alert alert-success">
                             {{ Session::get('welcome_message') }}
@@ -95,6 +94,7 @@
                     </div>
                     @endif  
                     @endif
+
                    
 
                 
@@ -141,13 +141,13 @@
 
 
 
-   /* @if(isset($status) && $status == 2)
+    // @if(isset($status) && $status == 2)
 
-    alert("Cancelled" );
-    <?php
-    $status = 0 ;
-    ?>
-    @endif*/
+    // alert("Cancelled" );
+    // <?php
+    // $status = 0 ;
+    // ?>
+    // @endif
 
     </script>
 
