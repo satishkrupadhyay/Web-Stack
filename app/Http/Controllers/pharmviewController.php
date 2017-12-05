@@ -120,7 +120,7 @@ class pharmviewController extends Controller
         else
         {
           // dd("else part");
-            $status = 2;
+            //$status = 2;
           // echo "Order canceled by user!";
             return redirect('admin')->with('message', 'Order has been cancelled');
           // return view('auth.dashboard', ['status'=>$status, 'order_id' => $ord_id, '$data' => null, '$count' => null]);

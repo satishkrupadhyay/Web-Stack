@@ -181,7 +181,6 @@
                                         <input type="hidden" id="price2" name="price2">
                                         <input type="hidden" id="pharmacy_id" name="pharmacy_id" value="{{Auth::user()->id}}">
 
-                                        if()
                                         <input type="hidden" id="ord_id" name="ord_id" value="{{$order_id}}">
 
 
@@ -263,7 +262,7 @@
             },
             callback: function (result) {
                  if (result) {
-             window.location = $("a[data-bb='confirm']").attr('href');
+                    window.location = $("a[data-bb='confirm']").attr('href');
                 }
             }
             });

@@ -390,16 +390,22 @@
 
                     var toAppend = '';
 
-                    $.each(response, function(k, v) {
+                    if( response == '' ) {
+                        
+                        toAppend += 'No results found';
+
+                    } else {
+                        $.each(response, function(k, v) {
 
                         toAppend += 'Brand name: ' + v.brand_name + '<br>';
                         toAppend += 'Generic name: ' + v.generic_name + '<br>';
                         toAppend += 'Category name: ' + v.category_name + '<br>';
                         toAppend += '<hr>';
+                        
+                        });
+                    }
 
-
-
-                    });
+                    
 
                     $('#result').show().html('<p>' + toAppend + '</p>');
                     
@@ -407,5 +413,14 @@
             });
 
     });
+
+    $('#drug').on('focusout', function() {
+
+        $('#result').html('').hide();
+
+    });
+
+
+
 
 </script>

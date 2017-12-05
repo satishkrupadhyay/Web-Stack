@@ -30,20 +30,28 @@ class FileController extends Controller
     {
 
       $user_locality = $request->user_locality;
+
       //get pharmacy id based on location of order
-      $pharm_data['pharm_data'] = DB::table('admins')
-        ->where('locality', $user_locality)->get()->first();
+      $pharm_data = DB::table('admins')
+        ->where('locality', $user_locality)->get();
+
+
+      if( count($pharm_data) == 0 ) {
+
+        return back()
+          -> with('denied','Sorry! We could not find any pharmacies near your locality');
+
+      }
+
 
 
       //$pharm_data = DB::select( DB::raw("SELECT id FROM admins WHERE locality = $user_locality") );
       
-      foreach ($pharm_data as $value) {
-                  $pharmacy_id=$value->id;
-                  
-                }
-
-
-
+      foreach ($pharm_data as $value) {        
+      
+        $pharmacy_id = $value->id;
+      
+      }
 
 
        //$contactEmail = $req->input('email'); 
@@ -68,7 +76,7 @@ class FileController extends Controller
         //$request->image->storeAs('upload',$imageName);
         //$date_of_purchase = date('d-m-y H:i:s');
 
-        $data = array('image' =>$imageName,'cust_id' =>$user_id,'pharmacy_id'=>$pharmacy_id);
+        $data = array('image' =>$imageName,'cust_id' => $user_id, 'pharmacy_id' => $pharmacy_id);
         DB::table('orders')->insert($data);
 
         Mail::send(['text'=> $template_path ], array('email' => $request->get('email')), function($message) use ($usr_email)

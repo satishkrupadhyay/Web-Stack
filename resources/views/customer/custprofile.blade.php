@@ -56,6 +56,16 @@
     <hr>
                 <div class="row">
                   
+                      <!-- left column -->
+                  <div class="col-md-3">
+                    <div class="text-center">
+                      <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                      <h6>Upload a different photo...</h6>
+                      
+                      <input disabled type="file" class="form-control">
+                    </div>
+                  </div>
+
                   
                   <!-- edit form column -->
                   <div class="col-md-9 personal-info">
@@ -128,15 +138,7 @@
                     </form>
                   </div>
 
-                  <!-- left column -->
-                  <div class="col-md-3">
-                    <div class="text-center">
-                      <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                      <h6>Upload a different photo...</h6>
-                      
-                      <input disabled type="file" class="form-control">
-                    </div>
-                  </div>
+              
 
 
               </div>

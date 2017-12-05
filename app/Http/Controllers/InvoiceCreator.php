@@ -158,14 +158,12 @@ foreach ($drug as $value) {
 
     public function cancelorder($ord_id){
 
-      $id2=$ord_id;
+      $id2 = $ord_id;
+
+
 
       $drug = DB::table('orders')
-
-
       ->join('users', 'users.id', '=', 'orders.cust_id')
-
-
       ->where('order_id','=',$id2)->get();
       //$drug = Order::find($ord_id);
       // $user = User::find($id);
@@ -178,6 +176,22 @@ foreach ($drug as $value) {
             # code...
           
 }
+
+
+  $details = DB::select("select status from orders where order_id = $id2");
+      foreach( $details as $r ) {
+         $r_status = $r->status;
+            
+       }
+
+       if( $r_status != 0 ) {
+
+           return redirect('admin')->with('message', "Order has already been cancelled by customer - $customer_name");
+       }
+
+
+
+
 
       $template_path = 'cancel';
           Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($mailid)

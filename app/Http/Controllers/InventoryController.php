@@ -250,6 +250,105 @@ class InventoryController extends Controller
         }
     }   
 
+    public function searchBrand(Request $request) {
+
+        $brand_name = $request->brand_name;
+
+        $toSearch = $brand_name . '%';
+
+        $dataString = "SELECT brand_name
+
+        FROM drug 
+
+        WHERE brand_name LIKE '$toSearch'";
+
+        $drugDetails = DB::select( DB::raw($dataString) );
+
+        if( count($drugDetails) > 0 ) {
+
+        ?>
+
+        <ul class="list">
+        <?php
+        foreach($drugDetails as $dd) {
+        ?>
+        <li class="listTitle result" onClick="selectBrand('<?php echo $dd->brand_name; ?>');"><?php echo $dd->brand_name; ?></li>
+        <?php } ?>
+        </ul>
+
+        <?php
+        } else {
+            echo "No suggestions found";
+        }
+    }
+
+
+
+    public function searchGeneric(Request $request) {
+
+        $generic_name = $request->generic_name;
+
+        $toSearch = $generic_name . '%';
+
+        $dataString = "SELECT generic_name
+
+        FROM drug 
+
+        WHERE generic_name LIKE '$toSearch'";
+
+        $drugDetails = DB::select( DB::raw($dataString) );
+
+        if( count($drugDetails) > 0 ) {
+
+        ?>
+
+        <ul class="list">
+        <?php
+        foreach($drugDetails as $dd) {
+        ?>
+        <li class="listTitle result" onClick="selectGeneric('<?php echo $dd->generic_name; ?>');"><?php echo $dd->generic_name; ?></li>
+        <?php } ?>
+        </ul>
+
+        <?php
+        } else {
+            echo "No suggestions found";
+        }
+    }
+
+
+    public function searchManufacturer(Request $request) {
+
+        $manufacturer = $request->manufacturer;
+
+        $toSearch = $manufacturer . '%';
+
+        $dataString = "SELECT manufacturer
+
+        FROM drug 
+
+        WHERE manufacturer LIKE '$toSearch'";
+
+        $drugDetails = DB::select( DB::raw($dataString) );
+
+        if( count($drugDetails) > 0 ) {
+
+        ?>
+
+        <ul class="list">
+        <?php
+        foreach($drugDetails as $dd) {
+        ?>
+        <li class="listTitle result" onClick="selectManufacturer('<?php echo $dd->manufacturer; ?>');"><?php echo $dd->manufacturer; ?></li>
+        <?php } ?>
+        </ul>
+
+        <?php
+        } else {
+            echo "No suggestions found";
+        }
+    }
+
 
     
 }

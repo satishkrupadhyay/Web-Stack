@@ -13,6 +13,45 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+        
+    .result {
+        min-height: 31px;
+        text-decoration: none;
+        cursor: pointer;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .list {
+        padding: 0;
+    line-height: 25px;
+    position: absolute;
+    z-index: 9999999;
+    background: white;
+    width: 94%;
+    }
+
+    .listTitle {
+        list-style: none;
+    border: 1px solid #b5b2b2;
+    border-radius: 4px;
+    padding: 5px 6px;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+
+        .strength_con {
+            margin-bottom: 20px !important;
+        }
+    }
+
+
+
+    </style>
   
 </head>
 <body>
@@ -30,9 +69,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a href="{{ url('/home') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
+                    <a href="{{ url('/admin') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:40px; height:40px; margin-top: -10px; "/></a>
 
-                    <a class="navbar-brand" href="{{ url('/home') }}">
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
                         Hello {{ Auth::user()->store_name  }}
                     </a>
                 </div>
@@ -71,6 +110,9 @@
 
                             <div class="col-md-6">
                                 <input id="brandname" type="text" class="form-control" name="brandname" value="{{ old('brandname') }}" placeholder="e.g. Calpol 500 MG" required autofocus >
+                                <div id="brand_result">
+                                    
+                                </div>
 
                                 @if ($errors->has('brandname'))
                                     <span class="help-block">
@@ -86,6 +128,12 @@
                             <div class="col-md-6">
                                 <input id="genericname" type="text" class="form-control" name="genericname" value="{{ old('genericname') }}" placeholder="e.g. Paracetamol" required  >
 
+                                <div id="generic_result">
+                                    
+                                </div>
+
+
+
                                 @if ($errors->has('genericname'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('genericname') }}</strong>
@@ -100,6 +148,10 @@
 
                             <div class="col-md-6">
                                 <input id="manufacturer" type="text" class="form-control" name="manufacturer" value="{{ old('manufacturer') }}" placeholder="e.g.  Glaxosmithkline Pharmaceuticals Ltd" required>
+
+                                 <div id="manufacturer_result">
+                                    
+                                </div>
 
                                 @if ($errors->has('manufacturer'))
                                     <span class="help-block">
@@ -126,15 +178,15 @@
                         <div class="form-group">
                             <label for="dosage" class="col-md-4 control-label">Strength</label>
 
-                            <div class="col-md-3">
-                                <input id="strength" type="text" class="form-control" style="width: 50%" name="strength" value="{{ old('strength') }}" placeholder="e.g. 1-10000 " required >
+                            <div class="col-md-2 strength_con">
+                                <input id="strength" type="text" class="form-control" name="strength" value="{{ old('strength') }}" placeholder="e.g. 1-10000 " required >
                                 @if ($errors->has('dosage'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('dosage') }}</strong>
                                     </span>
                                 @endif      
                            </div>
-                           <div class="col-md-3" style="margin-left: -130px">
+                           <div class="col-md-3">
                                 <select id ="strength_unit" class = "form-control" name="strength_unit" style="width: 35%" value="{{ old('strength_unit') }}" required>
                                       <option value="mg">mg</option>
                                       <option value="ml">ml</option>
@@ -204,13 +256,31 @@
      });
 
     </script>
-});
      <!-- end Scripts for valid price -->
 
 <!-- Scripts for valid strength(only numbers) -->
      <script type="text/javascript">
+        
+       
+            function selectBrand(val) {
+                $("#brandname").val(val);
+                $("#brand_result").hide();
+            }
 
-     $("#strength").on("input",function (event) {    
+            function selectGeneric(val) {
+                $("#genericname").val(val);
+                $("#generic_result").hide();
+            }
+
+            function selectManufacturer(val) {
+                $("#manufacturer").val(val);
+                $("#manufacturer_result").hide();
+            }
+        
+        
+
+
+         $("#strength").on("input",function (event) {    
            $(this).val($(this).val().replace(/[^\d].+/, ""));
             if ((event.which < 48 || event.which > 57)) {
                 event.preventDefault();
@@ -218,3 +288,115 @@
         });
     </script>
 <!-- end Scripts for valid strength(only numbers) -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+
+    // selecting brand name
+    
+    $('#brandname').on('keyup focusin', function() {
+
+         if( $(this).val().trim() != '' ) {
+            $.ajax({
+                    url: "{{ Route('ajax.searchbrandname') }}",
+                    type: 'GET',
+                    data: 'brand_name=' + $(this).val().trim(),
+
+                    success: function(response) {
+
+                        $('#brand_result').show().html(response);
+                        
+                    }
+                });
+        } else {
+            $('#brand_result').hide();
+        }
+    });
+
+    $('.container').on('click', function(event) {
+
+        if( event.target.id == "brand_result" ) {
+            return;
+        }
+
+        $('#brand_result').html('').hide();
+    });
+
+
+    // selecting generic name
+    
+    $('#genericname').on('keyup focusin', function() {
+
+         if( $(this).val().trim() != '' ) {
+            $.ajax({
+                    url: "{{ Route('ajax.searchgenericname') }}",
+                    type: 'GET',
+                    data: 'generic_name=' + $(this).val().trim(),
+
+                    success: function(response) {
+
+                        $('#generic_result').show().html(response);
+                        
+                    }
+                });
+        } else {
+            $('#generic_result').hide();
+        }
+    });
+
+    $('.container').on('click', function(event) {
+
+        if( event.target.id == "generic_result" ) {
+            return;
+        }
+
+        $('#generic_result').html('').hide();
+    });
+
+
+    // selecting manufacturer name
+    
+    $('#manufacturer').on('keyup focusin', function() {
+
+         if( $(this).val().trim() != '' ) {
+            $.ajax({
+                    url: "{{ Route('ajax.searchmanufacturer') }}",
+                    type: 'GET',
+                    data: 'manufacturer=' + $(this).val().trim(),
+
+                    success: function(response) {
+
+                        $('#manufacturer_result').show().html(response);
+                        
+                    }
+                });
+        } else {
+            $('#manufacturer_result').hide();
+        }
+    });
+
+    $('.container').on('click', function(event) {
+
+        if( event.target.id == "manufacturer_result" ) {
+            return;
+        }
+
+        $('#manufacturer_result').html('').hide();
+    });
+
+
+   
+
+    
+
+
+
+
+
+});
+
+
+
+
+</script>
