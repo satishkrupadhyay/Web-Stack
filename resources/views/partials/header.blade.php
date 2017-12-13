@@ -10,7 +10,7 @@
                         </button>
 
                         <a href="{{ route('welcome') }}" class="navbar-brand"><img src="images/Final Logo3x.png" alt="Logo" style="width:70px; height:70px; "/></a>
-                         <a href="{{ route('welcome') }}" class="navbar-brand" style="font-weight: bold; font-family:Seravek; color:#fff; font-size: 24px; margin-top:15px;" id="jiv">Jivoni</a>
+                         <a href="{{ route('welcome') }}" class="navbar-brand" style="font-weight: bold; font-family:Lato; color:#fff; font-size: 24px; margin-top:15px;" id="jiv">Jivoni</a>
 
                     </div>
 
@@ -26,26 +26,15 @@
                                     @endif
                                 @endif
 
-                            <li><a href="#" id="search" class="" style="text-transform:uppercase;"><b>Search</b></a></li>
-                            <li><a href="#downloadApps" class="" style="text-transform:uppercase;"><b>Download</b></a></li>
+                            <li><a href="#downloadApps" class="" style="text-transform:uppercase;"><b>HOW IT WORKS</b></a></li>
                             <li><a href="#description_second" class="" style="text-transform:uppercase;"><b>About</b></a></li>
-                            <li><a href="#" class="" data-toggle="modal" data-target="#pharmlogin" ><b>Pharmacy?</b></a></li>
+                            <li><a href="javascript:void(0)" class="" data-toggle="modal" data-target="#pharmlogin" ><b>PHARMACY</b></a></li>
 
                         </ul>
 
                     </div>
                 </div>
             </div>  
-
-             <div class="col-md-6 col-md-offset-3">
-                        <form id="searchForm">
-                            <input type="text" name="drug" class="form-control" placeholder="Type anything..." id="drug">
-                        </form>
-                        <div id="result" style="background: white; padding: 5px 5px; border-radius: 5px; display: none;">
-                           
-                        </div>
-                    </div>
-
 
         </header>
 

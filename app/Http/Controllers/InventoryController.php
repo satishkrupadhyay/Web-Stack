@@ -252,7 +252,7 @@ class InventoryController extends Controller
 
     public function searchBrand(Request $request) {
 
-        $brand_name = $request->brand_name;
+        $brand_name = $request->term;
 
         $toSearch = $brand_name . '%';
 
@@ -264,29 +264,29 @@ class InventoryController extends Controller
 
         $drugDetails = DB::select( DB::raw($dataString) );
 
-        if( count($drugDetails) > 0 ) {
+        $toSend = array();
 
-        ?>
+        foreach ( $drugDetails as $key => $value ) {
+            
+            foreach( $value as $k => $v ) {
 
-        <ul class="list">
-        <?php
-        foreach($drugDetails as $dd) {
-        ?>
-        <li class="listTitle result" onClick="selectBrand('<?php echo $dd->brand_name; ?>');"><?php echo $dd->brand_name; ?></li>
-        <?php } ?>
-        </ul>
-
-        <?php
-        } else {
-            echo "No suggestions found";
+                $toSend[] = $v;
+            }
+            
         }
+
+        echo json_encode($toSend);
+
+
+
+       
     }
 
 
 
     public function searchGeneric(Request $request) {
 
-        $generic_name = $request->generic_name;
+        $generic_name = $request->term;
 
         $toSearch = $generic_name . '%';
 
@@ -298,28 +298,24 @@ class InventoryController extends Controller
 
         $drugDetails = DB::select( DB::raw($dataString) );
 
-        if( count($drugDetails) > 0 ) {
+        $toSend = array();
 
-        ?>
+        foreach ( $drugDetails as $key => $value ) {
+            
+            foreach( $value as $k => $v ) {
 
-        <ul class="list">
-        <?php
-        foreach($drugDetails as $dd) {
-        ?>
-        <li class="listTitle result" onClick="selectGeneric('<?php echo $dd->generic_name; ?>');"><?php echo $dd->generic_name; ?></li>
-        <?php } ?>
-        </ul>
-
-        <?php
-        } else {
-            echo "No suggestions found";
+                $toSend[] = $v;
+            }
+            
         }
+
+        echo json_encode($toSend);
     }
 
 
     public function searchManufacturer(Request $request) {
 
-        $manufacturer = $request->manufacturer;
+        $manufacturer = $request->term;
 
         $toSearch = $manufacturer . '%';
 
@@ -331,22 +327,18 @@ class InventoryController extends Controller
 
         $drugDetails = DB::select( DB::raw($dataString) );
 
-        if( count($drugDetails) > 0 ) {
+         $toSend = array();
 
-        ?>
+        foreach ( $drugDetails as $key => $value ) {
+            
+            foreach( $value as $k => $v ) {
 
-        <ul class="list">
-        <?php
-        foreach($drugDetails as $dd) {
-        ?>
-        <li class="listTitle result" onClick="selectManufacturer('<?php echo $dd->manufacturer; ?>');"><?php echo $dd->manufacturer; ?></li>
-        <?php } ?>
-        </ul>
-
-        <?php
-        } else {
-            echo "No suggestions found";
+                $toSend[] = $v;
+            }
+            
         }
+
+        echo json_encode($toSend);
     }
 
 
