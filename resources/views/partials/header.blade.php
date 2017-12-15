@@ -166,15 +166,17 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-8 col-md-offset-4">
-                <button type="submit" class="btn btn-primary btn-custom" id="p_submit" >
+        <div class="form-group ">
+            <center class="form-horizontal">
+                <button type="submit" class="btn btn-primary btn-custom" id="p_submit">
                     Login
                 </button>
-
-                
-            </div>
+            </center>
         </div>
+
+
+
+
     </form>
 
 </div>
