@@ -156,7 +156,8 @@ Route::get('/admin', 'AdminController@viewpage')->name('admin.home');
 
 Route::get('/SendMessage','TextMessageController@SendMessage')->name('text.form');
 
-
+Route::get('/tnc','DocumentController@tnc')->name('doc.tnc');
+Route::get('/privacy','DocumentController@privacy')->name('doc.privacy');
 
 
 
