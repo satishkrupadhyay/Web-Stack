@@ -59,7 +59,7 @@ PRE LOADER
 img{max-width:100%;}
 
 p {
-    font: normal 16px "Myriad Pro", arial, sans-serif;
+    font: normal 16px "Lato", arial, sans-serif;
 }
 a:hover{
     text-decoration:none;
@@ -75,14 +75,14 @@ h1 {
     font-size: 3.5rem;
     line-height: 50px;
     font-weight: 600;
-    font-family: "Myriad Pro" , sans-serif;
+    font-family: "Lato" , sans-serif;
 }
 
 h2 {
     font-size: 2.5rem;
     line-height: 38px;
     font-weight: 600;
-    font-family: "Myriad Pro" , sans-serif;
+    font-family: "Lato" , sans-serif;
     margin: 0;
 }
 
@@ -90,7 +90,7 @@ h3 {
     font-size: 2rem;
     line-height: 32px;
     font-weight: 600;
-    font-family: "Myriad Pro" , sans-serif;
+    font-family: "Lato" , sans-serif;
     margin: 0;
 }
 
@@ -99,20 +99,20 @@ h4 {
     font-size: 2.7rem;
     line-height: 26px;
     font-weight: 600;
-    font-family: "Myriad Pro" , sans-serif;
+    font-family: "Lato" , sans-serif;
 }
 h5{
     font-size: 3rem;
     line-height: 30px;
     font-weight: 600;
-    font-family: "Myriad Pro" , sans-serif;	
+    font-family: "Lato" , sans-serif;	
 }
 
 h6 {
     font-size: 1.7rem;
     line-height: 20px;
     font-weight: 600;
-    font-family: "Myriad Pro" , sans-serif;
+    font-family: "Lato" , sans-serif;
     margin: 0;
     text-decoration: none;
 }
@@ -874,6 +874,13 @@ a.info_right_text{
 
     .welcomeHeader {
         margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .strength_con {
+        margin-bottom: : 20px !important;
     }
 }
 

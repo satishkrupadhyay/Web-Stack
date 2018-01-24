@@ -99,6 +99,9 @@ Route::get('/ajax-login-check-pharmacy', 'Auth\LoginController@validatePharmCred
 
 //live search
 Route::get('/ajax-live-search', 'Auth\RegisterController@liveSearch')->name('ajax.live.search');
+Route::get('/ajax-brand-search', 'InventoryController@searchBrand')->name('ajax.searchbrandname');
+Route::get('/ajax-generic-search', 'InventoryController@searchGeneric')->name('ajax.searchgenericname');
+Route::get('/ajax-manufacturer-search', 'InventoryController@searchManufacturer')->name('ajax.searchmanufacturer');
 
 
 

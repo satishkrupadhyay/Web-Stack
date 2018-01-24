@@ -250,6 +250,97 @@ class InventoryController extends Controller
         }
     }   
 
+    public function searchBrand(Request $request) {
+
+        $brand_name = $request->term;
+
+        $toSearch = $brand_name . '%';
+
+        $dataString = "SELECT brand_name
+
+        FROM drug 
+
+        WHERE brand_name LIKE '$toSearch'";
+
+        $drugDetails = DB::select( DB::raw($dataString) );
+
+        $toSend = array();
+
+        foreach ( $drugDetails as $key => $value ) {
+            
+            foreach( $value as $k => $v ) {
+
+                $toSend[] = $v;
+            }
+            
+        }
+
+        echo json_encode($toSend);
+
+
+
+       
+    }
+
+
+
+    public function searchGeneric(Request $request) {
+
+        $generic_name = $request->term;
+
+        $toSearch = $generic_name . '%';
+
+        $dataString = "SELECT generic_name
+
+        FROM drug 
+
+        WHERE generic_name LIKE '$toSearch'";
+
+        $drugDetails = DB::select( DB::raw($dataString) );
+
+        $toSend = array();
+
+        foreach ( $drugDetails as $key => $value ) {
+            
+            foreach( $value as $k => $v ) {
+
+                $toSend[] = $v;
+            }
+            
+        }
+
+        echo json_encode($toSend);
+    }
+
+
+    public function searchManufacturer(Request $request) {
+
+        $manufacturer = $request->term;
+
+        $toSearch = $manufacturer . '%';
+
+        $dataString = "SELECT manufacturer
+
+        FROM drug 
+
+        WHERE manufacturer LIKE '$toSearch'";
+
+        $drugDetails = DB::select( DB::raw($dataString) );
+
+         $toSend = array();
+
+        foreach ( $drugDetails as $key => $value ) {
+            
+            foreach( $value as $k => $v ) {
+
+                $toSend[] = $v;
+            }
+            
+        }
+
+        echo json_encode($toSend);
+    }
+
 
     
 }
