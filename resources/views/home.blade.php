@@ -19,7 +19,7 @@
           <center> 
             <img src="images/flier.jpg" alt="" style="width: 70%; "/>
                   
-          </center>  
+          </center>  f
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
