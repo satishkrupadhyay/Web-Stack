@@ -19,6 +19,12 @@ body {
     width: 100%;
     color:#9da6ac;
 }
+
+.high_five {
+    font-size: 1.7rem; 
+    font-weight: 500;
+    font-family: "Lato";
+}
 /*==========================================
 PRE LOADER 
 ==========================================*/

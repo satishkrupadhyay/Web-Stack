@@ -14,6 +14,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" /> 
+
+
+
+
+
     <style type="text/css">
         
     .result {
@@ -25,18 +31,16 @@
     }
 
     .list {
-        padding: 0;
+    padding: 0;
     line-height: 25px;
-    position: absolute;
     z-index: 9999999;
     background: white;
-    width: 94%;
+    border: 1px solid #ccc6c6;
+    width: 100%;
     }
 
     .listTitle {
-        list-style: none;
-    border: 1px solid #b5b2b2;
-    border-radius: 4px;
+       list-style: none;
     padding: 5px 6px;
     text-decoration: none;
     cursor: pointer;
@@ -48,6 +52,40 @@
             margin-bottom: 20px !important;
         }
     }
+
+    .ui-autocomplete { min-height: 20px; max-height: 200px; overflow-y: scroll; overflow-x: hidden;}
+
+    .force-overflow
+        {
+            min-height: 450px;
+        }
+/*
+ *  STYLE 2
+ */
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #D62929;
+}
+
+
+
+
 
 
 
@@ -109,7 +147,7 @@
                             <label for="brandname" class="col-md-4 control-label">Drug/brand Name</label>
 
                             <div class="col-md-6">
-                                <input id="brandname" type="text" class="form-control" name="brandname" value="{{ old('brandname') }}" placeholder="e.g. Calpol 500 MG" required autofocus >
+                                <input id="brandname" type="text" class="form-control" name="brandname" value="{{ old('brandname') }}" placeholder="e.g. Calpol 500 MG" required >
                                 <div id="brand_result">
                                     
                                 </div>
@@ -225,11 +263,6 @@
     </div>
 @endif
                     </form>
-                    
-                   
-
-                
-                
                      
                  </div>
             </div>
@@ -240,6 +273,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
 </body>
 </html>
 
@@ -262,20 +297,20 @@
      <script type="text/javascript">
         
        
-            function selectBrand(val) {
-                $("#brandname").val(val);
-                $("#brand_result").hide();
-            }
+            // function selectBrand(val) {
+            //     $("#brandname").val(val);
+            //     $("#brand_result").hide();
+            // }
 
-            function selectGeneric(val) {
-                $("#genericname").val(val);
-                $("#generic_result").hide();
-            }
+            // function selectGeneric(val) {
+            //     $("#genericname").val(val);
+            //     $("#generic_result").hide();
+            // }
 
-            function selectManufacturer(val) {
-                $("#manufacturer").val(val);
-                $("#manufacturer_result").hide();
-            }
+            // function selectManufacturer(val) {
+            //     $("#manufacturer").val(val);
+            //     $("#manufacturer_result").hide();
+            // }
         
         
 
@@ -290,113 +325,51 @@
 <!-- end Scripts for valid strength(only numbers) -->
 
 <script type="text/javascript">
-    $(document).ready(function(){
+ 
+
+ //this function colors the text typed by the user.. this method is called monkey patching
+ // we are redefining the original renderItem function with this one
+ function monkeyPatchAutocomplete() {
+
+      var oldFn = $.ui.autocomplete.prototype._renderItem;
+
+      $.ui.autocomplete.prototype._renderItem = function( ul, item) {
+          var re = new RegExp("^" + this.term) ;
+          var t = item.label.replace(re,"<span style='font-weight:bold;color:#3097D1;'>" + 
+                  this.term + 
+                  "</span>");
+          return $( "<li></li>" )
+              .data( "item.autocomplete", item )
+              .append( "<a>" + t + "</a>" )
+              .appendTo( ul );
+      };
+  }
 
 
-    // selecting brand name
+$(function() {
+     
+     monkeyPatchAutocomplete(); // calling the function here
     
-    $('#brandname').on('keyup focusin', function() {
-
-         if( $(this).val().trim() != '' ) {
-            $.ajax({
-                    url: "{{ Route('ajax.searchbrandname') }}",
-                    type: 'GET',
-                    data: 'brand_name=' + $(this).val().trim(),
-
-                    success: function(response) {
-
-                        $('#brand_result').show().html(response);
-                        
-                    }
-                });
-        } else {
-            $('#brand_result').hide();
-        }
-    });
-
-    $('.container').on('click', function(event) {
-
-        if( event.target.id == "brand_result" ) {
-            return;
-        }
-
-        $('#brand_result').html('').hide();
-    });
+    //autocomplete
+    $("#brandname").autocomplete({
+        source: "{{ Route('ajax.searchbrandname') }}",
+        minLength: 1,
+    });  
 
 
-    // selecting generic name
-    
-    $('#genericname').on('keyup focusin', function() {
-
-         if( $(this).val().trim() != '' ) {
-            $.ajax({
-                    url: "{{ Route('ajax.searchgenericname') }}",
-                    type: 'GET',
-                    data: 'generic_name=' + $(this).val().trim(),
-
-                    success: function(response) {
-
-                        $('#generic_result').show().html(response);
-                        
-                    }
-                });
-        } else {
-            $('#generic_result').hide();
-        }
-    });
-
-    $('.container').on('click', function(event) {
-
-        if( event.target.id == "generic_result" ) {
-            return;
-        }
-
-        $('#generic_result').html('').hide();
-    });
+    //autocomplete
+    $("#genericname").autocomplete({
+        source: "{{ Route('ajax.searchgenericname') }}",
+        minLength: 1
+    });  
 
 
-    // selecting manufacturer name
-    
-    $('#manufacturer').on('keyup focusin', function() {
-
-         if( $(this).val().trim() != '' ) {
-            $.ajax({
-                    url: "{{ Route('ajax.searchmanufacturer') }}",
-                    type: 'GET',
-                    data: 'manufacturer=' + $(this).val().trim(),
-
-                    success: function(response) {
-
-                        $('#manufacturer_result').show().html(response);
-                        
-                    }
-                });
-        } else {
-            $('#manufacturer_result').hide();
-        }
-    });
-
-    $('.container').on('click', function(event) {
-
-        if( event.target.id == "manufacturer_result" ) {
-            return;
-        }
-
-        $('#manufacturer_result').html('').hide();
-    });
-
-
-   
-
-    
-
-
-
-
+    //autocomplete
+    $("#manufacturer").autocomplete({
+        source: "{{ Route('ajax.searchmanufacturer') }}",
+        minLength: 1
+    });                
 
 });
-
-
-
 
 </script>
