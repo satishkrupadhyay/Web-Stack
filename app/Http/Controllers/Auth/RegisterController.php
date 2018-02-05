@@ -2,6 +2,7 @@
 
 namespace Jivoni\Http\Controllers\Auth;
 
+use Jivoni\Traits\SendOtp;
 use Jivoni\User;
 use Jivoni\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -9,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Mail;
 use DB;
+use Hash;
 use Illuminate\Support\Facades\Input;
 class RegisterController extends Controller
 
@@ -24,7 +26,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers, SendOtp;
 
     /**
      * Where to redirect users after registration.
@@ -200,6 +202,59 @@ class RegisterController extends Controller
 
     }
 
+
+    public function sendOtpToPhone(Request $request) {
+
+      $otp = mt_rand(111111,666666);
+      
+      $phone = $request->phone;
+      $first_name = $request->first_name;
+      $name = $request->name;
+      $email = $request->email;
+      $address = $request->address;
+      $user_locality = $request->user_locality;
+      $password = Hash::make($request->password);
+      $this->sendTheOtp($first_name, $phone, $otp);
+
+      User::create(
+        [
+          'name' => $name,
+          'email' => $email,
+          'phone' => $phone,
+          'address' => $address,
+          'user_locality' => $user_locality,
+          'password' => $password,
+          'otp' => md5($otp)
+        ]);
+
+    }
+
+    public function verifyOtp(Request $request) {
+
+      $phone = $request->phone;
+      $name = $request->name;
+      $email = $request->email;
+      $address = $request->address;
+      $user_locality = $request->user_locality;
+      $otp_entered = $request->otp_entered;
+      $password = Hash::make($request->password);
+
+      $user = DB::table('users')->select('otp')->where('email', '=', $email)->first();
+      $otp = $user->otp;
+      if( md5($otp_entered) !== $otp ) {
+        echo "wrong";
+      } else {
+        echo "right";
+      }
+
+      DB::table('users')
+          ->where('email', '=' , $email)
+          ->update([
+            'status'      => 1,
+            'otp'         => null,
+      ]);
+
+    }
 
  public function liveSearch(Request $request) {
 

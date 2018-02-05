@@ -199,7 +199,7 @@
 
      $('#userLogin').on('submit', function(event) {
 
-       
+       event.preventDefault();
         
         var e_flag = false;
         var p_flag = false;
@@ -214,33 +214,30 @@
 
         var filter = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
 
-        if( $('#login_email').val() == '' ){
-            $('#e_div').html('<img src="images/if_cross.png" alt="" /> required');
+        if( $('#login_email').val().trim() == '' ){
+            $('#e_div').html('<img src="images/if_cross.png" alt="" /> Yikes! Please type in the email');
             $('#login_email').addClass('borderred');
-            event.preventDefault();
-      } else if( !filter.test($('#login_email').val()) ) {
-            $('#e_div').html('<img src="images/if_cross.png" alt="" /> invalid');
-            $('#login_email').addClass('borderred');
-            event.preventDefault();
-      } else {
-            $('#e_div').html('<img src="images/if_tick.png" alt="" /> okay');
+            //event.preventDefault();
+        } else {
+            $('#e_div').html('');
             $('#login_email').removeClass('borderred');
-            event.preventDefault();
+            //event.preventDefault();
             e_flag = true;
-      }
+        }
 
 
 
-      if( $('#login_password').val() == '' ) {
-            $('#p_div').html('<img src="images/if_cross.png" alt="" /> required');
+        if( $('#login_password').val().trim() == '' ) {
+            console.log("here");
+            //event.preventDefault();
+            $('#p_div').html('<img src="images/if_cross.png" alt="" /> Yikes! Please type in the password');
             $('#login_password').addClass('borderred');
-            event.preventDefault();
-      } else {
-            $('#p_div').html('<img src="images/if_tick.png" alt="" /> okay');
+        } else {
+            //event.preventDefault();
+            $('#p_div').html('');
             $('#login_password').removeClass('borderred');
-            event.preventDefault();
             p_flag = true;
-      }
+        }
 
 
       if( e_flag && p_flag ) {
@@ -252,19 +249,15 @@
                 success: function(response) {
 
 
-                    if( response == 1 ) {
-                        $('#e_div').html('<img src="images/if_cross.png" alt="" /> Sorry! E-mail id not found');
-                        $('#login_email').addClass('borderred');
-                    } else if( response == 2 ) {
+                    if( response == "notfound" ) {
+                        $('#e_div').html('<img src="images/if_cross.png" alt="" /> Looks like you are not registered.');
+                    } else if( response == "notverified" ) {
+                        $('#e_div').html('<img src="images/if_cross.png" alt="" /> Phone number not yet verified');
+                    } else if( response == "denied" ) {
                         $('#e_div').html('<img src="images/if_cross.png" alt="" /> Sorry! Wrong credentials');
-                        $('#login_email').addClass('borderred');
+                        //$('#login_email').addClass('borderred');
                     } else {
-                        if( response == 'passed' ) {
-                             window.location.href = '/home';
-                        } else {
-                            $('#e_div').html('<img src="images/if_cross.png" alt="" /> Log in error');
-                            $('#login_email').addClass('borderred');
-                        }
+                        window.location.href = '/home';
                     }
 
                     
@@ -274,10 +267,7 @@
         e.stopImmediatePropagation(); // to prevent ajax firing twice
       }
 
-
-
      });
-
 
 
      //Pharmacy login script

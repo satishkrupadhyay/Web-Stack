@@ -79,6 +79,12 @@ Route::post('/admin/change-password', 'InventoryController@postPharmChangePass')
 Route::get('/ajax-check-unique-email', 'Auth\RegisterController@check_email')->name('ajax.unique.email');
 Route::get('/ajax-check-unique-phone', 'Auth\RegisterController@check_phone')->name('ajax.unique.phone');
 
+// ajax for sending OTP
+Route::get('/ajax-send-otp', 'Auth\RegisterController@sendOtpToPhone')->name('ajax.send.otp');
+
+// ajax for verifying OTP
+Route::get('/ajax-verify-otp', 'Auth\RegisterController@verifyOtp')->name('ajax.verify.otp');
+
 
 //Customer profile section and change password
 

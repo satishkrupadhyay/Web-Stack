@@ -264,18 +264,19 @@
                     </form>
                 </div>
 
-                <div data-remodal-id="modal" role="dialog">
+                <div data-remodal-id="modal" role="dialog" id="remodal">
                   <div>
                     <h2 id="modal1Title">One Time Password (OTP)</h2>
                     <p id="modal1Desc">
                       Please enter the OTP sent to your
                     </p>
-                    <p>Registered Mobile Number <strong>******9999</strong></p>
+                    <p>Registered Mobile Number <strong id="partial_phone"></strong></p>
                     <input type="text" name="otp_entered" id="otp_entered" placeholder="999999" class="form-control otp_entered" maxlength="6">
+                    <input type="hidden" name="entity" id="entity">
                   </div>
                   <br>
                   <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
-                  <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+                  <button data-remodal-action="confirm" id="remodal-confirm" class="remodal-confirm">OK</button>
                 </div>
 
                 </div>
@@ -703,32 +704,22 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
      });
-
-
    
 
     var button = $('#submit');
     var registerform = $('#registerForm');
-    
+
+
+
 
     registerform.on('submit', function(event){
 
-      var name = $('#name').val();
-      var email = $('#email').val();
-      var password = $('#password').val();
-      var address = $('#address').val();
-      var user_locality = $('#user_locality').val();
-      var phone = $('#phone').val();
-    
-      
-      var postData = {
-        'name'    : name,
-        'email'    : email,
-        'password'    : password,
-        'address' : address,
-        'user_locality' : user_locality,
-        'phone' : phone,
-      }
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var address = $('#address').val();
+        var user_locality = $('#user_locality').val();
+        var phone = $('#phone').val();
 
  
       if( $('#name').val() == '' ){
@@ -807,7 +798,6 @@
                         $('#phone').addClass('borderred');
                         phoneFlag = 1;
                     } else {
-                        console.log("here");
                          $('#ph').html('<img src="images/if_tick.png" alt="" /> looks cool. Keep going');
                         $('#phone').removeClass('borderred');
                         phoneFlag = 2;
@@ -823,9 +813,6 @@
     if( emailFlag == 2 && phoneFlag == 2 ) {
 
       if( name != '' && email != '' && password != '' && phone != '' ) {
-
-        console.log(emailFlag);
-
     
         var options = 
         {
@@ -836,8 +823,26 @@
 
         var init = $('[data-remodal-id=modal]').remodal(options);
         init.open();
+       
+        var first_name = name.split(' ')[0];
 
-    
+        var subString = phone.slice(-4);
+        $('#partial_phone').html('******' + subString);
+
+        data = 'phone=' + phone + '&name=' + name + '&email=' + email + '&address=' + address + '&password=' + password + '&user_locality=' + user_locality + '&first_name=' + first_name;
+
+        $.ajax({
+            url: "{{ Route('ajax.send.otp') }}",
+            type: 'GET',
+            data: data,
+
+            success: function(response) {
+                var otp = response.otp;
+            },
+             async: false,
+        });
+
+
         $(document).on('closing', '.remodal', function (e) {
            if (e.reason == 'cancellation') {
                 
@@ -860,9 +865,6 @@
                 $('#user_locality').val('Guwahati');
                  $('#address').val('');
                 $("#u img:last-child").remove();
-                
-
-
            }
           });
 
@@ -870,13 +872,44 @@
 
       }
   }
-
-
-
-
-
   
     });
+
+    $('#remodal-confirm').click('submit', function() {
+        
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var address = $('#address').val();
+        var user_locality = $('#user_locality').val();
+        var phone = $('#phone').val();
+
+        var otp_entered = $('#otp_entered').val();
+
+        data = 'phone=' + phone + '&name=' + name + '&email=' + email + '&address=' + address + '&password=' + password + '&user_locality=' + user_locality + '&otp_entered=' + otp_entered; 
+
+         $.ajax({
+            url: "{{ Route('ajax.verify.otp') }}",
+            type: 'GET',
+            data: data,
+
+            success: function(response) {
+                if( response == 'right' ) {
+
+                    $('#remodal').html('');
+                    $('#remodal').html('<img src="images/otp_verified.gif" /><br><br><span class="high_five">High five! You can login now &nbsp;&nbsp;</span><button style="min-width: 71px; padding: 4px 0;" data-remodal-action="cancel" class="remodal-cancel">OK</button>').fadeIn();
+
+                }
+            },
+             async: false,
+        });
+
+        return false;
+    });
+
+
+
+
 
     $('#name').on('focusout', function(){
         if( $('#name').val() == '' ) {
@@ -987,6 +1020,7 @@
         }
         
     });
+    
 
 </script>
 </html>
