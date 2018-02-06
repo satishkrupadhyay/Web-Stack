@@ -24,6 +24,7 @@ body {
     font-size: 1.7rem; 
     font-weight: 500;
     font-family: "Lato";
+    margin: 4px 0;
 }
 /*==========================================
 PRE LOADER 
@@ -869,12 +870,87 @@ a.info_right_text{
 
 .remodal {
     width: 510px !important;
+    height: 264px !important;
+}
+
+#success_img {
+    height: 126px !important;
 }
 
 
 .jivoniTag {
     color: #666 !important;
 }
+
+@media (max-width: 550px) and (min-width: 448px) {
+
+    .remodal {
+        width: 420px !important;
+    }
+
+}
+
+@media (max-width: 448px) and (min-width: 375px) {
+
+    .remodal {
+        width: 379px !important;
+    }
+
+    #modal1Title {
+        font-size: 22px;
+    }
+
+    #modal1Desc {
+        font-size: 13px;
+    }
+
+    #modal2desc {
+        font-size: 12px;
+    }
+
+    .remodal-confirm, .remodal-cancel {
+        padding: 7px 0;
+        min-width: 85px;
+    }
+
+}
+
+
+@media (max-width: 400px) and (min-width: 330px) {
+
+    .remodal {
+        width: 298px !important;
+    }
+
+    #modal1Title {
+        font-size: 18px;
+    }
+
+    #modal1Desc {
+        font-size: 13px;
+    }
+
+    #modal2desc {
+        font-size: 12px;
+    }
+
+    .remodal-confirm, .remodal-cancel {
+        padding: 4px 0;
+        min-width: 75px;
+    }
+
+    #otp_entered {
+        padding: 7px 0px;
+    }
+
+    #success_img {
+        height: 125px !important;
+
+    }
+
+
+}
+
 
 @media (max-width: 768px) {
 
@@ -891,5 +967,56 @@ a.info_right_text{
 }
 
 
+/* Ripple effect */
+
+.ripple {
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 2px;
+  font-size: 22px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+  background: #2196F3;
+}
+
+/* Ripple magic */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.ripple:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
 
 

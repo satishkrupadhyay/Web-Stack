@@ -27,25 +27,34 @@ class AdminController extends Controller
     }
     public function viewpage()
     {
-        $loc = Auth::user()->locality;
-        $pharmacy_id = Auth::user()->id;
+        // $loc = Auth::user()->locality;
+        // $pharmacy_id = Auth::user()->id;
 
-        //$dat = DB::table('admins')->where('store_email', $pemail)->pluck('locality');
+        // $dat = DB::table('admins')->where('store_email', $pemail)->pluck('locality');
 
-        $data['data'] = DB::table('orders')
-        ->join('users', 'users.id', '=', 'orders.cust_id')
-        ->where('status', 0)
-        ->where('user_locality', '=', $loc)
-        ->simplePaginate(5);
+        // $data['data'] = DB::table('orders')
+        // ->join('users', 'users.id', '=', 'orders.cust_id')
+        // ->where('status', 0)
+        // ->where('user_locality', '=', $loc)
+        // ->simplePaginate(5);
         
-        $count['count'] = DB::select( DB::raw("SELECT count(*) as cnt FROM orders WHERE status = '0' AND pharmacy_id=$pharmacy_id") );
-              if (count($data) > 0) 
-              {
-                return view('auth.dashboard', $data, $count);
-              }
-              else{
-                    return view('auth.dashboard');
-              }
+        // $count['count'] = DB::select( DB::raw("SELECT count(*) as cnt FROM orders WHERE status = '0' AND pharmacy_id=$pharmacy_id") );
+        //       if (count($data) > 0) 
+        //       {
+                return view('auth.dashboard');
+              // }
+              // else{
+              //       return view('auth.dashboard');
+              // }
+    }
+
+
+    public function adminLogout( Request $request ) {
+
+        Auth::guard('admin')->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect()->route('welcome');
     }
     
     

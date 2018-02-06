@@ -85,6 +85,8 @@ Route::get('/ajax-send-otp', 'Auth\RegisterController@sendOtpToPhone')->name('aj
 // ajax for verifying OTP
 Route::get('/ajax-verify-otp', 'Auth\RegisterController@verifyOtp')->name('ajax.verify.otp');
 
+// ajax for resending OTP
+Route::get('/ajax-resend-otp', 'Auth\RegisterController@resendOtp')->name('ajax.resend.otp');
 
 //Customer profile section and change password
 
@@ -154,6 +156,7 @@ Route::group(['middleware' => 'preventbackhistory'],function(){
 Route::group(['middleware' => 'prevent'],function(){
 	Auth::routes();
 	Route::get('/admin', 'AdminController@viewpage')->name('admin.home');
+	Route::get('/admin-logout', 'AdminController@adminLogout')->name('admin.logout');
 
 	
 });

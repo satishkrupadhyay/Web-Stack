@@ -1,121 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        
-        <!-- font awesome -->
-        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-        <link rel="icon" href="images/favicon.ico">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="css/remodal.css">
-        <link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
-        <script src="js/remodal.min.js"></script>       
-
-
-       <!-- <script src="js/jquery/jquery.js"></script>-->
-
-        <!-- Bootstrap -->
-      <!-- <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
-         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="css/superslide/superslides.css">
-        <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
-        <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">
-        <link rel="stylesheet" href="css/themes/default/default.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
-        <link rel="stylesheet" href="css/animate/animate.css">
-        <link rel="stylesheet" href="css/owl-carousel/owl.carousel.css">
-        <link rel="stylesheet" href="css/owl-carousel/owl.theme.css">
-        <link rel="stylesheet" href="css/owl-carousel/owl.transitions.css">
-
-
-        <script src="js/script.js"></script>
-
-
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-   <!--     <script src="js/bootstrap/bootstrap.min.js"></script>-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="js/fancybox/jquery.fancybox.pack.js"></script>
-        <script src="js/nivo-lightbox/nivo-lightbox.min.js"></script>
-        <script src="js/owl-carousel/owl.carousel.min.js"></script>
-        <script src="js/jquery-easing/jquery.easing.1.3.js"></script>
-        <script src="js/superslide/jquery.superslides.js"></script>
-        <script src="js/wow/wow.min.js"></script>
-       
-        <title>Jivoni</title>
-
-        <style type="text/css">
-
-			body {
-			padding-right: 0px !important;
-			}
-			
-			.btn-try{
-    border: 1px solid #fff;
-    border-radius: 50px;
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    width: 100px;
-    padding: .5em;
-    height: 40px;
-    text-align: center;
-    background: transparent;
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-left: 5px;
-    font-size: 14px;
-    font-weight: 300;
-    margin-top: 26px;
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-   
-}
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-.btn-try:hover {
-    background-color: #d83535;
-    color: #fff;
-    text-decoration: none;
-}
-
-.borderred {
-    border: 1px solid red;
-}
-
-.otp {
-    font-size: 18px;
-    text-align: center;
-    color: white;
-    font-weight: 400; 
-}
-
-.otp_pass {
-    color: white;
-    font-weight: 400;
-    font-size: 12px;
-    text-align: center;
-    margin: 5px;
-}
-
-.otp_entered {
-    text-align: center;
-    width: 27%;
-    margin: 0 auto;
-}
+    <link rel="stylesheet" type="text/css" href="css/remodal.css">
+    <link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
+    <script src="js/remodal.min.js"></script>       
 
 
+    <!-- <script src="js/jquery/jquery.js"></script>-->
+
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/superslide/superslides.css">
+    <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">
+    <link rel="stylesheet" href="css/themes/default/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animate/animate.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.transitions.css">
 
 
-	</style>
-    </head>
-    <body>
+    <script src="js/script.js"></script>
+
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--     <script src="js/bootstrap/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="js/nivo-lightbox/nivo-lightbox.min.js"></script>
+    <script src="js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/jquery-easing/jquery.easing.1.3.js"></script>
+    <script src="js/superslide/jquery.superslides.js"></script>
+    <script src="js/wow/wow.min.js"></script>
+    
+    <title>Jivoni</title>
+
+    <style type="text/css">
+
+    body {
+        padding-right: 0px !important;
+    }
+    
+    .btn-try{
+        border: 1px solid #fff;
+        border-radius: 50px;
+        
+        width: 100px;
+        padding: .5em;
+        height: 40px;
+        text-align: center;
+        background: transparent;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-left: 5px;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 26px;
+        
+        
+    }
+
+    .btn-try:hover {
+        background-color: #d83535;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .borderred {
+        border: 1px solid red;
+    }
+
+    .otp {
+        font-size: 18px;
+        text-align: center;
+        color: white;
+        font-weight: 400; 
+    }
+
+    .otp_pass {
+        color: white;
+        font-weight: 400;
+        font-size: 12px;
+        text-align: center;
+        margin: 5px;
+    }
+
+    .otp_entered {
+        text-align: center;
+        width: 100%;
+        
+    }
+
+
+
+
+</style>
+</head>
+<body>
+
+
         <!-- @include('layouts.master')
     
       <!--  <div class="flex-center position-ref full-height">
@@ -145,29 +147,29 @@
             </div>
         </div>
 
- -->
+    -->
 
 
- <div class='preloader'><div class='loaded'>&nbsp;</div></div>
-       @include('partials.header')
+    <div class='preloader'><div class='loaded'>&nbsp;</div></div>
+    @include('partials.header')
 
-        <section id="home">
-            <div id="bgimage" class="header-image">
-                <div class="container-fluid">
-                    <div class="row">
+    <section id="home">
+        <div id="bgimage" class="header-image">
+            <div class="container-fluid">
+                <div class="row">
 
-                        <div class="col-sm-4 col-xs-12" style="margin-top:-50px;">
-                            <div class="iphone center-content wow fadeInLeft" data-wow-duration="1s">
-                                <img src="images/iphone-1.png" style="width:55%; height:auto; "alt="" />
-                            </div>
+                    <div class="col-sm-4 col-xs-12" style="margin-top:-50px;">
+                        <div class="iphone center-content wow fadeInLeft" data-wow-duration="1s">
+                            <img src="images/iphone-1.png" style="width:55%; height:auto; "alt="" />
                         </div>
+                    </div>
 
-                        <div class="col-sm-5 col-xs-12 heading-text welcomeHeader" style="margin-left: -73px" >
+                    <div class="col-sm-5 col-xs-12 heading-text welcomeHeader" style="margin-left: -73px" >
 
-                            <div class="single_home_content wow zoomIn" data-wow-duration="1s">
+                        <div class="single_home_content wow zoomIn" data-wow-duration="1s">
 
-                                <h2 style=" color: #fff; ">Introducing <b>JIVONI</b> </h2>
-                                <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Because we <b>CARE.</b></p>
+                            <h2 style=" color: #fff; ">Introducing <b>JIVONI</b> </h2>
+                            <p class="bannerDescription">Now get your medicines delivered at your doorstep. <b>HASSLE FREE.</b><br>Because we <b>CARE.</b></p>
                                <!-- <div class="button" style="margin-top:-50px;margin-left:-20px;">
                                     <a href="#downloadApps" class="btn">Download APP</a>
                                     <a href="#video" class="btn white-btn youtube-media"><i class="fa fa-play"></i> Watch video</a>
@@ -176,123 +178,134 @@
                         </div>
 
                         <div class="container-fluid">
-                        <div class="col-sm-3 col-xs-12 " style="margin-top:-50px;" id="otpDiv">
-                            <div id="formDiv" >
-                           <h3 style="color:#FFF"> Register Yourself. It's FREE</h3><br>
-                            <form class="form-horizontal" style=" color: #fff;" id="registerForm" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
-                        
-                        <div class="form-group">
-                           
+                            <div class="col-sm-3 col-xs-12 " style="margin-top:-50px;" id="otpDiv">
+                                <div id="formDiv" >
+                                 <h3 style="color:#FFF; text-align: center;"> Register Yourself. It's FREE</h3><br>
+                                 <form class="form-horizontal" style=" color: #fff;" id="registerForm" method="POST" action="{{ route('register') }}">
+                                    {{ csrf_field() }}
+                                    
+                                    <div class="form-group">
+                                     
 
-                                <input type="text" class="form-control" name="name" placeholder="Name" id="name">
-                                <div style="margin-top: 4px;" id="n">
+                                        <input type="text" class="form-control" name="name" placeholder="Name" id="name">
+                                        <div style="margin-top: 4px;" id="n">
+                                        </div>
+
+                                    </div>
+
+                                    
+                                    <!-- <label for="email" class="col-md-4 control-label">E-Mail Address</label>-->
+
+                                    <div class="form-group">
+                                        <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                                        <div style="margin-top: 4px;" id="e">
+                                          
+                                        </div>
+
+                                    </div>
+                                    
+                                    
+
+                                    
+                                    <!--   <label for="password" class="col-md-4 control-label">Password</label>-->
+
+                                    <div class="form-group">
+                                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+
+                                        <div style="margin-top: 4px;" id="p">
+                                         
+                                        </div>
+
+                                        
+                                    </div>
+
+                                    
+
+                                    <div class="form-group">
+                                      <!--  <label for="address" class="col-md-4 control-label">Address</label>-->
+                                      
+                                      <textarea id="address" rows="3"  class="form-control" name="address" value="{{ old('address') }}" placeholder="Address"></textarea>
+
+                                      <div style="margin-top: 4px;" id="a">
+                                        
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group" style="margin-bottom: 0">
+                                        <div class="col-md-6" style="margin-bottom: 14px;">
+                                          
+                                          
+                                            <select class="form-control" id="user_locality" name="user_locality" id="user_locality">
+                                                <option value="Guwahati" selected>Guwahati</option>
+                                                <option value="Mangoldoi">Mangoldoi</option>
+                                            </select>
+                                            <div style="margin-top: 4px;" id="u">
+                                              
+                                            </div>
+                                        </div> 
+                                        
+                                        <div class="col-md-6">
+                                            <input id="phone" type="text" class="form-control" size="10" name="phone" placeholder="Phone Number" maxlength="10">
+                                            <div style="margin-top: 4px;" id="ph">
+                                              
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                    </div>
                                 </div>
 
-                        </div>
-
-                       
-                           <!-- <label for="email" class="col-md-4 control-label">E-Mail Address</label>-->
-
-                              <div class="form-group">
-                                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-                                <div style="margin-top: 4px;" id="e">
-                                  
-                                </div>
-
+                                <div class="form-group">
+                                  <center> 
+                                    <button id="submit" type="submit" class="btn-try ripple" style="">
+                                        Register 
+                                    </button>
+                                </center>
                             </div>
-                            
-                     
 
-                        
-                         <!--   <label for="password" class="col-md-4 control-label">Password</label>-->
+                        </form>
+                    </div>
 
-                              <div class="form-group">
-                                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-
-                                <div style="margin-top: 4px;" id="p">
-                                   
-                                </div>
-
-                               
-                            </div>
-                            
-
-                        <div class="form-group">
-                          <!--  <label for="address" class="col-md-4 control-label">Address</label>-->
-                            
-                                <textarea id="address" rows="3"  class="form-control" name="address" value="{{ old('address') }}" placeholder="Address"></textarea>
-
-                                <div style="margin-top: 4px;" id="a">
-                                
-                                </div>
+                    <div data-remodal-id="modal" role="dialog" id="remodal">
+                      <div>
+                        <h2 id="modal1Title">One Time Password (OTP)</h2>
+                        <p id="modal1Desc">
+                          Please enter the OTP sent to your
+                      </p>
+                      <p id="modal2desc">Registered Mobile Number <strong id="partial_phone"></strong></p>
+                      <a href="javascript:void(0)" id="resend_otp" style="position: relative; bottom: 5px;">Resend OTP</a>
+                      <div class="row">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <input type="text" name="otp_entered" id="otp_entered" placeholder="999999" class="form-control otp_entered" maxlength="6">
+                            <input type="hidden" name="entity" id="entity">
                         </div>
-                        <div class="row">
-                            <div class="form-group" style="margin-bottom: 0">
-                        <div class="col-md-6" style="margin-bottom: 14px;">
-                          
-                                  
-                            <select class="form-control" id="user_locality" name="user_locality" id="user_locality">
-                                <option value="Guwahati" selected>Guwahati</option>
-                                <option value="Mangoldoi">Mangoldoi</option>
-                            </select>
-                            <div style="margin-top: 4px;" id="u">
-                                  
-                                </div>
-                        </div> 
-                    
-                       <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control" size="10" name="phone" placeholder="Phone Number" maxlength="10">
-                                <div style="margin-top: 4px;" id="ph">
-                                  
-                                </div>
-                                
-                           
-                        
+                        <div class="col-sm-3" style="margin-top: 5px;" id="invalid_otp">
                         </div>
                     </div>
-                    </div>
 
-                        <div class="form-group">
-                              <center> 
-                                <button id="submit" type="submit" class="btn-try" style="">
-                                    Register
-                                </button>
-                            </center>
-                        </div>
+                    <div style="margin-top: 20px">
+                      <button data-remodal-action="cancel" class="remodal-cancel ripple" style="padding: 5px 39px; font-size: 14px; background: #da3534;" onclick="redirectSuccess()">Cancel</button>
+                      <button data-remodal-action="confirm" id="remodal-confirm" class="remodal-confirm ripple" style="padding: 5px 39px; font-size: 14px; background: #da3534;">OK</button> 
+                  </div>  
+                  
+              </div>
+          </div>
 
-                    </form>
-                </div>
 
-                <div data-remodal-id="modal" role="dialog" id="remodal">
-                  <div>
-                    <h2 id="modal1Title">One Time Password (OTP)</h2>
-                    <p id="modal1Desc">
-                      Please enter the OTP sent to your
-                    </p>
-                    <p>Registered Mobile Number <strong id="partial_phone"></strong></p>
-                    <input type="text" name="otp_entered" id="otp_entered" placeholder="999999" class="form-control otp_entered" maxlength="6">
-                    <input type="hidden" name="entity" id="entity">
-                  </div>
-                  <br>
-                  <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
-                  <button data-remodal-action="confirm" id="remodal-confirm" class="remodal-confirm">OK</button>
-                </div>
+      </div>
+      
 
-                </div>
-                </div>
-                        
+  </div> <!-- end of row -->
+</div> <!-- end of container -->
 
-                    </div> <!-- end of row -->
-                </div> <!-- end of container -->
+<div class="scrolldown">
+    <a href="#downloadApps" class="scroll_btn ripple" style="padding: 0;"></a>
+</div>
 
-                <div class="scrolldown">
-                    <a href="#downloadApps" class="scroll_btn"></a>
-                </div>
+</div>
 
-            </div>
-
-        </section>
+</section>
 
 
      <!--   <section id="works_2">
@@ -483,7 +496,7 @@
             </div>
         </section>-->
 
-    
+        
 
 
         <!-- Download Section  -->
@@ -654,373 +667,5 @@
         </div>
 
     </body>
-
-    <script type="text/javascript">
-
-
-    $("#phone").keydown(function (e) {
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-             // Allow: Ctrl/cmd+A
-            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-             // Allow: Ctrl/cmd+C
-            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
-             // Allow: Ctrl/cmd+X
-            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
-             // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-                 // let it happen, don't do anything
-                 return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-
-     $("#otp_entered").keydown(function (e) {
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-             // Allow: Ctrl/cmd+A
-            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-             // Allow: Ctrl/cmd+C
-            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
-             // Allow: Ctrl/cmd+X
-            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
-             // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-                 // let it happen, don't do anything
-                 return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-     });
-   
-
-    var button = $('#submit');
-    var registerform = $('#registerForm');
-
-
-
-
-    registerform.on('submit', function(event){
-
-        var name = $('#name').val();
-        var email = $('#email').val();
-        var password = $('#password').val();
-        var address = $('#address').val();
-        var user_locality = $('#user_locality').val();
-        var phone = $('#phone').val();
-
- 
-      if( $('#name').val() == '' ){
-       
-        $('#n').html('<img src="images/if_cross.png" alt="" /> required');
-        $('#name').addClass('borderred');
-        event.preventDefault();
-      } else {
-        $('#n').html('<img src="images/if_tick.png" alt="" /> okay');
-        $('#name').removeClass('borderred');
-      }
-
-
-      var filter = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
-
-      if( $('#email').val() == '' ){
-        $('#e').html('<img src="images/if_cross.png" alt="" /> required');
-        $('#email').addClass('borderred');
-        event.preventDefault();
-      } else if( !filter.test($('#email').val()) ) {
-        $('#e').html('<img src="images/if_cross.png" alt="" /> required');
-        $('#email').addClass('borderred');
-        event.preventDefault();
-      } else {
-
-        var emailFlag = 0;
-            
-            $.ajax({
-                url: "{{ Route('ajax.unique.email') }}",
-                type: 'GET',
-                data: 'email=' + $('#email').val(),
-
-                success: function(response) {
-                    if ( response == 1 ) {
-                        $('#e').html('<img src="images/if_cross.png" alt="" /> already exists');
-                        $('#email').addClass('borderred');
-                        emailFlag = 1;
-                    } else if( response == 2 ) {
-                         $('#e').html('<img src="images/if_tick.png" alt="" /> looks cool. Keep going');
-                        $('#email').removeClass('borderred');
-                        emailFlag = 2;
-                    }
-                },
-                 async: false,
-            });
-
-        }
-
-      if( $('#password').val() == '' ){
-        $('#p').html('<img src="images/if_cross.png" alt="" /> required');
-        $('#password').addClass('borderred');
-        event.preventDefault();
-      } else {
-        $('#p').html('<img src="images/if_tick.png" alt="" /> okay');
-        $('#password').removeClass('borderred');
-      }
-
-      if( $('#phone').val() == '' ){
-        $('#ph').html('<img src="images/if_cross.png" alt="" /> required');
-        $('#phone').addClass('borderred');
-        event.preventDefault();
-      } else if( $('#phone').val().length != 10 ) {
-            $('#ph').html('<img src="images/if_cross.png" alt="" /> not a 10 digit ');
-            $('#phone').addClass('borderred'); 
-            event.preventDefault();  
-        } else {
-            var phoneFlag = 0;
-            $.ajax({
-                url: "{{ Route('ajax.unique.phone') }}",
-                type: 'GET',
-                data: 'phone=' + $('#phone').val(),
-
-                success: function(response) {
-                    if ( response == 1 ) {
-                        $('#ph').html('<img src="images/if_cross.png" alt="" />  Phone already exists');
-                        $('#phone').addClass('borderred');
-                        phoneFlag = 1;
-                    } else {
-                         $('#ph').html('<img src="images/if_tick.png" alt="" /> looks cool. Keep going');
-                        $('#phone').removeClass('borderred');
-                        phoneFlag = 2;
-                    }
-                },
-                 async: false,
-            });
-        }
-
-        event.preventDefault();
-
-
-    if( emailFlag == 2 && phoneFlag == 2 ) {
-
-      if( name != '' && email != '' && password != '' && phone != '' ) {
-    
-        var options = 
-        {
-            hashTracking : false,
-            closeOnEscape : false,
-            closeOnOutsideClick : false,
-        };
-
-        var init = $('[data-remodal-id=modal]').remodal(options);
-        init.open();
-       
-        var first_name = name.split(' ')[0];
-
-        var subString = phone.slice(-4);
-        $('#partial_phone').html('******' + subString);
-
-        data = 'phone=' + phone + '&name=' + name + '&email=' + email + '&address=' + address + '&password=' + password + '&user_locality=' + user_locality + '&first_name=' + first_name;
-
-        $.ajax({
-            url: "{{ Route('ajax.send.otp') }}",
-            type: 'GET',
-            data: data,
-
-            success: function(response) {
-                var otp = response.otp;
-            },
-             async: false,
-        });
-
-
-        $(document).on('closing', '.remodal', function (e) {
-           if (e.reason == 'cancellation') {
-                
-                $('#name').val('');
-                $('#n').text('');
-                $("#n img:last-child").remove()
-                $('#email').val('');
-                $('#e').text('');
-                $("#e img:last-child").remove()
-                $('#phone').val('');
-                $('#ph').text('');
-                $("#ph img:last-child").remove()
-                $('#password').val('');
-                $('#p').text('');
-                $("#p img:last-child").remove()
-                $('#address').val('');
-                $('#user_locality').val('Guwahati');
-                $("#u img:last-child").remove()
-                $("#u").text('');
-                $('#user_locality').val('Guwahati');
-                 $('#address').val('');
-                $("#u img:last-child").remove();
-           }
-          });
-
-        event.preventDefault();
-
-      }
-  }
-  
-    });
-
-    $('#remodal-confirm').click('submit', function() {
-        
-        var name = $('#name').val();
-        var email = $('#email').val();
-        var password = $('#password').val();
-        var address = $('#address').val();
-        var user_locality = $('#user_locality').val();
-        var phone = $('#phone').val();
-
-        var otp_entered = $('#otp_entered').val();
-
-        data = 'phone=' + phone + '&name=' + name + '&email=' + email + '&address=' + address + '&password=' + password + '&user_locality=' + user_locality + '&otp_entered=' + otp_entered; 
-
-         $.ajax({
-            url: "{{ Route('ajax.verify.otp') }}",
-            type: 'GET',
-            data: data,
-
-            success: function(response) {
-                if( response == 'right' ) {
-
-                    $('#remodal').html('');
-                    $('#remodal').html('<img src="images/otp_verified.gif" /><br><br><span class="high_five">High five! You can login now &nbsp;&nbsp;</span><button style="min-width: 71px; padding: 4px 0;" data-remodal-action="cancel" class="remodal-cancel">OK</button>').fadeIn();
-
-                }
-            },
-             async: false,
-        });
-
-        return false;
-    });
-
-
-
-
-
-    $('#name').on('focusout', function(){
-        if( $('#name').val() == '' ) {
-            $('#submit').prop('disabled', true);
-            $('#n').html('<img src="images/if_cross.png" alt="" />  not cool');
-            $(this).addClass('borderred');
-        } else {     
-            $('#submit').prop('disabled', false);
-            $('#n').html('<img src="images/if_tick.png" alt="" /> looks cool');
-            $(this).removeClass('borderred');
-
-        }
-        
-    });
-    $('#email').on('focusout', function(){
-
-        var filter = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
-
-        if( $('#email').val() == '' ) {
-            $('#submit').prop('disabled', true);
-            $('#e').html('<img src="images/if_cross.png" alt="" />  not cool');
-            $(this).addClass('borderred');    
-        } else if( !filter.test($('#email').val()) ){
-            $('#submit').prop('disabled', true);
-             $('#e').html('<img src="images/if_cross.png" alt="" />  not cool');
-            $(this).addClass('borderred'); 
-        } else {
-            
-            $.ajax({
-                url: "{{ Route('ajax.unique.email') }}",
-                type: 'GET',
-                data: 'email=' + $(this).val(),
-
-                success: function(response) {
-                    if (response == 1) {
-                        $('#submit').prop('disabled', true);
-                        $('#e').html('<img src="images/if_cross.png" alt="" />  e-mail already exists');
-                        $('#email').addClass('borderred');
-                    } else {
-                         $('#submit').prop('disabled', false);
-                         $('#e').html('<img src="images/if_tick.png" alt="" /> looks cool. Keep going');
-                        $('#email').removeClass('borderred');
-                    }
-                }
-            });
-
-        }
-        
-    });
-
-
-    $('#password').on('focusout', function(){
-        if( $('#password').val() == '' ) {
-            $('#p').html('<img src="images/if_cross.png" alt="" />  not cool');
-            $(this).addClass('borderred');    
-            $('#submit').prop('disabled', true);
-        } else {
-            $('#p').html('<img src="images/if_tick.png" alt="" /> looks cool');
-            $(this).removeClass('borderred');
-            $('#submit').prop('disabled', false);
-        }
-        
-    });
-
-
-    $('#user_locality').on('focusout', function(){
-        if( $('#user_locality').val() == '0' ) {
-            $('#u').html('<img src="images/if_cross.png" alt="" /> not cool');
-            $(this).addClass('borderred');    
-          
-        } else {
-            $('#u').html('<img src="images/if_tick.png" alt="" /> looks cool');
-            $(this).removeClass('borderred');
-           
-        }
-        
-    });
-
-
-
-    $('#phone').on('focusout', function(){
-        if( $('#phone').val() == '' ) {
-            $('#ph').html('<img src="images/if_cross.png" alt="" /> required');
-            $(this).addClass('borderred');    
-            $('#submit').prop('disabled', true);
-        } else if( $('#phone').val().length != 10 ) {
-            $('#ph').html('<img src="images/if_cross.png" alt="" /> not a 10 digit ');
-            $(this).addClass('borderred');   
-           $('#submit').prop('disabled', true); 
-        } else {
-            $.ajax({
-                url: "{{ Route('ajax.unique.phone') }}",
-                type: 'GET',
-                data: 'phone=' + $(this).val(),
-
-                success: function(response) {
-                    if (response == 1) {
-                        $('#ph').html('<img src="images/if_cross.png" alt="" />  Phone already exists');
-                        $('#phone').addClass('borderred');
-                        $('#submit').prop('disabled', true);
-                    } else {
-                         $('#ph').html('<img src="images/if_tick.png" alt="" /> looks cool. Keep going');
-                        $('#phone').removeClass('borderred');
-                        $('#submit').prop('disabled', false);
-                    }
-                }
-            });
-        }
-        
-    });
-    
-
-</script>
-</html>
+    <script src="js/resource.js"></script>
+    </html>

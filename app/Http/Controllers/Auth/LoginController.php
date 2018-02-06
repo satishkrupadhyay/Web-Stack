@@ -7,8 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
-//use Hash;
-//use Session;
+use Hash;
+use Session;
 
 class LoginController extends Controller
 {
@@ -43,7 +43,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-       
+
     }
 
 
@@ -61,14 +61,10 @@ class LoginController extends Controller
 
 
 
-
     public function validateCredentials(Request $request) {
-
-        //$checkFlag = false;
 
         $email = $request->email;
         $password = $request->password;
-
         $rememberMe = false;
 
         if($request->remember == 'true'){
@@ -76,8 +72,8 @@ class LoginController extends Controller
         }
 
         $userDetails = DB::table('users')
-                            ->where('email', '=', $email)
-                            ->first();
+        ->where('email', '=', $email)
+        ->first();
 
         if( count( $userDetails ) == 0 ) {
             echo "notfound";
@@ -91,57 +87,37 @@ class LoginController extends Controller
             } else {
                 echo "notverified";
             }
-                 
+
         }
-            
-        
 
     }
 
 
+    public function validatePharmCredentials(Request $request) {
 
-    //     public function validatePharmCredentials(Request $request) {
+      $email = $request->email;
+      $password = $request->password;
+      $rememberMe = false;
 
-    //     $checkFlag = false;
+      if($request->remember == 'true'){
+        $rememberMe = true;
+    }
 
-    //     $email = $request->email;
-    //     $password = $request->password;
+    $adminDetails = DB::table('admins')
+                        ->where('store_email', '=', $email)
+                        ->first();
 
-    //     $rememberMe = false;
-        
-    //     if($request->remember == 'true'){
-    //         $rememberMe = true;
-    //     }
+    if( count( $adminDetails ) == 0 ) {
+        echo "notfound";
+    } else {
+        if( Auth::guard('admin')->attempt(['store_email' => $email, 'password' => $password], $rememberMe) ) {
+            echo "granted";
+        } else {
+            echo "denied";
+        }
+
+    }
 
 
-
-
-    //     $pharmDetails = DB::table('admins')
-    //                         ->where('store_email', '=', $email)
-    //                         ->first();
-
-    //     if( count($pharmDetails) == 0 ) {
-    //         echo 1;
-    //     } else {
-    //         $username = $pharmDetails->owner_name;
-    //         if( !Hash::check($password, $pharmDetails->password) ) {
-    //             $checkFlag = true;
-    //             echo 2;
-    //         } else {
-    //             $inputs = array(
-    //                 'store_email' => $request->email,
-    //                 'password' => $request->password,
-    //             );
-    //             if( $this->guard()->attempt($inputs, $rememberMe) ) {
-    //                 Session::flash('welcome_message' , "Welcome $username");
-    //                 echo "passed";
-    //             } else {
-    //                 echo "fail";
-    //             }
-    //         }    
-    //     }
-
-    // }
-
-    
+}
 }

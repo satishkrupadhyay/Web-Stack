@@ -5,7 +5,7 @@ namespace Jivoni\Traits;
 
 trait SendOtp {
 
-	public function sendTheOtp($firstName, $phone, $otp) {
+	public function sendTheOtp($phone, $otp) {
 
 		 $authKey = "179537A8dc5PRixK59e43aea";
 
@@ -14,7 +14,7 @@ trait SendOtp {
         $senderId = "Jivoni";
 
         //Your message to send, Add URL encoding here.
-        $message = urlencode("Hello $firstName, \n Your OTP is $otp");
+        $message = urlencode("OTP for mobile verification is $otp. Please do not share it with anyone.");
 
         //Define route 
         $route = "4";

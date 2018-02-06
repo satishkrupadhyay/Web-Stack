@@ -42,7 +42,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+      $this->middleware('guest');
     }
 
     /**
@@ -68,115 +68,109 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Jivoni\User
      */
-    protected function create(array $data)
-    {
-        $template_path = 'registermail';
-    //    $usr_email = Input::get('email');
+    // protected function create(array $data)
+    // {
+    //     $template_path = 'registermail';
+    // //    $usr_email = Input::get('email');
 
 
-        $user= User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'address' => $data['address'],
-            'user_locality' => $data['user_locality'],
-            'dob' => $data['dob'],
-            'gender' => $data['gender'],
-            'phone' => $data['phone'],
-        ]);
+    //     $user= User::create([
+    //         'name' => $data['name'],
+    //         'email' => $data['email'],
+    //         'password' => bcrypt($data['password']),
+    //         'address' => $data['address'],
+    //         'user_locality' => $data['user_locality'],
+    //         'dob' => $data['dob'],
+    //         'gender' => $data['gender'],
+    //         'phone' => $data['phone'],
+    //     ]);
 
 
-        Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($user)
-          {
-             // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
+    //     Mail::send(['text'=> $template_path ], array('email' => Input::get('email')), function($message) use ($user)
+    //       {
+    //          // $message->from('imdadul@simplisticsolutions.in','Admin')->to($request->get('email'))->subject('Order Placed');
 
-             // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
+    //          // $message->to($request->get('email'), 'Receiver Name')->subject('Order Placed');
 
-              $message->to(Input::get('email'), 'Receiver Name')->subject('Registration Successful');
+    //           $message->to(Input::get('email'), 'Receiver Name')->subject('Registration Successful');
 
-                      // Set the sender
+    //                   // Set the sender
 
-              $message->from('satish@simplisticsolutions.in','Greetings');
-
-                      
-
-          });
-            /*------------Successful Registration Confirmation Message---------------*/
+    //           $message->from('satish@simplisticsolutions.in','Greetings');
 
 
 
-              $authKey = "179537A8dc5PRixK59e43aea";
-
-              //Multiple mobiles numbers separated by comma
-              $mobileNumber = $user['phone'];
-              // Customer Name
-              $customer_name = $user['name'];
-              
-              //Sender ID,While using route4 sender id should be 6 characters long.
-              $senderId = "Jivoni";
-
-              //Your message to send, Add URL encoding here.
-              $message = urlencode('Hello '.$customer_name.','."\nYou have been succesfully registered to our services. Please login to use our services.");
-
-              //Define route 
-              $route = "4";
-              //Prepare you post parameters
-              $postData = array(
-                  'authkey' => $authKey,
-                  'mobiles' => $mobileNumber,
-                  'message' => $message,
-                  'sender' => $senderId,
-                  'route' => $route
-              );
-
-              //API URL
-              $url="https://control.msg91.com/api/sendhttp.php";
-
-              // init the resource
-              $ch = curl_init();
-              curl_setopt_array($ch, array(
-                  CURLOPT_URL => $url,
-                  CURLOPT_RETURNTRANSFER => true,
-                  CURLOPT_POST => true,
-                  CURLOPT_POSTFIELDS => $postData
-                  //,CURLOPT_FOLLOWLOCATION => true
-              ));
-
-
-              //Ignore SSL certificate verification
-              curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-              curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-
-
-              //get response
-              $output = curl_exec($ch);
-
-              //Print error if any
-              if(curl_errno($ch))
-              {
-                  echo 'error:' . curl_error($ch);
-              }
-
-              curl_close($ch);
-
-              echo $output;
-
-          /*-----------end of Successful Registartion Confirmation Message-----------*/
-
-        return $user;
-    }
+    //       });
+    //         /*------------Successful Registration Confirmation Message---------------*/
 
 
 
+    //           $authKey = "179537A8dc5PRixK59e43aea";
+
+    //           //Multiple mobiles numbers separated by comma
+    //           $mobileNumber = $user['phone'];
+    //           // Customer Name
+    //           $customer_name = $user['name'];
+
+    //           //Sender ID,While using route4 sender id should be 6 characters long.
+    //           $senderId = "Jivoni";
+
+    //           //Your message to send, Add URL encoding here.
+    //           $message = urlencode('Hello '.$customer_name.','."\nYou have been succesfully registered to our services. Please login to use our services.");
+
+    //           //Define route 
+    //           $route = "4";
+    //           //Prepare you post parameters
+    //           $postData = array(
+    //               'authkey' => $authKey,
+    //               'mobiles' => $mobileNumber,
+    //               'message' => $message,
+    //               'sender' => $senderId,
+    //               'route' => $route
+    //           );
+
+    //           //API URL
+    //           $url="https://control.msg91.com/api/sendhttp.php";
+
+    //           // init the resource
+    //           $ch = curl_init();
+    //           curl_setopt_array($ch, array(
+    //               CURLOPT_URL => $url,
+    //               CURLOPT_RETURNTRANSFER => true,
+    //               CURLOPT_POST => true,
+    //               CURLOPT_POSTFIELDS => $postData
+    //               //,CURLOPT_FOLLOWLOCATION => true
+    //           ));
 
 
+    //           //Ignore SSL certificate verification
+    //           curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    //           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
 
-     public function check_email(Request $request) {
+    //           //get response
+    //           $output = curl_exec($ch);
+
+    //           //Print error if any
+    //           if(curl_errno($ch))
+    //           {
+    //               echo 'error:' . curl_error($ch);
+    //           }
+
+    //           curl_close($ch);
+
+    //           echo $output;
+
+    //       /*-----------end of Successful Registartion Confirmation Message-----------*/
+
+    //     return $user;
+    // }
+
+    public function check_email(Request $request) {
 
       $email = DB::table('users')
-                  ->where('email', '=', $request->email)
-                  ->get();
+      ->where('email', '=', $request->email)
+      ->get();
 
       if( count($email) > 0 ) {
         echo 1;
@@ -187,11 +181,11 @@ class RegisterController extends Controller
     }
 
 
-      public function check_phone(Request $request) {
+    public function check_phone(Request $request) {
 
       $phone = DB::table('users')
-                  ->where('phone', '=', $request->phone)
-                  ->get();
+      ->where('phone', '=', $request->phone)
+      ->get();
 
       if( count($phone) > 0 ) {
         echo 1;
@@ -214,18 +208,41 @@ class RegisterController extends Controller
       $address = $request->address;
       $user_locality = $request->user_locality;
       $password = Hash::make($request->password);
-      $this->sendTheOtp($first_name, $phone, $otp);
+      $isVerified = $request->isVerified;
+      $this->sendTheOtp($phone, $otp);
 
-      User::create(
-        [
-          'name' => $name,
-          'email' => $email,
-          'phone' => $phone,
-          'address' => $address,
-          'user_locality' => $user_locality,
-          'password' => $password,
-          'otp' => md5($otp)
+      if( !$isVerified ) {
+
+        User::create(
+          [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'address' => $address,
+            'user_locality' => $user_locality,
+            'password' => $password,
+            'otp' => md5($otp)
+          ]);
+
+        echo json_encode(['response' => 200]);
+
+      } else {
+        $user = User::select('name', 'email', 'phone', 'status')
+        ->where('email', $email)
+        ->first();
+
+        $phone = $user->phone;
+
+        $this->sendTheOtp($phone, $otp);
+
+        DB::table('users')
+        ->where('email', '=' , $email)
+        ->update([
+          'otp' => md5($otp),
         ]);
+
+        echo json_encode(['response' => $phone]);
+      }
 
     }
 
@@ -238,46 +255,91 @@ class RegisterController extends Controller
       $user_locality = $request->user_locality;
       $otp_entered = $request->otp_entered;
       $password = Hash::make($request->password);
+      $isVerified = $request->isVerified;
 
-      $user = DB::table('users')->select('otp')->where('email', '=', $email)->first();
-      $otp = $user->otp;
-      if( md5($otp_entered) !== $otp ) {
-        echo "wrong";
-      } else {
-        echo "right";
-      }
+      if( !$isVerified ) {
 
-      DB::table('users')
+        $user = DB::table('users')
+        ->select('otp')
+        ->where('email', '=', $email)
+        ->first();
+
+        $otp = $user->otp;
+        if( md5($otp_entered) !== $otp ) {
+          echo "wrong";
+        } else {
+          DB::table('users')
           ->where('email', '=' , $email)
           ->update([
             'status'      => 1,
             'otp'         => null,
+          ]);
+          echo "right";
+        }
+      } else {
+        $user = User::select('email', 'phone', 'otp')
+        ->where('phone', $phone)
+        ->first();
+
+        $otp = $user->otp;
+        if( md5($otp_entered) !== $otp ) {
+          echo "wrong";
+        } else {
+
+          DB::table('users')
+          ->where('phone', '=' , $phone)
+          ->update([
+            'status'      => 1,
+            'otp'         => null,
+          ]);
+          echo "right";
+        }
+      }
+    }
+
+    public function resendOtp( Request $request ) {
+
+      $phone = $request->phone;
+      $otp = mt_rand(111111,666666);
+
+      DB::table('users')
+      ->where('phone', '=' , $phone)
+      ->update([
+        'otp' => md5($otp),
       ]);
 
-    }
+      $this->sendTheOtp($phone, $otp);
 
- public function liveSearch(Request $request) {
+      echo json_encode(['message' => 'OTP Sent']);
 
-        $name = $request->name;
 
-        $toSearch = $name . '%';
 
-        $dataString = "SELECT drug.brand_name, drug.generic_name, drug_category.category_name 
-
-          FROM drug INNER JOIN drug_category
-
-          ON drug_category.drug_category_id = drug.drug_category_id
-
-          WHERE drug.brand_name LIKE '$toSearch'
-
-          OR
-
-          drug.generic_name LIKE '$toSearch'";
-
-        $drugDetails = DB::select( DB::raw($dataString) );
-
-        echo json_encode($drugDetails);
     }
 
 
-}
+
+    public function liveSearch(Request $request) {
+
+      $name = $request->name;
+
+      $toSearch = $name . '%';
+
+      $dataString = "SELECT drug.brand_name, drug.generic_name, drug_category.category_name 
+
+      FROM drug INNER JOIN drug_category
+
+      ON drug_category.drug_category_id = drug.drug_category_id
+
+      WHERE drug.brand_name LIKE '$toSearch'
+
+      OR
+
+      drug.generic_name LIKE '$toSearch'";
+
+      $drugDetails = DB::select( DB::raw($dataString) );
+
+      echo json_encode($drugDetails);
+    }
+
+
+  }

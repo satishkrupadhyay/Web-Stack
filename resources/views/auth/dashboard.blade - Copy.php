@@ -58,6 +58,13 @@
                         
                     </div>
                 @endif
+                <div class="panel-heading"><strong>Pending Orders:&nbsp;</strong>
+                @if(isset($count))
+                    @foreach ($count as $value1)
+                    <strong>{{$value1->cnt}}</strong>
+                    @endforeach
+                @endif
+                </div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -77,26 +84,44 @@
 
                     
 
+                    @if (count($data)== 0)
+
+                    @if (isset($data) && count($data) == 0)
+                    <div>                    
+                       
+                        <h5>There are no pending orders ! </h5>
+                                         
+                    </div>
+                    @endif  
+                    @endif
 
                    
 
                 
                 <div class="list-group">
                                
-                          
+                               
+                            @if(isset($data))
+                           @foreach ($data as $value)
+
 
                                 
 
-                                <a href="" class="list-group-item"> 
-                                    <li style="list-style-type:none"><b>ORDER ID:</b> </li>  
-                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> </li> 
-                                    <li style="list-style-type:none"><b>CUSTOMER NAME:</b> </li> 
-                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b></li>
+                                <a href="{{ action('pharmviewController@index', $value->order_id) }}" class="list-group-item"> 
+                                    <li style="list-style-type:none"><b>ORDER ID:</b> {{$value->order_id}}</li>  
+                                    <li style="list-style-type:none"><b>CUSTOMER ID:</b> {{$value->id}}</li> 
+                                    <li style="list-style-type:none"><b>CUSTOMER NAME:</b> {{$value->name}}</li> 
+                                    <li style="list-style-type:none"><b>DATE OF ORDER:</b> {{\Carbon\Carbon::parse($value->date_of_purchase)->format('d-M-Y h:i:s a')}}</li>
                                 </a>
 
 
+                           @endforeach
+                           @endif
+
                     </div> 
-                   
+                    @if(isset($data))
+                     {{ $data->links() }}
+                     @endif
 
                  </div>
             </div>
